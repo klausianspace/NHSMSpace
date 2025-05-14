@@ -74,11 +74,11 @@ const Footer: React.FC = () => {
 
         {/* Credits */}
         <div className="text-center border-t border-white/10 pt-6 flex flex-col items-center gap-2">
-          <p className="text-sm text-white/60">© 2023 NHSM Space. All rights reserved.</p>
+          <p className="text-sm text-white/60">© 2025 NHSM Space. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="text-sm text-white/60">Developed by</span>
             <img 
-              src="Assets/images/finmatics footer logo 2.png" 
+              src="/finmatics footer logo 2.png" 
               alt="Finmatics Quant Club"
               className="h-7 filter brightness-0 invert transition-transform hover:scale-110 duration-300"
             />

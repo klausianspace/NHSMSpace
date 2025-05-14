@@ -17,12 +17,12 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="Assets/images/logo.png" 
+              src="/Logo.png" 
               alt="NHSM Logo" 
               className="h-16 logo-pulse transition-transform duration-300 hover:scale-105 hover:animate-none" 
             />
             <img 
-              src="Assets/images/finmatics logo.png" 
+              src="/Finmatics logo.png" 
               alt="Finmatics Logo" 
               className="h-12 ml-2 transition-transform duration-300 hover:scale-105" 
             />

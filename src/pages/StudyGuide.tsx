@@ -49,7 +49,7 @@ const StudyGuide: React.FC = () => {
       name: 'Algebra 1',
       semester: 1,
       year: 1,
-      description: 'Study linear algebra, vector spaces, and matrix operations with practical applications.',
+      description: 'Study abstract algebra, mathematical logic, and algebraic structures with practical applications.',
       imageUrl: 'https://images.pexels.com/photos/5427670/pexels-photo-5427670.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
@@ -57,7 +57,7 @@ const StudyGuide: React.FC = () => {
       name: 'Discrete Mathematics 1',
       semester: 1,
       year: 1,
-      description: 'Explore sets, relations, functions, and the foundations of mathematical reasoning.',
+      description: 'Explore Combinatorial Analysis, Inclusion-Exclusion principle , Pigeonhole principle, and the foundations of graph theory.',
       imageUrl: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
@@ -73,7 +73,7 @@ const StudyGuide: React.FC = () => {
       name: 'Physics 1',
       semester: 1,
       year: 1,
-      description: 'Study mechanics, thermodynamics, and the mathematical formulation of physical laws.',
+      description: 'Study kinmatics, dynamics, and work & energy.',
       imageUrl: 'https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {

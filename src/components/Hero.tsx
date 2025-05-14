@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div 
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-50 z-[-2]"
         style={{ 
-          backgroundImage: "url('Assets/images/background.jpg')",
+          backgroundImage: "url('/background.jpg')",
           animation: "subtleZoom 30s infinite alternate"
         }}
       />

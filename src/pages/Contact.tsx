@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
                 <ContactItem 
                   icon={<MapPin className="w-5 h-5" />}
                   title="Visit Us"
-                  details={['National Higher School of Mathematics', 'B.P. 75, Kouba, 16050, Algiers, Algeria']}
+                  details={['National Higher School of Mathematics', 'Sidi ABDELLAH, Algiers, Algeria']}
                 />
                 <ContactItem 
                   icon={<Clock className="w-5 h-5" />}
@@ -188,7 +188,7 @@ const Contact: React.FC = () => {
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
                 <p className="text-white text-lg mb-2">National Higher School of Mathematics</p>
-                <p className="text-white/70">Kouba, Algiers, Algeria</p>
+                <p className="text-white/70">Sidi ABDELLAH, Algiers, Algeria</p>
               </div>
             </div>
           </div>
