@@ -130,3 +130,21 @@ body {
   transform-origin: left;
   animation: lineGrow 1s ease-out forwards;
 }
+
+
+@layer utilities {
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(16, 24, 38, 0.8);
+    border: 1px solid rgba(61, 169, 252, 0.1);
+  }
+  
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(61, 169, 252, 0.3);
+    transform: translateY(-2px);
+  }
+}

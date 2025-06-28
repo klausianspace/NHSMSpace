@@ -47,7 +47,7 @@ const Tips: React.FC = () => {
       category: 'study-strategies',
       title: 'Active Problem Solving',
       description: 'Actively working through problems, rather than passively reading solutions, is crucial for developing mathematical intuition. Try to solve problems before looking at their solutions.',
-      author: 'Prof. Sarah Mahmoud',
+      author: 'Prof. Maamar Benbachir',
       position: 'Analysis Department',
       rating: 4.9
     },
@@ -56,7 +56,7 @@ const Tips: React.FC = () => {
       category: 'study-strategies',
       title: 'Concept Mapping',
       description: 'Create visual representations of how mathematical concepts connect. This helps you understand the bigger picture and recognize patterns across different topics.',
-      author: 'Karim Benzarti',
+      author: 'Khaled Belaabas',
       position: '5th Year Student',
       rating: 4.7
     },

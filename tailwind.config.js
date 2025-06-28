@@ -24,6 +24,12 @@ export default {
           lighter: '#121225',
           darker: '#050510',
         },
+
+        // ⬅️ Add these
+        'primary-accent': '#7B68EE',
+        'primary-dark': '#0A0A1A',
+        'primary-success': '#22c55e',
+        'primary-text': 'rgba(255, 255, 255, 0.7)',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],

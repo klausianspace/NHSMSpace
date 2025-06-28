@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { BookOpen, FileText, Edit, Video, PlusCircle, ArrowRight, Download, BookOpenCheck, Play, ExternalLink } from 'lucide-react';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import ProgressTracker from '../components/ProgressTracker';
+
+import { sampleChapter } from '../data/chapters';
 
 // Type definitions
 interface Chapter {
@@ -134,15 +137,21 @@ const ModulePage: React.FC = () => {
               {chapter.description}
             </p>
             
-            {chapter.id === 'progress-tracker' ? (
-              <ProgressTracker />
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {module.resources[chapter.id]?.map((resource, index) => (
-                  <ResourceCard key={resource.id} resource={resource} index={index} />
-                ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
+              {module.resources[chapter.id]?.map((resource, index) => (
+                <ResourceCard key={resource.id} resource={resource} index={index} />
+              ))}
+            </div>
+
+            {chapter.id === 'limits' && (
+              <div className="max-w-6xl mx-auto">
+                <ProgressTracker 
+                  steps={sampleChapter.progressSteps} 
+                  chapterId="limits" 
+                />
               </div>
             )}
+
           </motion.section>
         ))}
       </div>
@@ -276,7 +285,7 @@ const VideoResource: React.FC = () => {
   return (
     <>
       <div className="h-40 rounded-lg overflow-hidden bg-cover bg-center mb-5 relative group cursor-pointer"
-        style={{ backgroundImage: "url('https://images.pexels.com/photos/6238118/pexels-photo-6238118.jpeg?auto=compress&cs=tinysrgb&w=600')" }}>
+        style={{ backgroundImage: "url('')" }}>
         <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-primary/30" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center
@@ -294,74 +303,7 @@ const VideoResource: React.FC = () => {
 };
 
 // Progress Tracker Component
-const ProgressTracker: React.FC = () => {
-  return (
-    <div className="bg-dark-lighter/30 rounded-xl border border-white/10 p-8 max-w-4xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-        <h3 className="text-2xl font-bold gradient-text">Analysis I - Learning Path</h3>
-        <div className="flex gap-6">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-secondary">68%</div>
-            <div className="text-xs uppercase text-white/60">Overall Progress</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-secondary">12/18</div>
-            <div className="text-xs uppercase text-white/60">Topics Mastered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-secondary">42</div>
-            <div className="text-xs uppercase text-white/60">Hours Studied</div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Placeholder for Concept Map */}
-      <div className="h-96 mb-6 bg-dark-darker/50 rounded-lg flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-white/50 mb-3">Interactive Concept Map</p>
-          <p className="text-white/80 text-lg">Your learning progress visualization</p>
-        </div>
-      </div>
-      
-      {/* Topic Details */}
-      <div className="bg-dark-darker/80 rounded-lg border border-white/5 p-6">
-        <div className="flex justify-between items-center mb-4">
-          <h4 className="text-xl font-semibold text-white">Supremum & Infimum</h4>
-          <div className="w-36 h-2 bg-accent/20 rounded-full overflow-hidden">
-            <div className="h-full w-3/4 primary-gradient rounded-full" />
-          </div>
-        </div>
-        
-        <p className="text-white/70 mb-6">
-          This topic covers the least upper bound (supremum) and greatest lower bound (infimum) 
-          properties of sets of real numbers, a critical foundation for understanding completeness.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {['Read lecture notes', 'Watch video lecture', 'Complete basic exercises', 'Advanced problem set', 'Topic quiz'].map((task, i) => (
-            <div key={i} className="flex items-center gap-3 bg-dark-lighter/30 p-3 rounded-lg">
-              <div className={`w-5 h-5 rounded-full border-2 border-accent flex items-center justify-center ${i < 3 ? 'bg-accent' : ''}`}>
-                {i < 3 && <div className="w-2 h-2 bg-white rounded-full" />}
-              </div>
-              <span className="text-white/80 text-sm">{task}</span>
-            </div>
-          ))}
-        </div>
-        
-        <div className="flex flex-col sm:flex-row gap-3">
-          <button className="btn-primary">
-            <Play className="w-4 h-4" />
-            Continue Learning
-          </button>
-          <button className="btn-secondary">
-            <BookOpen className="w-4 h-4" />
-            View Resources
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 // Mock data for Analysis 1 module
 const analysis1ModuleData: ModuleData = {
@@ -395,11 +337,7 @@ const analysis1ModuleData: ModuleData = {
       title: 'Differentiability',
       description: 'Derivatives, mean value theorems, L\'Hôpital\'s rule, Taylor expansions, and applications in optimization.'
     },
-    {
-      id: 'progress-tracker',
-      title: 'My Progress',
-      description: 'Track your learning journey through Analysis I, monitor your progress, and identify areas needing more focus.'
-    }
+    
   ],
   resources: {
     'real-numbers': [
@@ -542,7 +480,7 @@ const analysis1ModuleData: ModuleData = {
       {
         id: 'lim-problem-set',
         type: 'problem-set',
-        title: 'ε-δ Challenges',
+        title: 'Problem Sheet #5',
         description: '15 problems ranging from basic limit proofs to advanced uniform continuity applications.',
         meta: {
           difficulty: 'Difficulty: 4.7/5',
@@ -562,7 +500,7 @@ const analysis1ModuleData: ModuleData = {
       {
         id: 'lim-videos',
         type: 'video-playlist',
-        title: 'Mastering Limits',
+        title: 'Limits & Continuity course',
         description: 'Comprehensive video series with animations and examples of limit applications.',
         meta: {
           videos: '9 videos',
