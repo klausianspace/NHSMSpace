@@ -222,11 +222,166 @@ export const modulesData: Record<string, ModuleData> = {
     ],
     
     resources: {
-      'mathematical-logic': [],
-      'sets-and-maps': [],
-      'binary-relations': [],
-      'algebraic-structures': [],
-      'polynomials-and-rational-fractions': []
+      'mathematical-logic': [
+        {
+          id: 'aml-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Mathemathecal Logic Textbook',
+          description: 'Learn how to reason and prove statements with precision. This chapter covers propositions, logical connectives, truth tables, implications, equivalence, quantifiers, and proof techniques like direct proof, contradiction, and contraposition.',
+          meta: { pages: '12 pages', tags: 'Statements • Truth Tables • Proof Methods' }
+        },
+
+        {
+          id: 'aml-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #1',
+          description: 'Tackle problems on truth tables, implications, and common proof methods — with complete solutions provided for every exercise to strenghen your reasonning skills.',
+          meta: { difficulty: 'Difficulty: 4.3/5', solutions: 'Solutions Included'  }
+        },
+
+        {
+          id: 'aml-lecture-notes',
+          type: 'extras',
+          title: 'Additional Practise',
+          description: 'External resources, exercises, and supplementary materials for deeper understanding.',
+          meta: { resources: '3 external resources', type: 'Textual' }
+        },
+
+
+        {
+          id: 'aml-video-playlist',
+          type: 'video-playlist',
+          title: 'Logique et Raisonnements',
+          description: 'Engaging video series that builds your logical reasoning skills, explains key proof techniques, and walks through core concepts like implications, equivalence, and truth tables.',
+          meta: { videos: '19 videos', duration: '1.2h total'  }
+        },
+
+
+      ],
+      'sets-and-maps': [
+        {
+          id: 'sm-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Sets & Maps Textbook',
+          description: 'Formal introduction to set theory, Venn diagrams, Cartesian products, and functions—including injections, surjections, and bijections—with clear definitions and worked examples.',
+          meta: { pages: '23 pages', tags: 'Set Operations • (In)direct image • Injective , Surjective , Bijective • Inverse Maps ' }
+        },
+        {
+          id: 'sm-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #2',
+          description: '20 exercises covering set operations, Venn diagrams, functions, and mappings—designed to build mastery through progressive difficulty. Solutions included.',
+          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: 'Additional Practise',
+          description: 'External resources, exercises, and supplementary materials for deeper understanding.',
+          meta: { resources: '3 external resources', type: 'Textual' }
+        },
+        {
+          id: 'sm-video-playlist',
+          type: 'video-playlist',
+          title: 'Les Ensembles et Les Applications',
+          description: 'This playlist covers the theory side and a lot of applications to master the chapter. ',
+          meta: { videos: '11 video', duration: '4.1h total' }
+        }
+      ],
+      'binary-relations': [
+        {
+          id: 'br-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Binary Relations Textbook',
+          description: 'Comprehensive notes covering reflexive, symmetric, transitive relations, equivalence classes, and partial orders, with formal definitions, examples, and diagrams.',
+          meta: { pages: '12 pages', tags: 'Equivalence/Order relations' }
+        },
+        {
+          id: 'br-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #3',
+          description: 'A collection of graded exercises covering properties of relations, including reflexivity, symmetry, and equivalence — with full solutions provided.',
+          meta: { difficulty: '4/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'br-extras',
+          type: 'extras',
+          title: 'Additional Practise',
+          description: 'External resources, exercises, and supplementary materials for deeper understanding.',
+          meta: { resources: '3 external resources', type: 'Textual' }
+        },
+        {
+          id: 'br-video-playlist',
+          type: 'video-playlist',
+          title: 'Binary Relations',
+          description: 'This playlist covers the theory side and a lot of applications to master the chapter.',
+          meta: { videos: '12', duration: '3.2h' }
+        }
+      ],
+
+
+      'algebraic-structures': [
+        {
+          id: 'as-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Algebraic Structures Textbook',
+          description: 'Explore binary operations, identity and inverse elements, groups, rings, and fields — with definitions, properties, and worked examples.',
+          meta: { pages: '18 pages', tags: 'Groups • Rings • Fields' }
+        },
+        {
+          id: 'as-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #4',
+          description: 'Exercises covering group axioms, ring operations, and examples of algebraic structures. Full solutions included.',
+          meta: { difficulty: '4.1/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'as-extras',
+          type: 'extras',
+          title: 'Additional Practise',
+          description: 'External links, summary tables, and application-based exercises on algebraic structures.',
+          meta: { resources: '3 external resources', type: 'Visual & Textual' }
+        },
+        {
+          id: 'as-video-playlist',
+          type: 'video-playlist',
+          title: 'Algebraic Structures Essentials',
+          description: 'Visual explanations of groups, rings, and fields with animated examples and guided proofs.',
+          meta: { videos: '9 videos', duration: '3.8h total' }
+        }
+      ],
+
+      'polynomials-and-rational-fractions': [
+        {
+          id: 'prf-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Polynomials & Rational Fractions Textbook',
+          description: 'Detailed explanations on polynomial operations, factorization, irreducibility, and rational expressions with numerous examples.',
+          meta: { pages: '22 pages', tags: 'Factorization • Division • Rational Expressions' }
+        },
+        {
+          id: 'prf-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #5',
+          description: '20 problems covering polynomial identities, factorizations, and simplification of rational fractions. Includes full solutions.',
+          meta: { difficulty: '4.2/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'prf-extras',
+          type: 'extras',
+          title: 'Additional Practise',
+          description: 'Extra exercises and external video links for mastering polynomial algebra.',
+          meta: { resources: '3 external resources', type: 'Textual & Video' }
+        },
+        {
+          id: 'prf-video-playlist',
+          type: 'video-playlist',
+          title: 'Mastering Polynomials',
+          description: 'Engaging video tutorials covering polynomial division, factorization, and rational simplifications.',
+          meta: { videos: '10 videos', duration: '4.2h total' }
+        }
+      ]
+
     }
     
   },
@@ -255,9 +410,96 @@ export const modulesData: Record<string, ModuleData> = {
       }
     ],
     resources: {
-      'combinatorics': [],
-      'inclusion-exclusion': [],
-      'graph-theory-intro': []
+      'combinatorics': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ],
+      'inclusion-exclusion': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ],
+      'graph-theory-intro': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ]
     }
   },
 
