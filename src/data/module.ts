@@ -1,6 +1,9 @@
 import { ModuleData } from '../types/module'; 
 
 
+
+
+
 export const modulesData: Record<string, ModuleData> = {
   'analysis-1': {
     id: 'analysis-1',
@@ -326,7 +329,7 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Algebraic Structures Textbook',
           description: 'Explore binary operations, identity and inverse elements, groups, rings, and fields — with definitions, properties, and worked examples.',
-          meta: { pages: '18 pages', tags: 'Groups • Rings • Fields' }
+          meta: { pages: '48 pages', tags: 'Groups • Rings • Fields' }
         },
         {
           id: 'as-problem-set',
@@ -347,7 +350,7 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'video-playlist',
           title: 'Algebraic Structures Essentials',
           description: 'Visual explanations of groups, rings, and fields with animated examples and guided proofs.',
-          meta: { videos: '9 videos', duration: '3.8h total' }
+          meta: { videos: '14 videos', duration: '5.8h total' }
         }
       ],
 
@@ -412,94 +415,95 @@ export const modulesData: Record<string, ModuleData> = {
     resources: {
       'combinatorics': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'combi-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'Combinatorial Analysis Textbook',
+          description: 'Comprehensive guide to fundamental counting techniques: permutations, combinations, arrangements with/without repetition, binomial coefficients, and problem-solving strategies. Includes definitions, examples, and exercises.',
+          meta: { pages: '28 pages', tags: 'Permutations • Combinations • Binomial • Repetition' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'combi-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Problem Set #1',
+          description: '15+ problems graded by difficulty to test your mastery of permutations, combinations, and variations — with detailed solutions included. Practice both theory and real-world scenarios.',
+          meta: { difficulty: '4.4/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'combi-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'Additional Practice',
+          description: 'External resources including interactive combinatorics calculators, visual examples, and challenging problems for deeper exploration.',
+          meta: { resources: '3 external resources', type: 'Interactive & Textual' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'combi-video-playlist',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'Mastering Counting Techniques',
+          description: 'Video series covering basic to advanced counting methods with step-by-step explanations, real-life problems, and visual guides.',
+          meta: { videos: '7 videos', duration: '3.2h total' }
         }
-      ],
+],
       'inclusion-exclusion': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'ie-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'Inclusion-Exclusion & PHP Textbook',
+          description: 'Formal treatment of the inclusion-exclusion principle with step-by-step proofs and examples, covering 2-set and 3-set cases, general formula, and advanced extensions. Includes a dedicated section on the Pigeonhole Principle with applications.',
+          meta: { pages: '19 pages', tags: 'Inclusion-Exclusion • Pigeonhole Principle • Counting Overlaps' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'ie-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Problem Set #2',
+          description: 'Challenge yourself with carefully selected problems involving overlapping sets, derangements, and creative uses of the pigeonhole principle. Full solutions provided.',
+          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'ie-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'Interactive Practice',
+          description: 'External tools, articles, and exercises for mastering inclusion-exclusion and the pigeonhole principle beyond the classroom.',
+          meta: { resources: '3 external resources', type: 'Visual & Textual' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'ie-video-playlist',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'Inclusion-Exclusion & PHP Explained',
+          description: 'Clear and engaging video tutorials walking through the logic, derivation, and applications of both the inclusion-exclusion principle and the pigeonhole principle.',
+          meta: { videos: '6 videos', duration: '2.4h total' }
         }
       ],
       'graph-theory-intro': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'gt-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'Graph Theory Fundamentals',
+          description: 'Comprehensive notes introducing the core concepts of graph theory: graphs, vertices, edges, degree, adjacency, paths, cycles, and connectedness — with visual examples and formal definitions.',
+          meta: { pages: '17 pages', tags: 'Graphs • Degree • Paths • Connectivity' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'gt-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Problem Set #3',
+          description: 'Practice problems on simple and multigraphs, degree sequences, paths, and connectivity — ranging from basic to advanced difficulty, with full solutions.',
+          meta: { difficulty: '4.4/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'gt-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'Visual Graph Tools',
+          description: 'External tools and interactive resources to explore graph concepts through drag-and-drop visualizations and puzzles.',
+          meta: { resources: '3 external resources', type: 'Interactive & Visual' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'gt-video-playlist',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'Graph Theory Made Easy',
+          description: 'Introductory video series walking through graph types, degree properties, paths, and basic theorems with illustrative examples.',
+          meta: { videos: '7 videos', duration: '3.1h total' }
         }
       ]
+
     }
   },
 
@@ -532,11 +536,130 @@ export const modulesData: Record<string, ModuleData> = {
     }
   ],
   resources: {
-    'fundamentals': [],
-    'numerical-data': [],
-    'two-way-stats': [],
-    'intro-probability': []
-  }
+    
+      'fundamentals': [
+        {
+          id: 'stats-fundamentals-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Fundamentals of Statistics',
+          description: 'Clear introduction to key statistical concepts: types of data, populations vs. samples, parameters vs. statistics, and classifications of variables — with examples and definitions.',
+          meta: { pages: '15 pages', tags: 'Populations • Variables • Descriptive vs. Inferential' }
+        },
+        {
+          id: 'stats-fundamentals-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #1',
+          description: 'Foundational exercises on recognizing data types, sampling methods, and distinguishing between populations and samples.',
+          meta: { difficulty: '3.5/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'stats-fundamentals-extras',
+          type: 'extras',
+          title: 'Introductory Tools',
+          description: 'External links and interactive quizzes to test your understanding of statistics basics.',
+          meta: { resources: '3 external resources', type: 'Textual & Interactive' }
+        },
+        {
+          id: 'stats-fundamentals-videos',
+          type: 'video-playlist',
+          title: 'Understanding Statistics Basics',
+          description: 'Short videos covering the goals and structure of statistics, data classification, and basic terminology.',
+          meta: { videos: '6 videos', duration: '2.1h total' }
+        }
+      ],
+      'numerical-data': [
+        {
+          id: 'stats-numerical-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Representing Numerical Data',
+          description: 'Detailed notes on organizing, summarizing, and visualizing data using tables, histograms, bar charts, and pie charts, along with measures like mean, median, mode, and range.',
+          meta: { pages: '20 pages', tags: 'Tables • Histograms • Mean/Median/Mode' }
+        },
+        {
+          id: 'stats-numerical-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #2',
+          description: 'Exercises covering frequency tables, graphical representation, and descriptive measures of central tendency and dispersion.',
+          meta: { difficulty: '4.1/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'stats-numerical-extras',
+          type: 'extras',
+          title: 'Interactive Charts & Tools',
+          description: 'External platforms to create histograms, bar plots, and explore how statistical measures change with data.',
+          meta: { resources: '3 external resources', type: 'Visual & Interactive' }
+        },
+        {
+          id: 'stats-numerical-videos',
+          type: 'video-playlist',
+          title: 'Visualizing & Summarizing Data',
+          description: 'Step-by-step walkthroughs of data representation techniques and computation of descriptive measures.',
+          meta: { videos: '8 videos', duration: '3.3h total' }
+        }
+      ],
+      'two-way-stats': [
+        {
+          id: 'stats-two-way-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Two-Way Tables and Bivariate Data',
+          description: 'Complete notes on analyzing two-variable data using contingency tables, joint/marginal/conditional distributions, and detecting independence between variables.',
+          meta: { pages: '18 pages', tags: 'Contingency Tables • Conditional Distribution • Independence' }
+        },
+        {
+          id: 'stats-two-way-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #3',
+          description: 'Practice problems on constructing and interpreting two-way tables, computing conditional distributions, and testing for independence.',
+          meta: { difficulty: '4.2/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'stats-two-way-extras',
+          type: 'extras',
+          title: 'Bivariate Data Tools',
+          description: 'Interactive visualizations and external readings on contingency tables and real-life applications.',
+          meta: { resources: '3 external resources', type: 'Interactive & Applied' }
+        },
+        {
+          id: 'stats-two-way-videos',
+          type: 'video-playlist',
+          title: 'Analyzing Two-Variable Data',
+          description: 'Explanatory video series on two-way statistics, with examples involving categorical and numerical data.',
+          meta: { videos: '7 videos', duration: '2.9h total' }
+        }
+      ],
+      'intro-probability': [
+        {
+          id: 'stats-probability-lecture-notes',
+          type: 'lecture-notes',
+          title: 'Introduction to Probability',
+          description: 'Lecture notes on basic probability principles: sample spaces, events, counting techniques, rules of probability, and introductory combinatorics.',
+          meta: { pages: '25 pages', tags: 'Sample Spaces • Events • Probability Rules' }
+        },
+        {
+          id: 'stats-probability-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #4',
+          description: 'Exercises covering probability calculations, event combinations, and applications of the addition and multiplication rules.',
+          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' }
+        },
+        {
+          id: 'stats-probability-extras',
+          type: 'extras',
+          title: 'Probability Tools',
+          description: 'Simulations, visual tools, and puzzles to build intuition about randomness and probability.',
+          meta: { resources: '3 external resources', type: 'Simulations & Textual' }
+        },
+        {
+          id: 'stats-probability-videos',
+          type: 'video-playlist',
+          title: 'Intro to Probability',
+          description: 'Conceptual and practical videos on probability basics, with real-world problem-solving demonstrations.',
+          meta: { videos: '9 videos', duration: '4.0h total' }
+        }
+      ]
+    }
+    
+  
 },
 
 
@@ -569,10 +692,126 @@ export const modulesData: Record<string, ModuleData> = {
     }
   ],
   resources: {
-    'review': [],
-    'kinematics': [],
-    'dynamics': [],
-    'work-energy': []
+    'review': [
+      {
+        id: 'chapter-prefix-lecture-notes',
+        type: 'lecture-notes',
+        title: '',
+        description: '',
+        meta: { pages: '', tags: '' }
+      },
+      {
+        id: 'chapter-prefix-problem-set',
+        type: 'problem-set',
+        title: '',
+        description: '',
+        meta: { difficulty: '', solutions: '' }
+      },
+      {
+        id: 'chapter-prefix-extras',
+        type: 'extras',
+        title: '',
+        description: '',
+        meta: { resources: '', type: '' }
+      },
+      {
+        id: 'chapter-prefix-video-playlist',
+        type: 'video-playlist',
+        title: '',
+        description: '',
+        meta: { videos: '', duration: '' }
+      }
+    ],
+    'kinematics': [
+      {
+        id: 'chapter-prefix-lecture-notes',
+        type: 'lecture-notes',
+        title: '',
+        description: '',
+        meta: { pages: '', tags: '' }
+      },
+      {
+        id: 'chapter-prefix-problem-set',
+        type: 'problem-set',
+        title: '',
+        description: '',
+        meta: { difficulty: '', solutions: '' }
+      },
+      {
+        id: 'chapter-prefix-extras',
+        type: 'extras',
+        title: '',
+        description: '',
+        meta: { resources: '', type: '' }
+      },
+      {
+        id: 'chapter-prefix-video-playlist',
+        type: 'video-playlist',
+        title: '',
+        description: '',
+        meta: { videos: '', duration: '' }
+      }
+    ],
+    'dynamics': [
+      {
+        id: 'chapter-prefix-lecture-notes',
+        type: 'lecture-notes',
+        title: '',
+        description: '',
+        meta: { pages: '', tags: '' }
+      },
+      {
+        id: 'chapter-prefix-problem-set',
+        type: 'problem-set',
+        title: '',
+        description: '',
+        meta: { difficulty: '', solutions: '' }
+      },
+      {
+        id: 'chapter-prefix-extras',
+        type: 'extras',
+        title: '',
+        description: '',
+        meta: { resources: '', type: '' }
+      },
+      {
+        id: 'chapter-prefix-video-playlist',
+        type: 'video-playlist',
+        title: '',
+        description: '',
+        meta: { videos: '', duration: '' }
+      }
+    ],
+    'work-energy': [
+      {
+        id: 'chapter-prefix-lecture-notes',
+        type: 'lecture-notes',
+        title: '',
+        description: '',
+        meta: { pages: '', tags: '' }
+      },
+      {
+        id: 'chapter-prefix-problem-set',
+        type: 'problem-set',
+        title: '',
+        description: '',
+        meta: { difficulty: '', solutions: '' }
+      },
+      {
+        id: 'chapter-prefix-extras',
+        type: 'extras',
+        title: '',
+        description: '',
+        meta: { resources: '', type: '' }
+      },
+      {
+        id: 'chapter-prefix-video-playlist',
+        type: 'video-playlist',
+        title: '',
+        description: '',
+        meta: { videos: '', duration: '' }
+      }
+    ]
   }
 },
 
@@ -606,10 +845,126 @@ export const modulesData: Record<string, ModuleData> = {
       }
     ],
     resources: {
-      'intro-algorithms': [],
-      'algorithmic-language': [],
-      'arrays': [],
-      'procedures-functions': []
+      'intro-algorithms': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ],
+      'algorithmic-language': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ],
+      'arrays': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ],
+      'procedures-functions': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ]
     }
   },
   
@@ -628,7 +983,36 @@ export const modulesData: Record<string, ModuleData> = {
       }
     ],
     resources: {
-      'soft-skills': []
+      'soft-skills': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ]
     }
   }
   ,
@@ -648,7 +1032,36 @@ export const modulesData: Record<string, ModuleData> = {
       }
     ],
     resources: {
-      'historical-projects': []
+      'historical-projects': [
+        {
+          id: 'chapter-prefix-lecture-notes',
+          type: 'lecture-notes',
+          title: '',
+          description: '',
+          meta: { pages: '', tags: '' }
+        },
+        {
+          id: 'chapter-prefix-problem-set',
+          type: 'problem-set',
+          title: '',
+          description: '',
+          meta: { difficulty: '', solutions: '' }
+        },
+        {
+          id: 'chapter-prefix-extras',
+          type: 'extras',
+          title: '',
+          description: '',
+          meta: { resources: '', type: '' }
+        },
+        {
+          id: 'chapter-prefix-video-playlist',
+          type: 'video-playlist',
+          title: '',
+          description: '',
+          meta: { videos: '', duration: '' }
+        }
+      ]
     }
   }
   ,
