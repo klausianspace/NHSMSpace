@@ -6,6 +6,7 @@ export interface ProgressStep {
   estimatedTime?: string;
   completed: boolean;
   details?: string;
+  link?: string;
 }
 
 export interface ResourceCard {

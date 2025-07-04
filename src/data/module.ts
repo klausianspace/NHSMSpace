@@ -1,3 +1,4 @@
+import { Tags } from 'lucide-react';
 import { ModuleData } from '../types/module'; 
 
 
@@ -42,15 +43,24 @@ export const modulesData: Record<string, ModuleData> = {
         {
           id: 'rn-lecture-notes',
           type: 'lecture-notes',
-          title: 'Axioms of \u211D',
+          title: 'Real Numbers Textbook',
           description: 'Complete formal treatment of real number axioms, completeness, and topological properties with proofs and examples.',
-          meta: { pages: '65 pages', tags: 'Axioms • Sup/Inf • Topology' }
+          meta: { pages: '65 pages', tags: 'Axioms • Absolute Value • Integer Part • Sup/Inf • Topology' }
         },
+
         {
           id: 'rn-problem-set',
           type: 'problem-set',
-          title: 'Supremum & Infimum',
-          description: '15 carefully graded problems on bounded sets, completeness, and applications of supremum/infimum.',
+          title: 'Problem Set #0 (Inequalities)',
+          description: '15 exercises on very important real identities.',
+          meta: { difficulty: 'Difficulty: 4.8/5', solutions: 'Solutions Included' }
+        },
+
+        {
+          id: 'rn-problem-set',
+          type: 'problem-set',
+          title: 'Problem Set #1',
+          description: '14 carefully graded problems on absolute value, integer part, bounded sets, completeness, and applications of supremum/infimum.',
           meta: { difficulty: 'Difficulty: 4.2/5', solutions: 'Solutions Included' }
         },
         {
@@ -693,125 +703,128 @@ export const modulesData: Record<string, ModuleData> = {
   ],
   resources: {
     'review': [
-      {
-        id: 'chapter-prefix-lecture-notes',
-        type: 'lecture-notes',
-        title: '',
-        description: '',
-        meta: { pages: '', tags: '' }
-      },
-      {
-        id: 'chapter-prefix-problem-set',
-        type: 'problem-set',
-        title: '',
-        description: '',
-        meta: { difficulty: '', solutions: '' }
-      },
-      {
-        id: 'chapter-prefix-extras',
-        type: 'extras',
-        title: '',
-        description: '',
-        meta: { resources: '', type: '' }
-      },
-      {
-        id: 'chapter-prefix-video-playlist',
-        type: 'video-playlist',
-        title: '',
-        description: '',
-        meta: { videos: '', duration: '' }
-      }
-    ],
-    'kinematics': [
-      {
-        id: 'chapter-prefix-lecture-notes',
-        type: 'lecture-notes',
-        title: '',
-        description: '',
-        meta: { pages: '', tags: '' }
-      },
-      {
-        id: 'chapter-prefix-problem-set',
-        type: 'problem-set',
-        title: '',
-        description: '',
-        meta: { difficulty: '', solutions: '' }
-      },
-      {
-        id: 'chapter-prefix-extras',
-        type: 'extras',
-        title: '',
-        description: '',
-        meta: { resources: '', type: '' }
-      },
-      {
-        id: 'chapter-prefix-video-playlist',
-        type: 'video-playlist',
-        title: '',
-        description: '',
-        meta: { videos: '', duration: '' }
-      }
-    ],
-    'dynamics': [
-      {
-        id: 'chapter-prefix-lecture-notes',
-        type: 'lecture-notes',
-        title: '',
-        description: '',
-        meta: { pages: '', tags: '' }
-      },
-      {
-        id: 'chapter-prefix-problem-set',
-        type: 'problem-set',
-        title: '',
-        description: '',
-        meta: { difficulty: '', solutions: '' }
-      },
-      {
-        id: 'chapter-prefix-extras',
-        type: 'extras',
-        title: '',
-        description: '',
-        meta: { resources: '', type: '' }
-      },
-      {
-        id: 'chapter-prefix-video-playlist',
-        type: 'video-playlist',
-        title: '',
-        description: '',
-        meta: { videos: '', duration: '' }
-      }
-    ],
-    'work-energy': [
-      {
-        id: 'chapter-prefix-lecture-notes',
-        type: 'lecture-notes',
-        title: '',
-        description: '',
-        meta: { pages: '', tags: '' }
-      },
-      {
-        id: 'chapter-prefix-problem-set',
-        type: 'problem-set',
-        title: '',
-        description: '',
-        meta: { difficulty: '', solutions: '' }
-      },
-      {
-        id: 'chapter-prefix-extras',
-        type: 'extras',
-        title: '',
-        description: '',
-        meta: { resources: '', type: '' }
-      },
-      {
-        id: 'chapter-prefix-video-playlist',
-        type: 'video-playlist',
-        title: '',
-        description: '',
-        meta: { videos: '', duration: '' }
-      }
-    ]
+    {
+      id: 'phy-review-lecture-notes',
+      type: 'lecture-notes',
+      title: 'Prerequisite Review Notes',
+      description: 'Covers key mathematical tools and fundamental physics concepts: units, dimensional analysis, and vector operations in \u211D\u00b2/\u211D\u00b3.',
+      meta: { pages: '14 pages', tags: 'Units • Vectors • Kinematics Basics' }
+    },
+    {
+      id: 'phy-review-problem-set',
+      type: 'problem-set',
+      title: 'Intro Mechanics Problems',
+      description: 'Conceptual and calculation-based problems on vectors, unit conversions, and basic physical quantities.',
+      meta: { difficulty: '3.5/5', solutions: 'Solutions Included' }
+    },
+    {
+      id: 'phy-review-extras',
+      type: 'extras',
+      title: 'Vector Tools & Simulations',
+      description: 'External vector visualizers and unit converters to reinforce understanding of basics.',
+      meta: { resources: '3 external resources', type: 'Interactive & Visual' }
+    },
+    {
+      id: 'phy-review-videos',
+      type: 'video-playlist',
+      title: 'Foundation Refresher',
+      description: 'Short videos on the essentials of vectors, unit systems, and physical quantities.',
+      meta: { videos: '5 videos', duration: '1.4h total' }
+    }
+  ],
+
+  'kinematics': [
+    {
+      id: 'phy-kinematics-lecture-notes',
+      type: 'lecture-notes',
+      title: 'Kinematics in 1D & 2D',
+      description: 'Detailed treatment of position, velocity, acceleration, and motion graphs with examples in one and two dimensions.',
+      meta: { pages: '21 pages', tags: 'Motion Graphs • Vectors • Acceleration' }
+    },
+    {
+      id: 'phy-kinematics-problem-set',
+      type: 'problem-set',
+      title: 'Motion Practice',
+      description: '20 problems including free-fall, projectile motion, and velocity-time analysis.',
+      meta: { difficulty: '4.2/5', solutions: 'Solutions Included' }
+    },
+    {
+      id: 'phy-kinematics-extras',
+      type: 'extras',
+      title: 'Motion Simulations',
+      description: 'Interactive projectile and motion simulators with real-time graphs and parameters.',
+      meta: { resources: '3 external resources', type: 'Visual & Interactive' }
+    },
+    {
+      id: 'phy-kinematics-videos',
+      type: 'video-playlist',
+      title: 'Kinematics Masterclass',
+      description: 'Step-by-step video lessons on 1D/2D motion, projectiles, and motion under gravity.',
+      meta: { videos: '8 videos', duration: '3.3h total' }
+    }
+  ],
+
+  'dynamics': [
+    {
+      id: 'phy-dynamics-lecture-notes',
+      type: 'lecture-notes',
+      title: 'Newton’s Laws Explained',
+      description: 'Full coverage of Newton’s laws, forces, free-body diagrams, and applications in real-world systems.',
+      meta: { pages: '25 pages', tags: 'Forces • N1, N2, N3 • FBD' }
+    },
+    {
+      id: 'phy-dynamics-problem-set',
+      type: 'problem-set',
+      title: 'Dynamics Challenges',
+      description: 'From inclined planes to tension and friction problems—challenging applications of Newtonian mechanics.',
+      meta: { difficulty: '4.5/5', solutions: 'Solutions Included' }
+    },
+    {
+      id: 'phy-dynamics-extras',
+      type: 'extras',
+      title: 'Force Simulations',
+      description: 'External simulations demonstrating tension, normal forces, and dynamic motion scenarios.',
+      meta: { resources: '3 external resources', type: 'Interactive' }
+    },
+    {
+      id: 'phy-dynamics-videos',
+      type: 'video-playlist',
+      title: 'Forces in Action',
+      description: 'Comprehensive playlist visualizing Newton’s laws and their problem-solving applications.',
+      meta: { videos: '10 videos', duration: '4.5h total' }
+    }
+  ],
+
+  'work-energy': [
+    {
+      id: 'phy-energy-lecture-notes',
+      type: 'lecture-notes',
+      title: 'Work & Energy Notes',
+      description: 'Concepts of work, kinetic and potential energy, conservative forces, and mechanical energy conservation.',
+      meta: { pages: '22 pages', tags: 'Work • Kinetic/Potential Energy • Conservation' }
+    },
+    {
+      id: 'phy-energy-problem-set',
+      type: 'problem-set',
+      title: 'Work & Energy Problems',
+      description: 'Practice problems on work-energy theorem, gravitational potential energy, and systems of forces.',
+      meta: { difficulty: '4.1/5', solutions: 'Solutions Included' }
+    },
+    {
+      id: 'phy-energy-extras',
+      type: 'extras',
+      title: 'Interactive Energy Explorers',
+      description: 'Explore conservation of energy through simulations and animated problems.',
+      meta: { resources: '3 external resources', type: 'Visual & Interactive' }
+    },
+    {
+      id: 'phy-energy-videos',
+      type: 'video-playlist',
+      title: 'Energy Concepts in Physics',
+      description: 'High-quality lessons on mechanical energy, conservative forces, and energy bar charts.',
+      meta: { videos: '7 videos', duration: '3.7h total' }
+    }
+  ]
   }
 },
 
@@ -847,125 +860,129 @@ export const modulesData: Record<string, ModuleData> = {
     resources: {
       'intro-algorithms': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'dsa-intro-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'Introduction to Algorithms',
+          description: 'Defines algorithms, their properties (finiteness, effectiveness, determinism), and introduces the stages of algorithm development.',
+          meta: { pages: '16 pages', tags: 'Definition • Properties • Design Steps' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'dsa-intro-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Fundamentals Problem Sheet',
+          description: 'Practice questions on algorithm understanding, flow of execution, and identifying basic components of a problem.',
+          meta: { difficulty: '3.6/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'dsa-intro-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'External Resources',
+          description: 'Interactive websites, explanations, and PDFs introducing fundamental algorithm concepts.',
+          meta: { resources: '3 external resources', type: 'Visual & Conceptual' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'dsa-intro-videos',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'What is an Algorithm?',
+          description: 'Clear and engaging videos explaining what algorithms are and how they’re used in computer science and problem solving.',
+          meta: { videos: '5 videos', duration: '2.1h total' }
         }
       ],
+    
       'algorithmic-language': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'dsa-lang-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'The Algorithmic Language',
+          description: 'Pseudocode rules and syntax: variables, assignments, input/output, conditionals, and loops. Essential for writing and reading algorithms.',
+          meta: { pages: '19 pages', tags: 'Pseudocode • Control Flow • Syntax' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'dsa-lang-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Pseudocode Practice',
+          description: 'Exercises on interpreting and writing pseudocode using basic control structures (if, while, for).',
+          meta: { difficulty: '4.0/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'dsa-lang-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'Code Practice Tools',
+          description: 'Online pseudocode runners and exercises for control structures and variable handling.',
+          meta: { resources: '3 external resources', type: 'Interactive & Code' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'dsa-lang-videos',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'Learn Pseudocode',
+          description: 'Covers all algorithmic structures with examples and visual execution of logic flow.',
+          meta: { videos: '6 videos', duration: '3.0h total' }
         }
       ],
+    
       'arrays': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'dsa-arrays-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'Working with Arrays',
+          description: 'Covers declaration, initialization, access, traversal, and storage of values in 1D arrays with examples.',
+          meta: { pages: '18 pages', tags: 'Indexing • Traversal • Basic Ops' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'dsa-arrays-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Array Manipulation',
+          description: 'From basic access and updates to reversing arrays and finding min/max elements with pseudocode.',
+          meta: { difficulty: '4.2/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'dsa-arrays-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'Array Tools & Visualizers',
+          description: 'Interactive visual tools to simulate array traversal, updates, and sorting behavior.',
+          meta: { resources: '3 external resources', type: 'Interactive & Visual' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'dsa-arrays-videos',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'Mastering Arrays',
+          description: 'Step-by-step lessons and visualizations for array usage, logic patterns, and algorithm implementation.',
+          meta: { videos: '7 videos', duration: '3.5h total' }
         }
       ],
+    
       'procedures-functions': [
         {
-          id: 'chapter-prefix-lecture-notes',
+          id: 'dsa-procfunc-lecture-notes',
           type: 'lecture-notes',
-          title: '',
-          description: '',
-          meta: { pages: '', tags: '' }
+          title: 'Procedures & Functions',
+          description: 'Modular programming with subroutines: definitions, parameter passing, return values, and scope concepts.',
+          meta: { pages: '20 pages', tags: 'Modularity • Parameters • Return' }
         },
         {
-          id: 'chapter-prefix-problem-set',
+          id: 'dsa-procfunc-problem-set',
           type: 'problem-set',
-          title: '',
-          description: '',
-          meta: { difficulty: '', solutions: '' }
+          title: 'Functions in Action',
+          description: 'Exercises on building and calling procedures/functions, parameter scope, and dry-running modular code.',
+          meta: { difficulty: '4.3/5', solutions: 'Solutions Included' }
         },
         {
-          id: 'chapter-prefix-extras',
+          id: 'dsa-procfunc-extras',
           type: 'extras',
-          title: '',
-          description: '',
-          meta: { resources: '', type: '' }
+          title: 'Function Simulators',
+          description: 'External tools to visualize scope, recursion, and modular logic.',
+          meta: { resources: '3 external resources', type: 'Interactive & Simulation' }
         },
         {
-          id: 'chapter-prefix-video-playlist',
+          id: 'dsa-procfunc-videos',
           type: 'video-playlist',
-          title: '',
-          description: '',
-          meta: { videos: '', duration: '' }
+          title: 'Modular Thinking',
+          description: 'Videos that explain functions, procedures, and modular thinking in problem solving.',
+          meta: { videos: '6 videos', duration: '2.7h total' }
         }
       ]
     }
+    
   },
   
 

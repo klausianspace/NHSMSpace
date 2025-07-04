@@ -250,11 +250,25 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({ steps = [], ch
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
+                        {step.link ? (
+                          <a
+                            href={step.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`font-semibold ${
+                              isCompleted ? 'text-primary-success' : 'text-white'
+                            } hover:underline hover:text-primary-accent`}
+                          >
+                            Step {index + 1}: {step.title}
+                          </a>
+                        ) : (
                           <h3 className={`font-semibold ${
                             isCompleted ? 'text-primary-success' : 'text-white'
                           }`}>
                             Step {index + 1}: {step.title}
                           </h3>
+                        )}
+
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStepColor(step.type)}`}>
                             {getStepTypeLabel(step.type)}
                           </span>
@@ -264,17 +278,68 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({ steps = [], ch
                             </span>
                           )}
                         </div>
-                        <p className="text-primary-text text-sm leading-relaxed mb-3">
-                          {step.description}
-                        </p>
-                        {step.estimatedTime && (
-                          <div className="flex items-center space-x-2">
-                            <Clock className="h-4 w-4 text-primary-text" />
-                            <span className="text-xs text-primary-text">
-                              Estimated time: {step.estimatedTime}
-                            </span>
-                          </div>
-                        )}
+                        <div className="flex flex-col space-y-2">
+                          {/* Description */}
+                          <p className="text-primary-text text-sm leading-relaxed">
+                            {step.description}
+                          </p>
+
+                          {/* Watch Video button */}
+                          {step.type === 'video' && step.link && (
+                            <div className="flex justify-center">
+                              <a
+                                href={step.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-500 hover:bg-red-600 text-white text-sm font-medium transition-colors duration-300"
+                              >
+                                <Play className="h-4 w-4" />
+                                Watch Video
+                              </a>
+                            </div>
+                          )}
+
+                          {step.type === 'reading' && step.link && (
+                            <div className="flex justify-center">
+                              <a
+                                href={step.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium transition-colors duration-300"
+                              >
+                                <BookOpen className="h-4 w-4" />
+                                Check Textbook
+                              </a>
+                            </div>
+                          )}
+
+                          {step.type === 'exercise' && step.link && (
+                            <div className="flex justify-center">
+                              <a
+                                href={step.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500 hover:bg-green-600 text-white text-sm font-medium transition-colors duration-300"
+                              >
+                                <PenTool className="h-4 w-4" />
+                                View Exercises
+                              </a>
+                            </div>
+                          )}
+
+
+
+                          {/* Estimated time */}
+                          {step.estimatedTime && (
+                            <div className="flex items-center justify-center space-x-2">
+                              <Clock className="h-4 w-4 text-primary-text" />
+                              <span className="text-xs text-primary-text">
+                                Estimated time: {step.estimatedTime}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+
                       </div>
                       
                       {hasDetails && (

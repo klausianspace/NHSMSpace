@@ -4,14 +4,10 @@ import { BookOpen, FileText, Edit, Video, PlusCircle, ArrowRight, Download, Book
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import ProgressTracker from '../components/ProgressTracker';
-
-
-import { sampleChapter } from '../data/chapters';
-
 import { ModuleData } from '../types/module'; 
 import { modulesData } from '../data/module';
 
-
+import { chapterProgress } from '../data/chapterProgress';
 
 
 
@@ -130,14 +126,15 @@ const ModulePage: React.FC = () => {
               ))}
             </div>
 
-            {chapter.id === 'limits' && (
+            {chapterProgress[chapter.id] && (
               <div className="max-w-6xl mx-auto">
                 <ProgressTracker 
-                  steps={sampleChapter.progressSteps} 
-                  chapterId="limits" 
+                  steps={chapterProgress[chapter.id]} 
+                  chapterId={chapter.id} 
                 />
               </div>
             )}
+
 
           </motion.section>
         ))}
@@ -290,258 +287,6 @@ const VideoResource: React.FC = () => {
 };
 
 // Progress Tracker Component
-
-
-
-// Mock data for Analysis 1 module
-const analysis1ModuleData: ModuleData = {
-  id: 'analysis-1',
-  name: 'Analysis I',
-  subtitle: 'First Semester, Year 1',
-  description: 'Master the foundations of real and complex analysis through rigorous theory, problem-solving practice, and interactive visual tools.',
-  chapters: [
-    {
-      id: 'real-numbers',
-      title: 'Real Numbers',
-      description: 'The complete ordered field ℝ: axioms, supremum/infimum, bounded sets, absolute value, integer part, and topology of the real line.'
-    },
-    {
-      id: 'complex-numbers',
-      title: 'Complex Numbers',
-      description: 'Algebraic and geometric properties of ℂ, polar form, roots of unity, and complex functions with interactive visualizations.'
-    },
-    {
-      id: 'sequences',
-      title: 'Sequences',
-      description: 'Convergence, monotonic sequences, Bolzano-Weierstrass theorem, Cauchy sequences, and applications in analysis.'
-    },
-    {
-      id: 'limits',
-      title: 'Limits & Continuity',
-      description: 'ε-δ definitions, continuity theorems, uniform continuity, and their implications in real analysis.'
-    },
-    {
-      id: 'differentiability',
-      title: 'Differentiability',
-      description: 'Derivatives, mean value theorems, L\'Hôpital\'s rule, Taylor expansions, and applications in optimization.'
-    },
-    
-  ],
-  resources: {
-    'real-numbers': [
-      {
-        id: 'rn-lecture-notes',
-        type: 'lecture-notes',
-        title: 'Axioms of ℝ',
-        description: 'Complete formal treatment of real number axioms, completeness, and topological properties with proofs and examples.',
-        meta: {
-          pages: '65 pages',
-          tags: 'Axioms • Sup/Inf • Topology'
-        }
-      },
-      {
-        id: 'rn-problem-set',
-        type: 'problem-set',
-        title: 'Supremum & Infimum',
-        description: '15 carefully graded problems on bounded sets, completeness, and applications of supremum/infimum.',
-        meta: {
-          difficulty: 'Difficulty: 4.2/5',
-          solutions: 'Solutions Included'
-        }
-      },
-      {
-        id: 'rn-extras',
-        type: 'extras',
-        title: 'Additional Practice',
-        description: 'External resources, exercises, and supplementary materials for deeper understanding.',
-        meta: {
-          resources: '3 external resources',
-          type: 'Interactive & Textual'
-        }
-      },
-      {
-        id: 'rn-videos',
-        type: 'video-playlist',
-        title: 'Real Numbers Deep Dive',
-        description: 'Comprehensive video lectures covering all aspects of real number theory with visual explanations.',
-        meta: {
-          videos: '6 videos',
-          duration: '4.1h total'
-        }
-      }
-    ],
-    'complex-numbers': [
-      {
-        id: 'cn-lecture-notes',
-        type: 'lecture-notes',
-        title: 'Complex Plane & Algebra',
-        description: 'From Argand diagrams to Euler\'s formula, with proofs and 3D visualizations of complex mappings.',
-        meta: {
-          pages: '48 pages',
-          tags: 'Polar Form • Roots • Topology'
-        }
-      },
-      {
-        id: 'cn-problem-set',
-        type: 'problem-set',
-        title: 'Complex Operations',
-        description: '18 problems covering modulus, argument, roots of unity, and geometric interpretations.',
-        meta: {
-          difficulty: 'Difficulty: 3.8/5',
-          solutions: 'Solutions Included'
-        }
-      },
-      {
-        id: 'cn-extras',
-        type: 'extras',
-        title: 'Interactive Tools',
-        description: 'Interactive visualizations, tools, and external resources for exploring complex numbers.',
-        meta: {
-          resources: '3 external resources',
-          type: 'Interactive & Visual'
-        }
-      },
-      {
-        id: 'cn-videos',
-        type: 'video-playlist',
-        title: 'Mastering ℂ',
-        description: 'Video lectures with animations and examples showing geometric interpretations of complex operations.',
-        meta: {
-          videos: '7 videos',
-          duration: '3.5h total'
-        }
-      }
-    ],
-    'sequences': [
-      {
-        id: 'seq-lecture-notes',
-        type: 'lecture-notes',
-        title: 'Sequences in ℝ',
-        description: 'Formal treatment of convergence, subsequences, and completeness with 50+ worked examples.',
-        meta: {
-          pages: '72 pages',
-          tags: 'Convergence • B-W • Cauchy'
-        }
-      },
-      {
-        id: 'seq-problem-set',
-        type: 'problem-set',
-        title: 'Convergence Practice',
-        description: '20 problems on sequence limits, monotonicity, and applications of Bolzano-Weierstrass.',
-        meta: {
-          difficulty: 'Difficulty: 4.5/5',
-          solutions: 'Solutions Included'
-        }
-      },
-      {
-        id: 'seq-extras',
-        type: 'extras',
-        title: 'Advanced Materials',
-        description: 'Advanced exercises, proofs, and resources for deeper exploration of sequence properties.',
-        meta: {
-          resources: '3 external resources',
-          type: 'Academic & Interactive'
-        }
-      },
-      {
-        id: 'seq-videos',
-        type: 'video-playlist',
-        title: 'Sequences Unlocked',
-        description: 'Video series with detailed explanations and visualizations of sequence convergence and properties.',
-        meta: {
-          videos: '5 videos',
-          duration: '2.8h total'
-        }
-      }
-    ],
-    'limits': [
-      {
-        id: 'lim-lecture-notes',
-        type: 'lecture-notes',
-        title: 'Limits & Continuity',
-        description: 'Rigorous treatment of limits, continuity, and uniform continuity with graphical interpretations.',
-        meta: {
-          pages: '55 pages',
-          tags: 'ε-δ • IVT • Uniform Continuity'
-        }
-      },
-      {
-        id: 'lim-problem-set',
-        type: 'problem-set',
-        title: 'Problem Sheet #5',
-        description: '15 problems ranging from basic limit proofs to advanced uniform continuity applications.',
-        meta: {
-          difficulty: 'Difficulty: 4.7/5',
-          solutions: 'Solutions Included'
-        }
-      },
-      {
-        id: 'lim-extras',
-        type: 'extras',
-        title: 'Interactive Learning',
-        description: 'Interactive tools for exploring ε-δ definitions and visualizing continuity concepts.',
-        meta: {
-          resources: '3 external resources',
-          type: 'Interactive & Visual'
-        }
-      },
-      {
-        id: 'lim-videos',
-        type: 'video-playlist',
-        title: 'Limits & Continuity course',
-        description: 'Comprehensive video series with animations and examples of limit applications.',
-        meta: {
-          videos: '9 videos',
-          duration: '5.2h total'
-        }
-      }
-    ],
-    'differentiability': [
-      {
-        id: 'diff-lecture-notes',
-        type: 'lecture-notes',
-        title: 'Calculus of Derivatives',
-        description: 'From basic differentiation rules to Taylor series with error terms, including proofs of all major theorems.',
-        meta: {
-          pages: '68 pages',
-          tags: 'MVT • L\'Hôpital • Taylor'
-        }
-      },
-      {
-        id: 'diff-problem-set',
-        type: 'problem-set',
-        title: 'Derivative Challenges',
-        description: '22 problems covering computational techniques, MVT applications, and Taylor polynomial estimation.',
-        meta: {
-          difficulty: 'Difficulty: 4.3/5',
-          solutions: 'Solutions Included'
-        }
-      },
-      {
-        id: 'diff-extras',
-        type: 'extras',
-        title: 'Applied Tools',
-        description: 'Interactive tools for exploring derivatives, Taylor series approximations, and optimization.',
-        meta: {
-          resources: '3 external resources',
-          type: 'Application & Visual'
-        }
-      },
-      {
-        id: 'diff-videos',
-        type: 'video-playlist',
-        title: 'The Power of Derivatives',
-        description: 'Video lectures focusing on applications and geometric interpretations of derivatives.',
-        meta: {
-          videos: '8 videos',
-          duration: '4.5h total'
-        }
-      }
-    ]
-  }
-};
-
-
 
 
 

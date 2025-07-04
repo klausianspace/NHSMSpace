@@ -42,7 +42,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Master the foundations of real and complex analysis through rigorous theory and problem-solving.',
-      imageUrl: 'https://images.pexels.com/photos/6238297/pexels-photo-6238297.jpeg?auto=compress&cs=tinysrgb&w=600'
+      imageUrl: 'https://i.pinimg.com/1200x/72/61/4f/72614f985792dd43e36e3fb108a7c4a4.jpg'
     },
     {
       id: 'algebra-1',
@@ -50,7 +50,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Study abstract algebra, mathematical logic, and algebraic structures with practical applications.',
-      imageUrl: 'https://images.pexels.com/photos/5427670/pexels-photo-5427670.jpeg?auto=compress&cs=tinysrgb&w=600'
+      imageUrl: 'https://i.pinimg.com/736x/0e/77/45/0e7745770fc6fb84b350762c3e105921.jpg'
     },
     {
       id: 'discrete-math-1',
@@ -58,7 +58,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Explore Combinatorial Analysis, Inclusion-Exclusion principle , Pigeonhole principle, and the foundations of graph theory.',
-      imageUrl: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=600'
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv3F6idUZk1-p2v3pCYzSWZqkp9RtSVTbQjA&s'
     },
     {
       id: 'statistics-1',
@@ -66,7 +66,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Learn statistical methods, probability theory, and data analysis techniques.',
-      imageUrl: 'https://images.pexels.com/photos/6195085/pexels-photo-6195085.jpeg?auto=compress&cs=tinysrgb&w=600'
+      imageUrl: 'https://i.pinimg.com/1200x/78/a0/43/78a043a4f61e5e5b608108ae0c8d90c1.jpg'
     },
     {
       id: 'physics-1',
@@ -74,7 +74,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Study kinmatics, dynamics, and work & energy.',
-      imageUrl: 'https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=600'
+      imageUrl: 'https://i.pinimg.com/1200x/7e/c4/86/7ec486f3f96bdb56135e3e524a2533d1.jpg'
     },
     {
       id: 'asd-1',
@@ -98,7 +98,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Explore the historical development of mathematical concepts through ancient civilizations.',
-      imageUrl: 'https://images.pexels.com/photos/6237823/pexels-photo-6237823.jpeg?auto=compress&cs=tinysrgb&w=600'
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7xfMscUY2yIEiBKukaStERKA0cLUZGn1Azw&s'
     }
   ];
   
