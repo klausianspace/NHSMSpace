@@ -5,7 +5,8 @@ export interface ProgressStep {
   type: 'reading' | 'video' | 'exercise' | 'quiz' | 'review';
   estimatedTime?: string;
   completed: boolean;
-  details?: string;
+  details?: string | string[];
+
   link?: string;
 }
 
@@ -16,6 +17,7 @@ export interface ResourceCard {
   description: string;
   url?: string;
   fileType?: string;
+  link?: string; 
 }
 
 export interface QuizQuestion {

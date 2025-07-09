@@ -45,7 +45,9 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Real Numbers Textbook',
           description: 'Complete formal treatment of real number axioms, completeness, and topological properties with proofs and examples.',
-          meta: { pages: '65 pages', tags: 'Axioms • Absolute Value • Integer Part • Sup/Inf • Topology' }
+          meta: { pages: '65 pages', tags: 'Axioms • Absolute Value • Integer Part • Sup/Inf • Topology' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Textbooks/real numbers textbook.pdf',
+          
         },
 
         {
@@ -53,7 +55,9 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'problem-set',
           title: 'Problem Set #0 (Inequalities)',
           description: '15 exercises on very important real identities.',
-          meta: { difficulty: 'Difficulty: 4.8/5', solutions: 'Solutions Included' }
+          meta: { difficulty: 'Difficulty: 4.8/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 1 - 2024-2025 (1).pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__1_Solutions.pdf'
         },
 
         {
@@ -61,7 +65,9 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'problem-set',
           title: 'Problem Set #1',
           description: '14 carefully graded problems on absolute value, integer part, bounded sets, completeness, and applications of supremum/infimum.',
-          meta: { difficulty: 'Difficulty: 4.2/5', solutions: 'Solutions Included' }
+          meta: { difficulty: 'Difficulty: 4.2/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 1 - 2024-2025 (1).pdf',
+          solutionsLink: 'd'
         },
         {
           id: 'rn-extras',
@@ -82,14 +88,14 @@ export const modulesData: Record<string, ModuleData> = {
         {
           id: 'cn-lecture-notes',
           type: 'lecture-notes',
-          title: 'Complex Plane & Algebra',
-          description: 'From Argand diagrams to Euler\'s formula, with proofs and 3D visualizations of complex mappings.',
-          meta: { pages: '48 pages', tags: 'Polar Form • Roots • Topology' }
+          title: 'Complex Numbers Textbook',
+          description: 'This textbook introduces complex numbers from their algebraic properties to their representation on the complex plane. It covers polar and exponential forms, Euler’s identities, solving equations, and finding n-th roots, providing a clear and structured approach to these fundamental concepts.',
+          meta: { pages: '48 pages', tags: 'Polar Form • Roots • Equations' }
         },
         {
           id: 'cn-problem-set',
           type: 'problem-set',
-          title: 'Complex Operations',
+          title: 'Problem Set #2',
           description: '18 problems covering modulus, argument, roots of unity, and geometric interpretations.',
           meta: { difficulty: 'Difficulty: 3.8/5', solutions: 'Solutions Included' }
         },

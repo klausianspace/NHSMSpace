@@ -12,6 +12,7 @@ export interface Resource {
   meta: {
     [key: string]: string;
   };
+  link?: string; 
 }
 
 export interface ModuleData {

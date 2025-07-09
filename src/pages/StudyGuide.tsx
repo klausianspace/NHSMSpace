@@ -42,7 +42,7 @@ const StudyGuide: React.FC = () => {
       semester: 1,
       year: 1,
       description: 'Master the foundations of real and complex analysis through rigorous theory and problem-solving.',
-      imageUrl: 'https://i.pinimg.com/1200x/72/61/4f/72614f985792dd43e36e3fb108a7c4a4.jpg'
+      imageUrl: 'https://i.ytimg.com/vi/5eq6H169pac/maxresdefault.jpg'
     },
     {
       id: 'algebra-1',

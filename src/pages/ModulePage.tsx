@@ -216,17 +216,31 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, index }) => {
         <VideoResource />
       ) : (
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="btn-primary">
-            <Download className="w-4 h-4" />
-            Download
-          </button>
-          {resource.type === 'problem-set' && (
-            <button className="btn-secondary">
+          {resource.link && (
+            <a
+              href={resource.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <FileText className="w-4 h-4" />
+              View PDF
+            </a>
+          )}
+          {resource.type === 'problem-set' && resource.solutionsLink && (
+            <a
+              href={resource.solutionsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center gap-2"
+            >
               <ArrowRight className="w-4 h-4" />
               Solutions
-            </button>
+            </a>
           )}
+
         </div>
+
       )}
     </motion.div>
   );

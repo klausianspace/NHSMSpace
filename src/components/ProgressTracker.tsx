@@ -360,9 +360,18 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({ steps = [], ch
                       <div className="mt-4 p-4 bg-primary-dark/50 rounded-xl border border-primary-accent/20">
                         <div className="flex items-start space-x-3">
                           <Lightbulb className="h-4 w-4 text-primary-accent mt-0.5 flex-shrink-0" />
-                          <p className="text-sm text-primary-text leading-relaxed">
-                            {step.details}
-                          </p>
+                          {Array.isArray(step.details) ? (
+                            <ul className="list-disc list-inside text-primary-text text-sm leading-relaxed mb-3 space-y-1">
+                              {step.details.map((point, idx) => (
+                                <li key={idx}>{point}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p className="text-primary-text text-sm leading-relaxed mb-3">
+                              {step.details}
+                            </p>
+                          )}
+
                         </div>
                       </div>
                     )}
