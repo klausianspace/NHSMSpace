@@ -66,8 +66,8 @@ export const modulesData: Record<string, ModuleData> = {
           title: 'Problem Set #1',
           description: '14 carefully graded problems on absolute value, integer part, bounded sets, completeness, and applications of supremum/infimum.',
           meta: { difficulty: 'Difficulty: 4.2/5', solutions: 'Solutions Included' },
-          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 1 - 2024-2025 (1).pdf',
-          solutionsLink: 'd'
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 2 - 2024-2025.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__2_Solutions.pdf'
         },
         {
           id: 'rn-extras',
