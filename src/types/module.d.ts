@@ -13,6 +13,7 @@ export interface Resource {
     [key: string]: string;
   };
   link?: string; 
+  solutionsLink?: string; 
 }
 
 export interface ModuleData {

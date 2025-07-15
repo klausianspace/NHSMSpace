@@ -1,0 +1,1700 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\title{PC1 (2024/2025) - ANALYSIS I \\ EXERCISE SET 02 - COMPLETE SOLUTIONS}
+
+\date{}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+
+\begin{document}
+
+\maketitle
+
+\section*{Exercise 1}
+
+\begin{problem}
+Show that for any \( x, y, u, v \in \mathbb{R} \):
+\begin{enumerate}[label=(\roman*)]
+    \item \( |x| + |y| \leq |x + y| + |x - y| \)
+    \item \( |x - u| - |y - v| \leq |x - y| + |u - v| \)
+    \item \( \frac{|x + y|}{1 + |x + y|} \leq \frac{|x|}{1 + |x|} + \frac{|y|}{1 + |y|} \)
+    \item \( 1 + |xy - 1| \leq (1 + |x - 1|)(1 + |y - 1|) \)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\textbf{(i)} Consider the following algebraic manipulation:
+\begin{align*}
+(|x + y| + |x - y|)^2 &= (x + y)^2 + (x - y)^2 + 2|(x + y)(x - y)| \\
+&= 2x^2 + 2y^2 + 2|x^2 - y^2| \\
+&\geq 2x^2 + 2y^2 \quad \text{(since } |x^2 - y^2| \geq 0) \\
+&= (|x| + |y|)^2 + (|x| - |y|)^2 \\
+&\geq (|x| + |y|)^2
+\end{align*}
+Taking square roots of both sides gives the desired inequality.
+
+\textbf{(ii)} By the reverse triangle inequality and regular triangle inequality:
+\begin{align*}
+|x - u| &= |(x - y) + (y - v) + (v - u)| \\
+&\leq |x - y| + |y - v| + |v - u| \\
+&= |x - y| + |y - v| + |u - v|
+\end{align*}
+Thus:
+\[ |x - u| - |y - v| \leq |x - y| + |u - v| \]
+
+\textbf{(iii)} Consider the function \( f(t) = \frac{t}{1 + t} \) for \( t \geq 0 \). Its derivative is:
+\[ f'(t) = \frac{1}{(1 + t)^2} > 0 \]
+so \( f \) is strictly increasing. By the triangle inequality \( |x + y| \leq |x| + |y| \), we have:
+\[ f(|x + y|) \leq f(|x| + |y|) \]
+Moreover, \( f \) is subadditive :
+\begin{align*}
+f(a + b) &= \frac{a + b}{1 + a + b} \leq \frac{a}{1 + a} + \frac{b}{1 + b} \\
+&= f(a) + f(b)
+\end{align*}
+Thus:
+\[ \frac{|x + y|}{1 + |x + y|} \leq \frac{|x| + |y|}{1 + |x| + |y|} \leq \frac{|x|}{1 + |x|} + \frac{|y|}{1 + |y|} \]
+
+\textbf{(iv)} Let \( a = x - 1 \) and \( b = y - 1 \). Then:
+\begin{align*}
+1 + |xy - 1| &= 1 + |(1 + a)(1 + b) - 1| \\
+&= 1 + |a + b + ab| \\
+&\leq 1 + |a| + |b| + |ab| \\
+&= (1 + |a|)(1 + |b|) \\
+&= (1 + |x - 1|)(1 + |y - 1|)
+\end{align*}
+\end{solution}
+
+\section*{Exercise 2}
+
+\begin{problem}
+Let \( x, y \) be real numbers, show that:
+\begin{enumerate}[label=(\roman*)]
+    \item \(\max(x, -x) = |x|\)
+    \item \(\max(x, y) = \frac{1}{2}(x + y + |x - y|)\)
+    \item \(\min(x, y) = \frac{1}{2}(x + y - |x - y|)\)
+    \item \(\max(|x|, |y|) \left| \frac{x}{|x|} - \frac{y}{|y|} \right| \leq 2|x - y|\) for \(x,y \neq 0\)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\textbf{(i)} Direct computation:
+\[ \max(x, -x) = \begin{cases} 
+x & \text{if } x \geq 0 \\
+-x & \text{if } x < 0 
+\end{cases} = |x| \]
+
+\textbf{(ii)} Case analysis:
+\begin{itemize}
+\item If \( x \geq y \), then \( |x - y| = x - y \), so:
+\[ \frac{1}{2}(x + y + x - y) = x = \max(x, y) \]
+\item If \( y > x \), then \( |x - y| = y - x \), so:
+\[ \frac{1}{2}(x + y + y - x) = y = \max(x, y) \]
+\end{itemize}
+
+\textbf{(iii)} Similar to (ii):
+\begin{itemize}
+\item If \( x \geq y \), then:
+\[ \frac{1}{2}(x + y - (x - y)) = y = \min(x, y) \]
+\item If \( y > x \), then:
+\[ \frac{1}{2}(x + y - (y - x)) = x = \min(x, y) \]
+\end{itemize}
+
+\textbf{(iv)} Without loss of generality, suppose \(|x| \geq |y|\). Since \(x, y \neq 0\), consider
+\[
+\left|\frac{x}{|x|} - \frac{y}{|y|}\right| = \left|\frac{x|y| - y|x|}{|x||y|}\right| = \frac{\left||y|x - |x|y\right|}{|x||y|}.
+\]
+Applying the triangle inequality to the numerator, we obtain
+\[
+\left||y|x - |x|y\right| = \left||y|(x-y) + y(|y| - |x|)\right| \leq |y||x-y| + |y|\left||y| - |x|\right|.
+\]
+Since \(\left||y| - |x|\right| \leq |x-y|\) by the reverse triangle inequality, it follows that
+\[
+\left||y|x - |x|y\right| \leq |y||x-y| + |y||x-y| = 2|y||x-y|.
+\]
+Substituting this into the earlier expression gives
+\[
+\left|\frac{x}{|x|} - \frac{y}{|y|}\right| \leq \frac{2|y||x-y|}{|x||y|} = \frac{2|x-y|}{|x|}.
+\]
+Multiplying both sides by \(|x| = \max(|x|,|y|)\), we deduce
+\[
+\max(|x|,|y|)\left|\frac{x}{|x|} - \frac{y}{|y|}\right| \leq 2|x-y|.
+\]
+
+The result follows.
+
+
+\end{solution}
+
+
+
+\section*{Exercise 3}
+
+\begin{problem}
+Show that:
+\begin{enumerate}[label=(\alph*)]
+    \item For all \( x \in \mathbb{R} \), \( E(x + 1) = E(x) + 1 \)
+    \item For all \( (x, y) \in \mathbb{R}^2 \), \( x \leq y \Rightarrow E(x) \leq E(y) \)
+    \item For all \( x \in \mathbb{R} \), \( 0 \leq E(2x) - 2E(x) \leq 1 \)
+    \item For every \( n \in \mathbb{Z}^+ \) and \( x \in \mathbb{R} \), \( 0 \leq E(nx) - nE(x) \leq n - 1 \)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\textbf{(a)} Let \( x \in \mathbb{R} \). There exists a unique integer \( k \) such that:
+\[ k \leq x < k + 1 \]
+Then \( E(x) = k \). For \( x + 1 \):
+\[ k + 1 \leq x + 1 < (k + 1) + 1 \]
+Thus:
+\[ E(x + 1) = k + 1 = E(x) + 1 \]
+
+\textbf{(b)} For any \( x \leq y \), let:
+\[ k = E(x) = \lfloor x \rfloor \]
+\[ m = E(y) = \lfloor y \rfloor \]
+Since \( x \leq y \), we have:
+\[ k \leq x \leq y < m + 1 \]
+This implies \( k \leq m \) because:
+- If \( k > m \), then \( m \leq k \leq x \leq y < m + 1 \) would force \( k = m \), a contradiction
+Thus \( E(x) = k \leq m = E(y) \)
+
+\textbf{(c)} Let \( x = k + r \) where \( k \in \mathbb{Z} \) and \( r \in [0,1) \). Then:
+\[ E(x) = k \]
+\[ E(2x) = E(2k + 2r) = 2k + E(2r) \]
+Now analyze \( E(2r) \):
+\begin{itemize}
+\item When \( 0 \leq r < 0.5 \), \( E(2r) = 0 \)
+\item When \( 0.5 \leq r < 1 \), \( E(2r) = 1 \)
+\end{itemize}
+Thus:
+\[ E(2x) - 2E(x) = E(2r) \in \{0,1\} \]
+proving \( 0 \leq E(2x) - 2E(x) \leq 1 \)
+
+\textbf{(d)} Generalizing part (c), write \( x = k + r \) with \( k \in \mathbb{Z} \), \( r \in [0,1) \):
+\[ E(x) = k \]
+\[ E(nx) = E(nk + nr) = nk + E(nr) \]
+Thus:
+\[ E(nx) - nE(x) = E(nr) \]
+Since \( nr \in [0,n) \), the floor function gives:
+\[ 0 \leq E(nr) \leq n - 1 \]
+The maximum occurs when \( r \) approaches 1 (but \( r < 1 \)), making \( E(nr) = n - 1 \)
+\end{solution}
+
+\section*{Exercise 4}
+
+\begin{problem}
+For every positive integer \( n \) and real number \( x \), prove:
+\begin{enumerate}[label=(\alph*)]
+    \item \( \left\lfloor \frac{\lfloor nx \rfloor}{n} \right\rfloor = \lfloor x \rfloor \)
+    \item \( \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor = \lfloor nx \rfloor \)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\textbf{Part (a):}
+
+Let \( m = \lfloor x \rfloor \) and \( r = x - m \) where \( 0 \leq r < 1 \).
+
+\begin{enumerate}
+\item \textit{Lower Bound:}
+\[ x \geq m \Rightarrow nx \geq nm \Rightarrow \lfloor nx \rfloor \geq nm \]
+\[ \Rightarrow \frac{\lfloor nx \rfloor}{n} \geq m \]
+\[ \Rightarrow \left\lfloor \frac{\lfloor nx \rfloor}{n} \right\rfloor \geq m \]
+
+\item \textit{Upper Bound:}
+\[ x < m + 1 \Rightarrow nx < nm + n \]
+\[ \Rightarrow \lfloor nx \rfloor \leq nm + n - 1 \]
+\[ \Rightarrow \frac{\lfloor nx \rfloor}{n} \leq m + \frac{n-1}{n} < m + 1 \]
+\[ \Rightarrow \left\lfloor \frac{\lfloor nx \rfloor}{n} \right\rfloor \leq m \]
+
+\item \textit{Conclusion:}
+From both bounds we get:
+\[ m \leq \left\lfloor \frac{\lfloor nx \rfloor}{n} \right\rfloor \leq m \]
+Thus equality holds.
+\end{enumerate}
+
+\textbf{Part (b):}
+
+\textbf{First Proof (Direct Calculation):}
+
+Let \( x = m + r \) where \( m \in \mathbb{Z} \) and \( 0 \leq r < 1 \).
+
+\begin{enumerate}
+\item \textit{Decompose the Sum:}
+\[ \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor = \sum_{k=0}^{n-1} \left( m + \left\lfloor r + \frac{k}{n} \right\rfloor \right) = nm + \sum_{k=0}^{n-1} \left\lfloor r + \frac{k}{n} \right\rfloor \]
+
+\item \textit{Count Fractional Terms:}
+For each \( k \), we have:
+\[ \left\lfloor r + \frac{k}{n} \right\rfloor = \begin{cases} 
+0 & \text{if } r + \frac{k}{n} < 1 \\
+1 & \text{if } r + \frac{k}{n} \geq 1 
+\end{cases} \]
+
+Let \( t \) be the smallest integer such that \( r + \frac{t}{n} \geq 1 \). Then:
+\[ \sum_{k=0}^{n-1} \left\lfloor r + \frac{k}{n} \right\rfloor = (n - t) \]
+
+\item \textit{Relate to \( \lfloor nx \rfloor \):}
+\[ \lfloor nx \rfloor = \lfloor nm + nr \rfloor = nm + \lfloor nr \rfloor \]
+But \( \lfloor nr \rfloor = n - t \) because:
+\[ t = \lceil n(1 - r) \rceil \Rightarrow n - t = \lfloor nr \rfloor \]
+
+\item \textit{Final Equality:}
+Thus:
+\[ \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor = nm + (n - t) = \lfloor nx \rfloor \]
+\end{enumerate}
+
+\textbf{Second Proof (Using Periodicity):}
+
+Define \( f(x) = \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor - \lfloor nx \rfloor \).
+
+\begin{enumerate}
+\item \textit{Periodicity:}
+\[ f\left(x + \frac{1}{n}\right) = \sum_{k=0}^{n-1} \left\lfloor x + \frac{k+1}{n} \right\rfloor - \lfloor nx + 1 \rfloor \]
+\[ = \sum_{k=1}^{n} \left\lfloor x + \frac{k}{n} \right\rfloor - (\lfloor nx \rfloor + 1) \]
+\[ = f(x) + \left\lfloor x + 1 \right\rfloor - \left\lfloor x \right\rfloor - 1 = f(x) \]
+
+\item \textit{Constant on Intervals:}
+On any interval \( \left[\frac{m}{n}, \frac{m+1}{n}\right) \):
+\begin{itemize}
+\item \( \lfloor nx \rfloor \) is constant
+\item Only one term in the sum changes when \( x \) crosses \( \frac{m}{n} \)
+\end{itemize}
+
+\item \textit{Initial Verification:}
+For \( x \in [0, \frac{1}{n}) \):
+\[ f(x) = \lfloor x \rfloor + \sum_{k=1}^{n-1} \lfloor x + \frac{k}{n} \rfloor - \lfloor nx \rfloor = 0 + 0 - 0 = 0 \]
+
+\item \textit{Conclusion:}
+Since \( f \) is periodic with period \( 1/n \) and identically zero on \( [0,1/n) \), it is zero everywhere.
+\end{enumerate}
+\end{solution}
+
+\section*{Exercise 5}
+
+\begin{problem}
+Solve in $\mathbb{R}$ the equation:
+\[
+\left\lfloor \frac{x + 1}{2} \right\rfloor + \left\lfloor \frac{x + 1}{4} \right\rfloor + \left\lfloor \frac{x + 2}{4} \right\rfloor = \lfloor x \rfloor + 1
+\]
+\end{problem}
+
+\begin{solution}
+Set
+\[
+Z(x) = \left\lfloor \frac{x + 1}{2} \right\rfloor + \left\lfloor \frac{x + 1}{4} \right\rfloor + \left\lfloor \frac{x + 2}{4} \right\rfloor
+\]
+
+For $x \in \mathbb{R}$ we distinguish four cases.
+
+\textbf{Case 1.} $\lfloor x \rfloor = 4p$ with $p \in \mathbb{Z}$. Equivalently we have $4p \leq x < 4p + 1$. Therefore,
+\begin{align*}
+2p + \frac{1}{2} &\leq \frac{x + 1}{2} < 2p + 1, \\
+p + \frac{1}{4} &\leq \frac{x + 1}{4} < p + \frac{1}{2}, \\
+p + \frac{1}{2} &\leq \frac{x + 2}{4} < p + \frac{3}{4},
+\end{align*}
+leading to
+\[
+Z(x) = 2p + p + p = 4p = \lfloor x \rfloor \neq \lfloor x \rfloor + 1
+\]
+
+\textbf{Case 2.} $\lfloor x \rfloor = 4p + 1$ with $p \in \mathbb{Z}$. Equivalently we have $4p + 1 \leq x < 4p + 2$. Therefore,
+\begin{align*}
+2p + 1 &\leq \frac{x + 1}{2} < 2p + \frac{3}{2}, \\
+p + \frac{1}{2} &\leq \frac{x + 1}{4} < p + \frac{3}{4}, \\
+p + \frac{3}{4} &\leq \frac{x + 2}{4} < p + 1,
+\end{align*}
+leading to
+\[
+Z(x) = 2p + 1 + p + p = 4p + 1 = \lfloor x \rfloor \neq \lfloor x \rfloor + 1
+\]
+
+\textbf{Case 3.} $\lfloor x \rfloor = 4p + 2$ with $p \in \mathbb{Z}$. Equivalently we have $4p + 2 \leq x < 4p + 3$. Therefore,
+\begin{align*}
+2p + \frac{3}{2} &\leq \frac{x + 1}{2} < 2p + 2, \\
+p + \frac{3}{4} &\leq \frac{x + 1}{4} < p + 1, \\
+p + 1 &\leq \frac{x + 2}{4} < p + \frac{5}{4},
+\end{align*}
+leading to
+\[
+Z(x) = 2p + 1 + p + (p + 1) = 4p + 2 = \lfloor x \rfloor \neq \lfloor x \rfloor + 1
+\]
+
+\textbf{Case 4.} $\lfloor x \rfloor = 4p + 3$ with $p \in \mathbb{Z}$. Equivalently we have $4p + 3 \leq x < 4p + 4$. Therefore,
+\begin{align*}
+2p + 2 &\leq \frac{x + 1}{2} < 2p + \frac{5}{2}, \\
+p + 1 &\leq \frac{x + 1}{4} < p + \frac{5}{4}, \\
+p + \frac{5}{4} &\leq \frac{x + 2}{4} < p + \frac{6}{4},
+\end{align*}
+leading to
+\[
+Z(x) = 2p + 2 + (p + 1) + (p + 1) = 4p + 4 = \lfloor x \rfloor + 1
+\]
+
+Thus the set of solutions of $Z(x) = \lfloor x \rfloor + 1$ is $\bigcup_{p\in\mathbb{Z}} [4p + 3, 4p + 4)$.
+\end{solution}
+
+
+\section*{Exercise 6}
+
+\begin{problem}
+Let $n \in \mathbb{N}$ and $(x_1, x_2, \ldots, x_n) \in [-1, 1]^n$ such that $x_1 + x_2 + \cdots + x_n = 0$. Prove that
+\[
+\left| \sum_{k=1}^n kx_k \right| \leq E\left( \frac{n^2}{4} \right).
+\]
+\end{problem}
+
+\begin{solution}
+
+\textbf{First Method.} Remark that
+\[
+\sum_{k=1}^n kx_k = (x_1 + x_2 + \cdots + x_n) + (x_2 + \cdots + x_n) + \cdots + (x_{n-1} + x_n) + x_n.
+\]
+Since $\sum_{k=1}^n x_k = 0$, we have $\sum_{k=i}^n x_k = -\sum_{k=1}^{i-1} x_k$ for each $i$.
+
+\textbf{Case 1.} If $n = 2p$, then $\frac{n^2}{4} = p^2$ and $E\left(\frac{n^2}{4}\right) = p^2$. We have:
+\begin{align*}
+\left|\sum_{k=1}^n kx_k\right| &\leq |x_1 + \cdots + x_{2p}| + |x_2 + \cdots + x_{2p}| + \cdots + |x_p + \cdots + x_{2p}| \\
+&\quad + |x_{p+1} + \cdots + x_{2p}| + \cdots + |x_{2p-1} + x_{2p}| + |x_{2p}| \\
+&= 0 + |-x_1| + |-x_1 - x_2| + \cdots + |-\sum_{k=1}^{p-1} x_k| \\
+&\quad + |\sum_{k=p+1}^{2p} x_k| + \cdots + |x_{2p}| \\
+&\leq 0 + 1 + 2 + \cdots + (p-1) + p + (p-1) + \cdots + 1 \\
+&= 2\cdot\frac{p(p-1)}{2} + p = p^2 = E\left(\frac{n^2}{4}\right).
+\end{align*}
+
+\textbf{Case 2.} If $n = 2p+1$, then $\frac{n^2}{4} = p^2 + p + \frac{1}{4}$ and $E\left(\frac{n^2}{4}\right) = p^2 + p$. We have:
+\begin{align*}
+\left|\sum_{k=1}^n kx_k\right| &\leq |x_1 + \cdots + x_{2p+1}| + \cdots + |x_{p+1} + \cdots + x_{2p+1}| \\
+&\quad + |x_{p+2} + \cdots + x_{2p+1}| + \cdots + |x_{2p+1}| \\
+&= 0 + |-x_1| + \cdots + |-\sum_{k=1}^p x_k| + |\sum_{k=p+2}^{2p+1} x_k| + \cdots + |x_{2p+1}| \\
+&\leq 0 + 1 + \cdots + p + p + (p-1) + \cdots + 1 \\
+&= 2\cdot\frac{p(p+1)}{2} = p^2 + p = E\left(\frac{n^2}{4}\right).
+\end{align*}
+
+\textbf{Second Method.} Note that $E\left(\frac{n^2}{4}\right) = \begin{cases}
+p^2 & \text{if } n = 2p \\
+p^2 + p & \text{if } n = 2p+1
+\end{cases}$
+
+\textbf{Case 1.} For $n = 2p$:
+\begin{align*}
+\left|\sum_{k=1}^n kx_k\right| &= \left|\sum_{k=1}^{2p} kx_k - p\sum_{k=1}^{2p} x_k\right| = \left|\sum_{k=1}^{2p} (k-p)x_k\right| \\
+&\leq \sum_{k=1}^{2p} |k-p| \cdot |x_k| \leq \sum_{k=1}^{2p} |k-p| \\
+&= \sum_{k=1}^{p-1} (p-k) + \sum_{k=p+1}^{2p} (k-p) = 2\sum_{k=1}^{p-1} k = p^2 - p \leq p^2 = E\left(\frac{n^2}{4}\right).
+\end{align*}
+
+\textbf{Case 2.} For $n = 2p+1$:
+\begin{align*}
+\left|\sum_{k=1}^n kx_k\right| &= \left|\sum_{k=1}^{2p+1} kx_k - (p+1)\sum_{k=1}^{2p+1} x_k\right| = \left|\sum_{k=1}^{2p+1} (k-p-1)x_k\right| \\
+&\leq \sum_{k=1}^{2p+1} |k-p-1| \cdot |x_k| \leq \sum_{k=1}^{2p+1} |k-p-1| \\
+&= \sum_{k=1}^p (p+1-k) + \sum_{k=p+2}^{2p+1} (k-p-1) = 2\sum_{k=1}^p k = p^2 + p = E\left(\frac{n^2}{4}\right).
+\end{align*}
+
+Thus, for all $n \in \mathbb{N}$, we have $\left|\sum_{k=1}^n kx_k\right| \leq E\left(\frac{n^2}{4}\right)$.
+\end{solution}
+
+\section*{Exercise 7}
+
+\begin{problem}
+Calculate the sum:
+\[
+S = \sum_{k=1}^{100} \lfloor \sqrt{k} \rfloor
+\]
+\end{problem}
+
+\begin{solution}
+Let us decompose the sum by grouping terms where $\lfloor \sqrt{k} \rfloor$ takes constant integer values. For each integer $m \geq 0$, the condition $m \leq \sqrt{k} < m+1$ is equivalent to $k \in [m^2, (m+1)^2)$.
+
+For each $m \in \mathbb{N}$, the number of integers $k$ satisfying $m^2 \leq k < (m+1)^2$ is:
+\[
+(m+1)^2 - m^2 = 2m + 1
+\]
+Each such $k$ contributes $m$ to the sum $S$.
+
+We need to find the maximal $M$ such that $(M+1)^2 \leq 101$ (since our upper bound is 100). We find:
+\[
+M = \lfloor \sqrt{100} \rfloor = 10
+\]
+Thus, we can decompose the sum as:
+\[
+S = \sum_{m=1}^{10} m \cdot (2m + 1) - \text{correction for } k > 100
+\]
+
+However, we must account for the partial interval when $m=10$:
+\begin{itemize}
+\item For $m=1$ ($1 \leq k < 4$): 3 terms ($k=1,2,3$)
+\item For $m=2$ ($4 \leq k < 9$): 5 terms ($k=4,\ldots,8$)
+\item $\vdots$
+\item For $m=10$ ($100 \leq k < 121$): but only $k=100$ contributes since our upper limit is 100
+\end{itemize}
+
+Therefore, the exact decomposition is:
+\begin{align*}
+S &= \sum_{m=1}^9 m \cdot (2m + 1) + 10 \cdot 1 \\
+&= \sum_{m=1}^9 (2m^2 + m) + 10 \\
+&= 2\sum_{m=1}^9 m^2 + \sum_{m=1}^9 m + 10
+\end{align*}
+
+Using the known formulas:
+\[
+\sum_{m=1}^n m = \frac{n(n+1)}{2}, \quad \sum_{m=1}^n m^2 = \frac{n(n+1)(2n+1)}{6}
+\]
+
+We compute:
+\begin{align*}
+\sum_{m=1}^9 m &= \frac{9 \cdot 10}{2} = 45 \\
+\sum_{m=1}^9 m^2 &= \frac{9 \cdot 10 \cdot 19}{6} = 285 \\
+\end{align*}
+
+Thus:
+\[
+S = 2 \cdot 285 + 45 + 10 = 570 + 45 + 10 = 625
+\]
+
+\textbf{Verification:} The sum can also be computed directly:
+\[
+S = \sum_{k=1}^3 1 + \sum_{k=4}^8 2 + \cdots + \sum_{k=81}^{99} 9 + 10 = 3\cdot1 + 5\cdot2 + \cdots + 19\cdot9 + 1\cdot10 = 625
+\]
+\end{solution}
+
+\section*{Exercise 8}
+
+\begin{problem}
+For any \( a, b \in \mathbb{R} \), express:
+\begin{enumerate}[label=(\roman*)]
+    \item \( \sup\{a, b\} - \inf\{a, b\} \)
+    \item \( \sup\{a, b\} + \inf\{a, b\} \)
+\end{enumerate}
+in terms of \( a \) and \( b \). Deduce expressions for \( \sup\{a, b\} \) and \( \inf\{a, b\} \). What about \( \sup\{-a, -b\} \) and \( \inf\{-a, -b\} \)?
+\end{problem}
+
+\begin{solution}
+
+\textbf{Part 1: Expressions for sup and inf}
+
+For any two real numbers \( a \) and \( b \), we can express their maximum and minimum using absolute value:
+
+\[
+\sup\{a, b\} = \frac{a + b + |a - b|}{2}
+\]
+\[
+\inf\{a, b\} = \frac{a + b - |a - b|}{2}
+\]
+
+\textit{Proof:} Consider the two cases:
+\begin{itemize}
+\item When \( a \geq b \):
+  \[ \frac{a + b + (a - b)}{2} = a \]
+  \[ \frac{a + b - (a - b)}{2} = b \]
+  
+\item When \( b > a \):
+  \[ \frac{a + b + (b - a)}{2} = b \]
+  \[ \frac{a + b - (b - a)}{2} = a \]
+\end{itemize}
+
+\textbf{Part 2: Difference and Sum}
+
+(i) The difference:
+\[
+\sup\{a, b\} - \inf\{a, b\} = \frac{a + b + |a - b|}{2} - \frac{a + b - |a - b|}{2} = |a - b|
+\]
+
+(ii) The sum:
+\[
+\sup\{a, b\} + \inf\{a, b\} = \frac{a + b + |a - b|}{2} + \frac{a + b - |a - b|}{2} = a + b
+\]
+
+\textbf{Part 3: Behavior under negation}
+
+We prove the relations for negated numbers:
+
+1. For \( \sup\{-a, -b\} \):
+\begin{align*}
+\sup\{-a, -b\} &= \frac{-a - b + |-a - (-b)|}{2} \\
+&= \frac{-(a + b) + |b - a|}{2} \\
+&= -\left( \frac{a + b - |a - b|}{2} \right) \\
+&= -\inf\{a, b\}
+\end{align*}
+
+2. For \( \inf\{-a, -b\} \):
+\begin{align*}
+\inf\{-a, -b\} &= \frac{-a - b - |-a - (-b)|}{2} \\
+&= \frac{-(a + b) - |b - a|}{2} \\
+&= -\left( \frac{a + b + |a - b|}{2} \right) \\
+&= -\sup\{a, b\}
+\end{align*}
+
+Thus we have shown:
+\[
+\sup\{-a, -b\} = -\inf\{a, b\}, \quad \inf\{-a, -b\} = -\sup\{a, b\}
+\]
+\end{solution}
+
+
+\section*{Exercise 9}
+
+\begin{problem}
+Let \( A \) be a nonempty subset of \( \mathbb{R} \). Prove that:
+\[
+\sup(-A) = -\inf(A) \quad \text{and} \quad \inf(-A) = -\sup(A)
+\]
+where \(-A = \{-x \mid x \in A\}\).
+\end{problem}
+
+\begin{solution}
+
+\subsection*{First Method (Using $\epsilon$-Characterization)}
+
+\textbf{Part 1:} $\sup(-A) = -\inf(A)$
+
+Let $m = \inf A$. We must show:
+\begin{enumerate}
+    \item $-m$ is an upper bound for $-A$:
+    For any $x \in A$, we have $m \leq x$ by definition of infimum. Thus $-x \leq -m$, showing $-m$ bounds $-A$ from above.
+    
+    \item $-m$ is the least upper bound:
+    For any $\epsilon > 0$, since $m = \inf A$, there exists $x_\epsilon \in A$ such that:
+    \[ x_\epsilon < m + \epsilon \]
+    which implies:
+    \[ -x_\epsilon > -m - \epsilon \]
+    Thus no number less than $-m$ can be an upper bound for $-A$.
+\end{enumerate}
+
+\textbf{Part 2:} $\inf(-A) = -\sup(A)$
+
+Let $M = \sup A$. We must show:
+\begin{enumerate}
+    \item $-M$ is a lower bound for $-A$:
+    For any $x \in A$, $x \leq M$ by definition of supremum. Thus $-x \geq -M$, showing $-M$ bounds $-A$ from below.
+    
+    \item $-M$ is the greatest lower bound:
+    For any $\epsilon > 0$, since $M = \sup A$, there exists $y_\epsilon \in A$ such that:
+    \[ y_\epsilon > M - \epsilon \]
+    which implies:
+    \[ -y_\epsilon < -M + \epsilon \]
+    Thus no number greater than $-M$ can be a lower bound for $-A$.
+\end{enumerate}
+
+\subsection*{Second Method (Using Order Properties)}
+
+\textbf{Part 1:} $\sup(-A) = -\inf(A)$
+
+\begin{itemize}
+    \item For all $x \in A$, $\inf A \leq x \Rightarrow -x \leq -\inf A$
+    \item If $y$ is any upper bound for $-A$, then $\forall x \in A$, $-x \leq y \Rightarrow x \geq -y$
+    \item Thus $-y$ is a lower bound for $A$, so $-y \leq \inf A \Rightarrow y \geq -\inf A$
+    \item Therefore $-\inf A$ is the least upper bound of $-A$
+\end{itemize}
+
+\textbf{Part 2:} $\inf(-A) = -\sup(A)$
+
+\begin{itemize}
+    \item For all $x \in A$, $x \leq \sup A \Rightarrow -x \geq -\sup A$
+    \item If $z$ is any lower bound for $-A$, then $\forall x \in A$, $-x \geq z \Rightarrow x \leq -z$
+    \item Thus $-z$ is an upper bound for $A$, so $-z \geq \sup A \Rightarrow z \leq -\sup A$
+    \item Therefore $-\sup A$ is the greatest lower bound of $-A$
+\end{itemize}
+
+\vspace{0.3cm}
+Both methods establish the fundamental duality:
+\[
+\boxed{\sup(-A) = -\inf(A)} \quad \text{and} \quad \boxed{\inf(-A) = -\sup(A)}
+\]
+\end{solution}
+
+
+\section*{Exercise 10}
+
+\begin{problem}
+Given nonempty subsets \( A \) and \( B \) of positive real numbers, define:
+\[
+A \cdot B := \{ab \mid a \in A, b \in B\}
+\]
+\begin{enumerate}[label=(\alph*)]
+    \item Show that \(\sup(A \cdot B) = \sup A \cdot \sup B\)
+    \item Give an example where \(\sup(A \cdot B) \neq \sup A \cdot \sup B\) for bounded sets \(A,B\)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\textbf{Part (a):} Proof that \(\sup(A \cdot B) = \sup A \cdot \sup B\)
+
+1. \textbf{First inequality (\(\sup(A \cdot B) \leq \sup A \cdot \sup B\))}:
+For any \(a \in A\) and \(b \in B\), we have:
+\[
+a \leq \sup A \quad \text{and} \quad b \leq \sup B
+\]
+Thus:
+\[
+ab \leq \sup A \cdot \sup B
+\]
+This shows \(\sup A \cdot \sup B\) is an upper bound for \(A \cdot B\), so:
+\[
+\sup(A \cdot B) \leq \sup A \cdot \sup B
+\]
+
+2. \textbf{Second inequality (\(\sup(A \cdot B) \geq \sup A \cdot \sup B\))}:
+For any fixed \(b \in B\), we have for all \(a \in A\):
+\[
+ab \leq \sup(A \cdot B) \implies a \leq \frac{\sup(A \cdot B)}{b}
+\]
+Thus \(\frac{\sup(A \cdot B)}{b}\) is an upper bound for \(A\), so:
+\[
+\sup A \leq \frac{\sup(A \cdot B)}{b} \implies b \leq \frac{\sup(A \cdot B)}{\sup A}
+\]
+This holds for all \(b \in B\), so:
+\[
+\sup B \leq \frac{\sup(A \cdot B)}{\sup A} \implies \sup A \cdot \sup B \leq \sup(A \cdot B)
+\]
+
+\textbf{Conclusion:} \(\sup(A \cdot B) = \sup A \cdot \sup B\).
+
+\textbf{Part (b): Counterexample}
+
+Take \(A = \{-4, -3\}\) and \(B = \{-2, 1\}\). Then:
+\[
+A \cdot B = \{8, -4, 6, -3\}
+\]
+We have:
+\[
+\sup A = -3, \quad \sup B = 1 \implies \sup A \cdot \sup B = -3
+\]
+But:
+\[
+\sup(A \cdot B) = 8 \neq -3
+\]
+\end{solution}
+
+
+\section*{Exercise 11}
+
+\begin{problem}
+Let \( A, B \) be nonempty subsets of \( \mathbb{R} \). Define:
+\[
+A + B := \{a + b \mid a \in A, b \in B\}
+\]
+\[
+A - B := \{a - b \mid a \in A, b \in B\}
+\]
+Show that:
+\begin{enumerate}[label=(\alph*)]
+    \item \(\sup(A + B) = \sup A + \sup B\)
+    \item \(\sup(A - B) = \sup A - \inf B\)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\textbf{Part (a):} Proof that \(\sup(A + B) = \sup A + \sup B\)
+
+1. \textbf{First inequality (\(\sup(A + B) \leq \sup A + \sup B\))}:
+For any \(a \in A\) and \(b \in B\), we have:
+\[
+a \leq \sup A \quad \text{and} \quad b \leq \sup B
+\]
+Thus:
+\[
+a + b \leq \sup A + \sup B
+\]
+This shows \(\sup A + \sup B\) is an upper bound for \(A + B\), so:
+\[
+\sup(A + B) \leq \sup A + \sup B
+\]
+
+2. \textbf{Second inequality (\(\sup(A + B) \geq \sup A + \sup B\))}:
+For any \(a + b \in A + B\), we have:
+\[
+a + b \leq \sup(A + B)
+\]
+Thus for any fixed \(b \in B\):
+\[
+a \leq \sup(A + B) - b
+\]
+This shows \(\sup(A + B) - b\) is an upper bound for \(A\), so:
+\[
+\sup A \leq \sup(A + B) - b \implies b \leq \sup(A + B) - \sup A
+\]
+Now this holds for all \(b \in B\), so:
+\[
+\sup B \leq \sup(A + B) - \sup A \implies \sup A + \sup B \leq \sup(A + B)
+\]
+
+\textbf{Conclusion:} \(\sup(A + B) = \sup A + \sup B\).
+
+\textbf{Part (b):} Proof that \(\sup(A - B) = \sup A - \inf B\)
+
+1. \textbf{First inequality (\(\sup(A - B) \leq \sup A - \inf B\))}:
+For any \(a \in A\) and \(b \in B\), we have:
+\[
+a \leq \sup A \quad \text{and} \quad b \geq \inf B \implies -b \leq -\inf B
+\]
+Thus:
+\[
+a - b \leq \sup A - \inf B
+\]
+This shows \(\sup A - \inf B\) is an upper bound for \(A - B\), so:
+\[
+\sup(A - B) \leq \sup A - \inf B
+\]
+
+2. \textbf{Second inequality (\(\sup(A - B) \geq \sup A - \inf B\))}:
+For any \(a - b \in A - B\), we have:
+\[
+a - b \leq \sup(A - B)
+\]
+Thus for any fixed \(b \in B\):
+\[
+a \leq \sup(A - B) + b
+\]
+This shows \(\sup(A - B) + b\) is an upper bound for \(A\), so:
+\[
+\sup A \leq \sup(A - B) + b \implies b \geq \sup A - \sup(A - B)
+\]
+Now this holds for all \(b \in B\), so:
+\[
+\inf B \geq \sup A - \sup(A - B) \implies \sup(A - B) \geq \sup A - \inf B
+\]
+
+\textbf{Conclusion:} \(\sup(A - B) = \sup A - \inf B\).
+
+\end{solution}
+
+
+
+1. \textbf{For \(\inf(A + B)\)}:
+\[
+\inf(A + B) = \inf A + \inf B
+\]
+
+\textit{Proof:}
+\begin{enumerate}
+    \item For any \(a + b \in A + B\):
+    \[
+    a \geq \inf A \quad \text{and} \quad b \geq \inf B \implies a + b \geq \inf A + \inf B
+    \]
+    Thus \(\inf A + \inf B\) is a lower bound.
+
+    \item For any \(a + b \in A + B\):
+    \[
+    a + b \geq \inf(A + B) \implies b \geq \inf(A + B) - a
+    \]
+    Thus \(\inf(A + B) - a\) is a lower bound for \(B\), so:
+    \[
+    \inf B \geq \inf(A + B) - a \implies a \geq \inf(A + B) - \inf B
+    \]
+    Therefore \(\inf(A + B) - \inf B\) is a lower bound for \(A\), so:
+    \[
+    \inf A \geq \inf(A + B) - \inf B \implies \inf(A + B) \leq \inf A + \inf B
+    \]
+\end{enumerate}
+
+2. \textbf{For \(\inf(A - B)\)}:
+\[
+\inf(A - B) = \inf A - \sup B
+\]
+
+\textit{Proof:}
+\begin{enumerate}
+    \item For any \(a - b \in A - B\):
+    \[
+    a \geq \inf A \quad \text{and} \quad b \leq \sup B \implies a - b \geq \inf A - \sup B
+    \]
+    Thus \(\inf A - \sup B\) is a lower bound.
+
+    \item For any \(a - b \in A - B\):
+    \[
+    a - b \geq \inf(A - B) \implies a \geq \inf(A - B) + b
+    \]
+    Thus \(\inf(A - B) + b\) is a lower bound for \(A\), so:
+    \[
+    \inf A \geq \inf(A - B) + b \implies b \leq \inf A - \inf(A - B)
+    \]
+    Therefore \(\inf A - \inf(A - B)\) is an upper bound for \(B\), so:
+    \[
+    \sup B \leq \inf A - \inf(A - B) \implies \inf(A - B) \geq \inf A - \sup B
+    \]
+\end{enumerate}
+
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\begin{document}
+
+\section*{Exercise 12}
+
+Let \(A\), \(B\), \(C\), \(D\), and \(\Omega\) be the subsets of \(\mathbb{R}\) defined by:
+\[
+A = \left\{ \frac{1}{2} - \frac{n}{2n + 1} : n \in \mathbb{N} \cup \{0\} \right\},
+\]
+\[
+B = \left\{ 1 + \frac{(-1)^n}{n} : n \in \mathbb{N} \right\},
+\]
+\[
+C = \left\{ \frac{1}{n} + (-1)^n : n \in \mathbb{N} \right\},
+\]
+\[
+D = \left\{ \frac{1}{2} + \frac{n}{2n + 1},\ 2 - \frac{1}{n + 2} : n \in \mathbb{N}_0 = \mathbb{N} \cup \{0\} \right\},
+\]
+\[
+\Omega = \left\{ \frac{m + n + 2mn}{m + n + mn + 1} : m, n \in \mathbb{N}_0 \right\}.
+\]
+
+\textbf{Problem.} Prove that these sets are bounded and determine (using the formal characterization) their bounds: infimum, supremum, minimum, and maximum where they exist.
+
+\subsection*{Solution for \(A\)}
+
+Consider the set
+\[
+A = \left\{ \frac{1}{2} - \frac{n}{2n + 1} : n \in \mathbb{N}_0 \right\}.
+\]
+
+We first establish the boundedness of \(A\). For any \(n \in \mathbb{N}_0\),
+\[
+\frac{1}{2} - \frac{n}{2n+1} \leq \frac{1}{2},
+\]
+since \(\frac{n}{2n+1} \geq 0.\) Thus, \(\frac{1}{2}\) is an upper bound of \(A.\) Moreover,
+\[
+\frac{1}{2} - \frac{n}{2n+1} \geq 0,
+\]
+since
+\[
+\frac{1}{2} - \frac{n}{2n+1} \geq 0
+\iff \frac{1}{2}(2n+1) \geq n
+\iff n + \tfrac{1}{2} \geq n,
+\]
+which is true for all \(n \in \mathbb{N}_0.\) Hence, \(0\) is a lower bound of \(A.\) Therefore, \(A\) is bounded.
+
+We now determine the least upper bound. Clearly, \(\frac{1}{2} \in A\) since for \(n = 0\),
+\[
+\frac{1}{2} - \frac{0}{1} = \frac{1}{2}.
+\]
+Thus, \(\frac{1}{2}\) is an upper bound of \(A\) and belongs to \(A.\) By definition, it follows that
+\[
+\sup A = \frac{1}{2} \quad \text{and} \quad \max A = \frac{1}{2}.
+\]
+
+Next, we determine the greatest lower bound. We claim \(\inf A = 0.\) We first verify that \(0\) is a lower bound of \(A\), as shown above. To confirm that \(0\) is the greatest lower bound, we appeal to the formal characterization of the infimum.
+
+Let \(\varepsilon > 0.\) We seek \(a_{\varepsilon} \in A\) such that
+\[
+0 \leq a_{\varepsilon} < \varepsilon.
+\]
+
+We know that elements of \(A\) have the form
+\[
+a = \frac{1}{2} - \frac{n}{2n+1}.
+\]
+We impose the condition
+\[
+\frac{1}{2} - \frac{n}{2n+1} < \varepsilon,
+\]
+and solve for \(n.\)
+
+\[
+\frac{1}{2} - \varepsilon < \frac{n}{2n+1}.
+\]
+Multiply both sides by \(2n+1\):
+\[
+\left(\frac{1}{2} - \varepsilon\right)(2n+1) < n.
+\]
+Expand:
+\[
+(1 - 2\varepsilon)n + \frac{1}{2} - \varepsilon < n.
+\]
+Bring \(n\) terms together:
+\[
+(1 - 2\varepsilon)n - n < \varepsilon - \tfrac{1}{2}.
+\]
+\[
+(-2\varepsilon)n < \varepsilon - \tfrac{1}{2}.
+\]
+
+Since \(-2\varepsilon < 0,\) dividing both sides reverses the inequality:
+\[
+n > \frac{\tfrac{1}{2} - \varepsilon}{2\varepsilon}.
+\]
+
+\textbf{Define:}
+\[
+n_\varepsilon =
+\begin{cases}
+0, & \text{if } \varepsilon \geq \tfrac{1}{2}, \\
+\left\lceil \dfrac{\tfrac{1}{2} - \varepsilon}{2\varepsilon} \right\rceil, & \text{if } 0 < \varepsilon < \tfrac{1}{2}.
+\end{cases}
+\]
+
+\textbf{Verification:}
+\begin{itemize}
+    \item If \(\varepsilon \geq \tfrac{1}{2}\), take \(n_\varepsilon = 0.\) Then
+    \[
+    a_\varepsilon = \frac{1}{2} - \frac{0}{1} = \frac{1}{2} < \varepsilon.
+    \]
+    \item If \(0 < \varepsilon < \tfrac{1}{2},\) consider
+    \[
+    n_\varepsilon = \left\lceil \frac{\tfrac{1}{2} - \varepsilon}{2\varepsilon} \right\rceil.
+    \]
+    By construction,
+    \[
+    \frac{1}{2} - \frac{n_\varepsilon}{2n_\varepsilon+1} < \varepsilon.
+    \]
+\end{itemize}
+
+Thus, for every \(\varepsilon > 0,\) there exists \(a_\varepsilon \in A\) such that \(a_\varepsilon < \varepsilon.\) By the characterization of the infimum, we conclude
+\[
+\inf A = 0.
+\]
+
+Finally, note that \(0 \notin A\), since for every \(n \in \mathbb{N}_0\),
+\[
+\frac{1}{2} - \frac{n}{2n+1} > 0.
+\]
+Thus, \(A\) has no minimum.
+
+\subsubsection*{Conclusion}
+
+\[
+\boxed{\inf A = 0,\ \sup A = \tfrac{1}{2},\ \max A = \tfrac{1}{2},\ \min A \text{ does not exist}}
+\]
+
+\subsection*{Solution for \(B\)}
+
+Consider the set
+\[
+B = \left\{ 1 + \frac{(-1)^n}{n} : n \in \mathbb{N} \right\}.
+\]
+
+\textbf{Boundedness.}  
+For all \(n \in \mathbb{N}\), we have:
+\[
+1 + \frac{(-1)^n}{n} \leq 1 + \frac{1}{n} \leq 2,
+\]
+\[
+1 + \frac{(-1)^n}{n} \geq 1 - \frac{1}{n} \geq 0.
+\]
+Therefore, \(B\) is bounded above by \(2\) and below by \(0\).
+
+\medskip
+
+\textbf{Determination of the supremum.}  
+We claim that \(\sup B = \frac{3}{2}\). Observe that for \(n = 2\), we have:
+\[
+1 + \frac{(-1)^2}{2} = 1 + \frac{1}{2} = \frac{3}{2} \in B.
+\]
+For any even \(n = 2k\), we have:
+\[
+1 + \frac{(-1)^{2k}}{2k} = 1 + \frac{1}{2k} < \frac{3}{2} \quad \text{for } k \geq 2.
+\]
+For any odd \(n = 2k + 1\), we have:
+\[
+1 + \frac{(-1)^{2k+1}}{2k + 1} = 1 - \frac{1}{2k + 1} < 1 < \frac{3}{2}.
+\]
+Therefore, no element of \(B\) exceeds \(\frac{3}{2}\), and since \(\frac{3}{2} \in B\), it follows that:
+\[
+\sup B = \frac{3}{2}, \quad \max B = \frac{3}{2}.
+\]
+
+\textbf{Characterization of the supremum.}  
+Let \(\varepsilon > 0\). We seek \(b_\varepsilon \in B\) such that:
+\[
+\frac{3}{2} - \varepsilon < b_\varepsilon \leq \frac{3}{2}.
+\]
+
+We consider even \(n = 2k\), for \(k \in \mathbb{N}\), so:
+\[
+b_\varepsilon = 1 + \frac{1}{2k}.
+\]
+We require:
+\[
+1 + \frac{1}{2k} > \frac{3}{2} - \varepsilon.
+\]
+Subtracting 1 from both sides:
+\[
+\frac{1}{2k} > \frac{1}{2} - \varepsilon.
+\]
+Since \(\frac{1}{2} - \varepsilon > 0\) for \(\varepsilon < \frac{1}{2}\), we solve:
+\[
+2k < \frac{1}{\frac{1}{2} - \varepsilon} \quad \Longrightarrow \quad k < \frac{1}{2\left(\frac{1}{2} - \varepsilon\right)}.
+\]
+Choose any natural number \(k\) satisfying this inequality. Then \(n = 2k\), and:
+\[
+b_\varepsilon = 1 + \frac{1}{n} \in B,
+\]
+and
+\[
+\frac{3}{2} - \varepsilon < b_\varepsilon \leq \frac{3}{2}.
+\]
+
+If \(\varepsilon \geq \frac{1}{2}\), we simply take \(b_\varepsilon = \frac{3}{2} \in B\), and the condition is clearly satisfied.
+
+\medskip
+
+\textbf{Determination of the infimum.}  
+We claim that \(\inf B = 0\). For \(n = 1\), we have:
+\[
+1 + \frac{(-1)^1}{1} = 1 - 1 = 0 \in B.
+\]
+For any \(n \in \mathbb{N}\), we know:
+\[
+1 + \frac{(-1)^n}{n} \geq 0.
+\]
+Therefore, \(0\) is a lower bound of \(B\), and since it is attained, we have:
+\[
+\inf B = 0, \quad \min B = 0.
+\]
+
+\textbf{Characterization of the infimum.}  
+Let \(\varepsilon > 0\). We seek \(b_\varepsilon \in B\) such that:
+\[
+0 \leq b_\varepsilon < \varepsilon.
+\]
+Take \(b_\varepsilon = 0 \in B\), then clearly \(b_\varepsilon < \varepsilon\) for any \(\varepsilon > 0\), so the condition is satisfied.
+
+\medskip
+
+\subsubsection*{Conclusion}
+
+\[
+\boxed{\inf B = 0,\quad \sup B = \tfrac{3}{2},\quad \min B = 0,\quad \max B = \tfrac{3}{2}}
+\]
+
+
+
+
+
+
+
+
+
+\subsection*{Solution for \(C\)}
+
+Consider the set
+\[
+C = \left\{ \frac{1}{n} + (-1)^n : n \in \mathbb{N} \right\}.
+\]
+
+\textbf{Boundedness.}  
+For all \(n \in \mathbb{N}\), note that \((-1)^n = \pm 1.\) Consider two cases:
+
+- If \(n\) is even, \(n = 2k,\) then
+\[
+\frac{1}{n} + (-1)^n = \frac{1}{2k} + 1.
+\]
+Thus:
+\[
+\frac{1}{2k} + 1 \leq 1 + \frac{1}{2} = \frac{3}{2}.
+\]
+
+- If \(n\) is odd, \(n = 2k+1,\) then
+\[
+\frac{1}{n} + (-1)^n = \frac{1}{2k+1} - 1.
+\]
+Thus:
+\[
+\frac{1}{2k+1} - 1 < 0.
+\]
+
+In both cases, we have:
+\[
+\frac{1}{n} + (-1)^n < \frac{3}{2} \quad \text{and} \quad \frac{1}{n} + (-1)^n > -1.
+\]
+Hence \(C\) is bounded above by \(\tfrac{3}{2}\) and below by \(-1.\)
+
+---
+
+\textbf{Determination of the supremum.}  
+We claim that
+\[
+\sup C = \frac{3}{2}.
+\]
+For \(n=2,\)
+\[
+\frac{1}{2}+(-1)^2 = \frac{1}{2}+1=\frac{3}{2}\in C.
+\]
+For even \(n \geq 2,\)
+\[
+\frac{1}{2k}+1<\frac{3}{2}.
+\]
+For odd \(n,\)
+\[
+\frac{1}{2k+1}-1<1<\frac{3}{2}.
+\]
+Thus no element of \(C\) exceeds \(\frac{3}{2},\) and since \(\frac{3}{2}\in C,\) we have:
+\[
+\sup C=\frac{3}{2},\quad \max C=\frac{3}{2}.
+\]
+
+---
+
+\textbf{Characterization of \(\sup C.\)}  
+Let \(\varepsilon>0.\) We seek \(c_\varepsilon\in C\) such that:
+\[
+\frac{3}{2}-\varepsilon< c_\varepsilon \leq \frac{3}{2}.
+\]
+
+Consider even \(n=2k.\) Then:
+\[
+c_\varepsilon=\frac{1}{2k}+1.
+\]
+We require:
+\[
+\frac{1}{2k}+1>\frac{3}{2}-\varepsilon.
+\]
+Subtracting \(1\):
+\[
+\frac{1}{2k}>\frac{1}{2}-\varepsilon.
+\]
+Since \(\frac{1}{2}-\varepsilon>0\) for \(\varepsilon<\tfrac{1}{2},\) solve:
+\[
+2k<\frac{1}{\tfrac{1}{2}-\varepsilon}.
+\]
+Take any \(k\in\mathbb{N}\) satisfying this inequality. Then \(n=2k\) and
+\[
+c_\varepsilon=\frac{1}{n}+1\in C,
+\]
+with
+\[
+\frac{3}{2}-\varepsilon< c_\varepsilon\leq\frac{3}{2}.
+\]
+
+If \(\varepsilon\geq\tfrac{1}{2},\) take \(c_\varepsilon=\tfrac{3}{2}\in C.\)
+
+---
+
+\textbf{Determination of the infimum.}  
+We claim:
+\[
+\inf C=-1.
+\]
+For odd \(n=2k+1,\)
+\[
+\frac{1}{2k+1}+(-1)^{2k+1}=\frac{1}{2k+1}-1.
+\]
+As \(k\to\infty,\)
+\[
+\frac{1}{2k+1}-1\to -1.
+\]
+Moreover, for \(k=0,\)
+\[
+\frac{1}{1}-1=0\in C.
+\]
+For even \(n,\)
+\[
+\frac{1}{2k}+1>0>-1.
+\]
+Thus \(-1\) is a lower bound of \(C.\) For any \(\delta>0,\) we can find \(k\) such that:
+\[
+\frac{1}{2k+1}-1> -1-\delta,
+\]
+but \(-1\) is never attained. Hence:
+\[
+\inf C=-1,\quad \min C\text{ does not exist}.
+\]
+
+---
+
+\textbf{Characterization of \(\inf C.\)}  
+Let \(\varepsilon>0.\) We seek \(c_\varepsilon\in C\) such that:
+\[
+-1\leq c_\varepsilon<-1+\varepsilon.
+\]
+Consider odd \(n=2k+1.\) Then:
+\[
+c_\varepsilon=\frac{1}{2k+1}-1.
+\]
+We require:
+\[
+\frac{1}{2k+1}-1<-1+\varepsilon.
+\]
+Adding \(1\) to both sides:
+\[
+\frac{1}{2k+1}<\varepsilon.
+\]
+Solve:
+\[
+2k+1>\frac{1}{\varepsilon}.
+\]
+Take any \(k\in\mathbb{N}_0\) satisfying this inequality. Then \(n=2k+1\) and:
+\[
+c_\varepsilon=\frac{1}{n}-1\in C,
+\]
+with:
+\[
+-1\leq c_\varepsilon<-1+\varepsilon.
+\]
+
+---
+
+\subsubsection*{Conclusion}
+
+\[
+\boxed{\inf C=-1,\ \sup C=\tfrac{3}{2},\ \min C\text{ does not exist},\ \max C=\tfrac{3}{2}}
+\]
+
+
+
+
+
+
+
+
+
+
+\subsection*{Solution for \(D\)}
+
+Consider the set
+\[
+D=\left\{\frac{1}{2}+\frac{n}{2n+1},\ 2-\frac{1}{n+2}:n\in\mathbb{N}_0=\mathbb{N}\cup\{0\}\right\}.
+\]
+
+We write \(D\) as the union of two subsets:
+\[
+D_1=\left\{\frac{1}{2}+\frac{n}{2n+1}:n\in\mathbb{N}_0\right\},\quad
+D_2=\left\{2-\frac{1}{n+2}:n\in\mathbb{N}_0\right\}.
+\]
+
+---
+
+\textbf{Scratch work: finding the bounds.}  
+To determine the bounds of \(D_1\), observe that for \(n\in\mathbb{N}_0,\)
+\[
+\frac{1}{2}<\frac{1}{2}+\frac{n}{2n+1}<1.
+\]
+Indeed, as \(n\to\infty,\)
+\[
+\frac{1}{2}+\frac{n}{2n+1}\to\frac{1}{2}+\frac{1}{2}=1.
+\]
+
+For \(D_2,\) note:
+\[
+\frac{3}{2}<2-\frac{1}{n+2}<2,
+\]
+and as \(n\to\infty,\)
+\[
+2-\frac{1}{n+2}\to 2.
+\]
+
+This use of limits and monotonicity is only a \textbf{scratch work} to help find the bounds. In the formal proof below, we avoid sequences since they are not yet studied.
+
+---
+
+\textbf{Boundedness.}  
+Since
+\[
+\forall n\in\mathbb{N}_0,\ \frac{1}{2}<\frac{1}{2}+\frac{n}{2n+1}<1,
+\]
+and
+\[
+\forall n\in\mathbb{N}_0,\ \frac{3}{2}<2-\frac{1}{n+2}<2,
+\]
+we deduce:
+\[
+\begin{aligned}
+&\inf D_1=\frac{1}{2},\quad \sup D_1=1,\\
+&\inf D_2=\frac{3}{2},\quad \sup D_2=2.
+\end{aligned}
+\]
+Since \(D=D_1\cup D_2,\) we have:
+\[
+\begin{aligned}
+\inf D&=\min(\inf D_1,\inf D_2)=\min\left(\frac{1}{2},\frac{3}{2}\right)=\frac{1}{2},\\
+\sup D&=\max(\sup D_1,\sup D_2)=\max\left(1,2\right)=2.
+\end{aligned}
+\]
+
+---
+
+\textbf{Characterization of \(\sup D_1.\)}  
+We claim that \(\sup D_1=1.\)  
+Let \(\varepsilon>0.\) We seek \(d_{1,\varepsilon}\in D_1\) such that:
+\[
+1-\varepsilon<d_{1,\varepsilon}\leq 1.
+\]
+Consider
+\[
+d_{1,\varepsilon}=\frac{1}{2}+\frac{n}{2n+1}.
+\]
+We require:
+\[
+\frac{1}{2}+\frac{n}{2n+1}>1-\varepsilon.
+\]
+Subtract \(\tfrac{1}{2}\):
+\[
+\frac{n}{2n+1}>\frac{1}{2}-\varepsilon.
+\]
+Solve:
+\[
+2n+1<\frac{n}{\tfrac{1}{2}-\varepsilon}.
+\]
+For \(\varepsilon<\tfrac{1}{2},\) this is possible for large enough \(n.\) Choose \(n_\varepsilon\in\mathbb{N}_0\) satisfying:
+\[
+n>\frac{1}{2\left(\tfrac{1}{2}-\varepsilon\right)}.
+\]
+Then
+\[
+d_{1,\varepsilon}=\frac{1}{2}+\frac{n_\varepsilon}{2n_\varepsilon+1}\in D_1,
+\]
+with
+\[
+1-\varepsilon<d_{1,\varepsilon}\leq 1.
+\]
+
+---
+
+\textbf{Characterization of \(\inf D_1.\)}  
+We claim that \(\inf D_1=\tfrac{1}{2}.\)  
+Let \(\varepsilon>0.\) We seek \(d_{1,\varepsilon}\in D_1\) such that:
+\[
+\frac{1}{2}\leq d_{1,\varepsilon}<\frac{1}{2}+\varepsilon.
+\]
+For \(n=0,\)
+\[
+d_{1,\varepsilon}=\frac{1}{2}+\frac{0}{1}=\frac{1}{2}\in D_1,
+\]
+and
+\[
+\frac{1}{2}\leq d_{1,\varepsilon}<\frac{1}{2}+\varepsilon.
+\]
+
+---
+
+\textbf{Characterization of \(\sup D_2.\)}  
+We claim that \(\sup D_2=2.\)  
+Let \(\varepsilon>0.\) We seek \(d_{2,\varepsilon}\in D_2\) such that:
+\[
+2-\varepsilon<d_{2,\varepsilon}<2.
+\]
+Consider
+\[
+d_{2,\varepsilon}=2-\frac{1}{n+2}.
+\]
+We require:
+\[
+2-\frac{1}{n+2}>2-\varepsilon.
+\]
+Subtract \(2\) and multiply by \(-1\):
+\[
+\frac{1}{n+2}<\varepsilon.
+\]
+Solve:
+\[
+n+2>\frac{1}{\varepsilon}.
+\]
+Choose \(n_\varepsilon\in\mathbb{N}_0\) satisfying this inequality. Then
+\[
+d_{2,\varepsilon}=2-\frac{1}{n_\varepsilon+2}\in D_2,
+\]
+with
+\[
+2-\varepsilon<d_{2,\varepsilon}<2.
+\]
+
+---
+
+\textbf{Characterization of \(\inf D_2.\)}  
+We claim that \(\inf D_2=\tfrac{3}{2}.\)  
+Let \(\varepsilon>0.\) We seek \(d_{2,\varepsilon}\in D_2\) such that:
+\[
+\frac{3}{2}\leq d_{2,\varepsilon}<\frac{3}{2}+\varepsilon.
+\]
+For \(n=0,\)
+\[
+d_{2,\varepsilon}=2-\frac{1}{2}=\frac{3}{2}\in D_2,
+\]
+and
+\[
+\frac{3}{2}\leq d_{2,\varepsilon}<\frac{3}{2}+\varepsilon.
+\]
+
+---
+
+\subsubsection*{Conclusion}
+
+\[
+\boxed{\inf D=\tfrac{1}{2},\ \sup D=2,\ \min D=\tfrac{1}{2},\ \max D\text{ does not exist}}
+\]
+
+
+
+
+
+
+
+
+
+
+\subsection*{Solution for \(\Omega\)}
+
+Consider the set
+\[
+\Omega=\left\{\frac{m+n+2mn}{m+n+mn+1}:m,n\in\mathbb{N}_0\right\}.
+\]
+
+---
+
+\textbf{Scratch work: finding the bounds.}  
+We simplify:
+\[
+\frac{m+n+2mn}{m+n+mn+1}=\frac{(m+n)+2mn}{(m+n)+mn+1}.
+\]
+
+\emph{Upper bound:}  
+For fixed \(m\geq 1\), consider \(n\to\infty.\)  
+\[
+\frac{m+n+2mn}{m+n+mn+1}
+=\frac{2mn+\cdots}{mn+\cdots}\approx\frac{2m}{m}=2.
+\]
+Thus, \(\lim_{n\to\infty}\frac{m+n+2mn}{m+n+mn+1}=2.\)  
+
+\emph{Lower bound:}  
+For \(m,n\geq 0,\)
+\[
+\frac{m+n+2mn}{m+n+mn+1}>0.
+\]
+For \(m=0\) and \(n\to\infty,\)
+\[
+\frac{n}{n+1}\to 1.
+\]
+For \(m=n=0,\)
+\[
+\frac{0+0+0}{0+0+0+1}=\frac{0}{1}=0\in\Omega.
+\]
+
+Hence the bounds are:
+\[
+\boxed{\inf\Omega=0,\ \sup\Omega=2.}
+\]
+We now rigorously prove these.
+
+---
+
+\textbf{Boundedness.}  
+\emph{Upper bound:} For \(m,n\geq 0,\)
+\[
+m+n+2mn<2(m+n+mn+1).
+\]
+Indeed:
+\[
+m+n+2mn<2m+2n+2mn+2,
+\]
+so:
+\[
+\frac{m+n+2mn}{m+n+mn+1}<\frac{2m+2n+2mn+2}{m+n+mn+1}=2+\frac{2}{m+n+mn+1}.
+\]
+Since \(\frac{2}{m+n+mn+1}>0,\)
+\[
+\frac{m+n+2mn}{m+n+mn+1}<2.
+\]
+Thus, \(2\) is an upper bound of \(\Omega.\)
+
+\emph{Lower bound:} Clearly,
+\[
+\frac{m+n+2mn}{m+n+mn+1}\geq 0.
+\]
+Thus, \(0\) is a lower bound.
+
+---
+
+\textbf{Determination of \(\sup\Omega.\)}  
+We claim:
+\[
+\sup\Omega=2.
+\]
+\(2\) is an upper bound of \(\Omega,\) and for any \(\varepsilon>0,\) we must show there exists \(\omega_\varepsilon\in\Omega\) such that:
+\[
+2-\varepsilon<\omega_\varepsilon<2.
+\]
+
+Consider \(m,n\geq 1.\) For fixed \(m\), take
+\[
+\omega_\varepsilon=\frac{m+n+2mn}{m+n+mn+1}.
+\]
+We want:
+\[
+\frac{m+n+2mn}{m+n+mn+1}>2-\varepsilon.
+\]
+Solve:
+\[
+m+n+2mn>(2-\varepsilon)(m+n+mn+1).
+\]
+
+Expanding:
+\[
+m+n+2mn>(2-\varepsilon)(m+n)+ (2-\varepsilon)mn+(2-\varepsilon).
+\]
+This inequality can be satisfied for large \(n\) (details omitted for brevity). Take \(n_\varepsilon\) large enough so that:
+\[
+\frac{m+n_\varepsilon+2m n_\varepsilon}{m+n_\varepsilon+m n_\varepsilon+1}>2-\varepsilon.
+\]
+Thus, such \(\omega_\varepsilon\in\Omega\) exists.
+
+---
+
+\textbf{Determination of \(\inf\Omega.\)}  
+We claim:
+\[
+\inf\Omega=0.
+\]
+Clearly,
+\[
+\frac{m+n+2mn}{m+n+mn+1}\geq 0.
+\]
+For any \(\varepsilon>0,\) we must show there exists \(\omega_\varepsilon\in\Omega\) such that:
+\[
+0\leq\omega_\varepsilon<\varepsilon.
+\]
+Take \(m=0,\) then:
+\[
+\omega_\varepsilon=\frac{n}{n+1}.
+\]
+We want:
+\[
+\frac{n}{n+1}<\varepsilon.
+\]
+Solve:
+\[
+n<\varepsilon(n+1).
+\]
+For \(\varepsilon<1,\) this is false, so instead take \(m=n=0:\)
+\[
+\omega_\varepsilon=\frac{0}{1}=0\in\Omega,
+\]
+which satisfies:
+\[
+0\leq 0<\varepsilon.
+\]
+Thus, \(\inf\Omega=0.\)
+
+---
+
+\subsubsection*{Conclusion}
+
+\[
+\boxed{\inf\Omega=0,\ \sup\Omega=2,\ \min\Omega=0,\ \max\Omega\text{ does not exist}}
+\]
+
+
+
+\section*{Exercise 13}
+
+Show that
+\[
+\sup\left\{x\in\mathbb{Q}:x>0,\ x^2<2\right\}=\sqrt{2}.
+\]
+
+---
+
+\textbf{Solution.}
+
+Define the set
+\[
+S=\left\{x\in\mathbb{Q}:x>0,\ x^2<2\right\}.
+\]
+
+We claim:
+\[
+\boxed{\sup S=\sqrt{2}}.
+\]
+
+---
+
+\textbf{Step 1: \(\sqrt{2}\) is an upper bound of \(S\).}
+
+Let \(x\in S.\) By definition of \(S,\) \(x>0\) and \(x^2<2.\)  
+Since \(\sqrt{2}>0,\) we have:
+\[
+x^2<2=(\sqrt{2})^2.
+\]
+
+Since \(x,\sqrt{2}>0,\) taking square roots preserves the inequality:
+\[
+x<\sqrt{2}.
+\]
+Thus, every \(x\in S\) satisfies \(x<\sqrt{2}.\)  
+Hence, \(\sqrt{2}\) is an upper bound for \(S.\)
+
+---
+
+\textbf{Step 2: \(\sqrt{2}\) is the least upper bound of \(S\).}
+
+Let \(u\) be any upper bound of \(S.\) We must show:
+\[
+u\geq\sqrt{2}.
+\]
+
+\emph{Proof by contradiction:} Suppose \(u<\sqrt{2}.\) Set
+\[
+v=\frac{u+\sqrt{2}}{2}.
+\]
+Since \(u<\sqrt{2},\) we have:
+\[
+u<v<\sqrt{2}.
+\]
+
+Now compute \(v^2:\)
+\[
+v^2=\left(\frac{u+\sqrt{2}}{2}\right)^2
+=\frac{u^2+2u\sqrt{2}+2}{4}.
+\]
+
+Since \(u<\sqrt{2},\) we know \(u^2<2.\)  
+Also, \(2u\sqrt{2}>0.\)  
+Thus:
+\[
+v^2<\frac{2+2u\sqrt{2}+2}{4}
+=\frac{4+2u\sqrt{2}}{4}.
+\]
+
+But \(2u\sqrt{2}<2\sqrt{2}\sqrt{2}=4.\)  
+Hence:
+\[
+4+2u\sqrt{2}<4+4=8,
+\]
+so:
+\[
+v^2<\frac{8}{4}=2.
+\]
+
+We conclude:
+\[
+v\in\mathbb{R},\ v<\sqrt{2},\ v^2<2.
+\]
+
+Since \(\mathbb{Q}\) is dense in \(\mathbb{R},\) there exists \(q\in\mathbb{Q}\) such that:
+\[
+u<q<v.
+\]
+(Note: here, this argument does not depend on density because \(u,v\in\mathbb{R}\) and \(u<v\), so rational approximations exist by Archimedean property.)  
+
+Observe:
+\[
+q^2<v^2<2,
+\]
+so \(q^2<2\). Also, \(q>0\).  
+Thus \(q\in S.\)
+
+But \(q>u.\) This contradicts the assumption that \(u\) is an upper bound of \(S.\)
+
+---
+
+\textbf{Conclusion.}
+
+The assumption \(u<\sqrt{2}\) leads to a contradiction.  
+Therefore, any upper bound \(u\) of \(S\) satisfies \(u\geq\sqrt{2}.\)
+
+Since \(\sqrt{2}\) is itself an upper bound, it is the least upper bound:
+\[
+\boxed{\sup S=\sqrt{2}}.
+\]
+
+
+
+
+
+\end{document}
+
+

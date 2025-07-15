@@ -53,7 +53,7 @@ export const modulesData: Record<string, ModuleData> = {
         {
           id: 'rn-problem-set',
           type: 'problem-set',
-          title: 'Problem Set #0 (Inequalities)',
+          title: 'Problem Set #1 (Inequalities)',
           description: '15 exercises on very important real identities.',
           meta: { difficulty: 'Difficulty: 4.8/5', solutions: 'Solutions Included' },
           link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 1 - 2024-2025 (1).pdf',
@@ -63,7 +63,7 @@ export const modulesData: Record<string, ModuleData> = {
         {
           id: 'rn-problem-set',
           type: 'problem-set',
-          title: 'Problem Set #1',
+          title: 'Problem Set #2',
           description: '14 carefully graded problems on absolute value, integer part, bounded sets, completeness, and applications of supremum/infimum.',
           meta: { difficulty: 'Difficulty: 4.2/5', solutions: 'Solutions Included' },
           link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 2 - 2024-2025.pdf',
@@ -90,14 +90,18 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Complex Numbers Textbook',
           description: 'This textbook introduces complex numbers from their algebraic properties to their representation on the complex plane. It covers polar and exponential forms, Euler’s identities, solving equations, and finding n-th roots, providing a clear and structured approach to these fundamental concepts.',
-          meta: { pages: '48 pages', tags: 'Polar Form • Roots • Equations' }
+          meta: { pages: '5 pages', tags: 'Polar Form • Roots • Equations' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Textbooks/Complex Numbers.pdf',
         },
         {
           id: 'cn-problem-set',
           type: 'problem-set',
-          title: 'Problem Set #2',
+          title: 'Problem Set #3',
           description: '18 problems covering modulus, argument, roots of unity, and geometric interpretations.',
-          meta: { difficulty: 'Difficulty: 3.8/5', solutions: 'Solutions Included' }
+          meta: { difficulty: 'Difficulty: 3.8/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 3.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__2_Solutions.pdf'
+          
         },
         {
           id: 'cn-extras',
@@ -125,9 +129,11 @@ export const modulesData: Record<string, ModuleData> = {
         {
           id: 'seq-problem-set',
           type: 'problem-set',
-          title: 'Convergence Practice',
+          title: 'Problem Set #4',
           description: '20 problems on sequence limits, monotonicity, and applications of Bolzano-Weierstrass.',
-          meta: { difficulty: 'Difficulty: 4.5/5', solutions: 'Solutions Included' }
+          meta: { difficulty: 'Difficulty: 4.5/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 4.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__2_Solutions.pdf'
         },
         {
           id: 'seq-extras',
@@ -157,7 +163,9 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'problem-set',
           title: 'Problem Sheet #5',
           description: '15 problems ranging from basic limit proofs to advanced uniform continuity applications.',
-          meta: { difficulty: 'Difficulty: 4.7/5', solutions: 'Solutions Included' }
+          meta: { difficulty: 'Difficulty: 4.7/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 5.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__2_Solutions.pdf'
         },
         {
           id: 'lim-extras',
@@ -185,9 +193,11 @@ export const modulesData: Record<string, ModuleData> = {
         {
           id: 'diff-problem-set',
           type: 'problem-set',
-          title: 'Derivative Challenges',
+          title: 'Problem Sheet #6',
           description: '22 problems covering computational techniques, MVT applications, and Taylor polynomial estimation.',
-          meta: { difficulty: 'Difficulty: 4.3/5', solutions: 'Solutions Included' }
+          meta: { difficulty: 'Difficulty: 4.3/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 6.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__2_Solutions.pdf'
         },
         {
           id: 'diff-extras',

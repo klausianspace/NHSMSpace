@@ -1,0 +1,508 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{problem}{}
+\newtheorem*{solution}{}
+
+\begin{document}
+
+\section*{Problem Set 1 Solutions}
+
+\subsection*{Exercise 3}
+\begin{problem}
+Solve in \( \mathbb{R} \):
+\begin{enumerate}
+    \item \( x - 1 \leq \sqrt{x + 2} \)
+    \item \( (2x - 7)\ln(x + 1) > 0 \)
+    \item \( \ln\left(\frac{x + 1}{3x - 5}\right) \leq 0 \)
+    \item \( x + \frac{1}{x} \geq 2 \)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}
+    \item Domain: \( x \geq -2 \). For \( x \in [-2, 1) \), inequality holds. For \( x \geq 1 \):
+    \[
+    (x - 1)^2 \leq x + 2 \implies x^2 - 3x - 1 \leq 0 \implies x \in \left[1, \frac{3 + \sqrt{13}}{2}\right]
+    \]
+    Solution: \( \left[-2, \frac{3 + \sqrt{13}}{2}\right] \)
+    
+    \item Domain: \( x > -1 \). Solution:
+    \[
+    x \in (-1, 0) \cup (3.5, \infty)
+    \]
+    
+    \item Domain: \( x < -1 \) or \( x > \frac{5}{3} \). Solution:
+    \[
+    \frac{x + 1}{3x - 5} \leq 1 \implies x \in (-\infty, -1) \cup \left[3, \infty\right)
+    \]
+    
+    \item Domain: \( x \neq 0 \). For \( x > 0 \):
+    \[
+    x + \frac{1}{x} \geq 2 \iff (x - 1)^2 \geq 0
+    \]
+    Solution: \( (0, \infty) \)
+\end{enumerate}
+\end{solution}
+
+\subsection*{Exercise 4}
+\begin{problem}
+Prove that for any \( x > 0 \):
+\[
+x - \frac{x^3}{6} \leq \ln(1 + x) \leq x
+\]
+\end{problem}
+
+\begin{solution}
+For the upper bound:
+\[
+f(x) = \ln(1 + x) - x \implies f'(x) = \frac{1}{1 + x} - 1 \leq 0 \quad \text{for } x > 0
+\]
+Since \( f(0) = 0 \), \( f(x) \leq 0 \) for \( x > 0 \).
+
+For the lower bound:
+\[
+g(x) = \ln(1 + x) - x + \frac{x^3}{6} \implies g'(x) = \frac{1}{1 + x} - 1 + \frac{x^2}{2} \geq 0 \quad \text{for } x > 0
+\]
+Since \( g(0) = 0 \), \( g(x) \geq 0 \) for \( x > 0 \).
+\end{solution}
+
+\subsection*{Exercise 5}
+\begin{problem}
+Let \( a, b, c \) be real positive numbers. Show that:
+\begin{enumerate}
+    \item \( a^2 + b^2 + c^2 \geq ab + bc + ca \)
+    \item \( (a + b + c)^2 \geq 3(ab + bc + ca) \)
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}
+    \item \textbf{Proof of \( a^2 + b^2 + c^2 \geq ab + bc + ca \):}
+    
+    Starting from the fact that squares are always non-negative:
+    \[
+    (a-b)^2 \geq 0 \quad \Rightarrow \quad a^2 - 2ab + b^2 \geq 0
+    \]
+    \[
+    (b-c)^2 \geq 0 \quad \Rightarrow \quad b^2 - 2bc + c^2 \geq 0
+    \]
+    \[
+    (c-a)^2 \geq 0 \quad \Rightarrow \quad c^2 - 2ca + a^2 \geq 0
+    \]
+    Adding these three inequalities:
+    \[
+    2a^2 + 2b^2 + 2c^2 - 2ab - 2bc - 2ca \geq 0
+    \]
+    Dividing by 2 gives the desired result:
+    \[
+    a^2 + b^2 + c^2 \geq ab + bc + ca
+    \]
+    
+    \item \textbf{Proof of \( (a + b + c)^2 \geq 3(ab + bc + ca) \):}
+    
+    First expand the left side:
+    \[
+    (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)
+    \]
+    From part (a), we know:
+    \[
+    a^2 + b^2 + c^2 \geq ab + bc + ca
+    \]
+    Adding \( 2(ab + bc + ca) \) to both sides:
+    \[
+    a^2 + b^2 + c^2 + 2(ab + bc + ca) \geq 3(ab + bc + ca)
+    \]
+    Substituting the expanded form:
+    \[
+    (a + b + c)^2 \geq 3(ab + bc + ca)
+    \]
+\end{enumerate}
+
+
+\end{solution}
+
+\subsection*{Exercise 6}
+\begin{problem}
+For non-negative real numbers \( a,b \), prove:
+\[ 8(a^4 + b^4) \geq (a + b)^4 \]
+\end{problem}
+
+\begin{proof}
+Let \( p = a + b \) and \( q = a - b \). Then:
+
+\[ a^4 + b^4 = \left(\frac{p+q}{2}\right)^4 + \left(\frac{p-q}{2}\right)^4 = \frac{p^4 + 6p^2q^2 + q^4}{8} \]
+
+Substituting into the original inequality:
+
+\[ 8\left(\frac{p^4 + 6p^2q^2 + q^4}{8}\right) \geq p^4 \]
+\[ \Rightarrow p^4 + 6p^2q^2 + q^4 \geq p^4 \]
+\[ \Rightarrow q^2(6p^2 + q^2) \geq 0 \]
+
+The inequality holds. 
+\end{proof}
+
+\subsection*{Exercise 7}
+\begin{problem}
+Let \( a_1, \ldots, a_n \) be real numbers with \( a_k > -1 \) for all \( k \), and either all \( a_k \geq 0 \) or all \( a_k \leq 0 \). Prove:
+\[ \prod_{k=1}^n (1 + a_k) \geq 1 + \sum_{k=1}^n a_k \]
+\end{problem}
+
+\begin{proof}
+We proceed by mathematical induction on \( n \).
+
+\textbf{Base case (\( n = 1 \)):}
+\[ 1 + a_1 \geq 1 + a_1 \]
+holds trivially.
+
+\textbf{Inductive step:} Assume the inequality holds for \( n \). Then for \( n+1 \):
+\[
+\prod_{k=1}^{n+1} (1 + a_k) = (1 + a_{n+1})\prod_{k=1}^n (1 + a_k) \geq (1 + a_{n+1})\left(1 + \sum_{k=1}^n a_k\right)
+\]
+Expanding the right side:
+\[
+1 + \sum_{k=1}^n a_k + a_{n+1} + a_{n+1}\sum_{k=1}^n a_k \geq 1 + \sum_{k=1}^{n+1} a_k
+\]
+since \( a_{n+1}\sum_{k=1}^n a_k \geq 0 \) (as all \( a_k \) have the same sign).
+
+Equality holds when either:
+\begin{itemize}
+\item All \( a_k = 0 \), or
+\item Exactly one \( a_k \neq 0 \) and the rest are zero.
+\end{itemize}
+\end{proof}
+
+\begin{problem}[Bernoulli's Inequality]
+Deduce that for any \( a > -1 \) and \( n \in \mathbb{N} \):
+\[ (1 + a)^n \geq 1 + na \]
+\end{problem}
+
+\begin{proof}
+Take \( a_1 = \cdots = a_n = a \) in the previous result. The condition on the signs is satisfied since either:
+\begin{itemize}
+\item \( a \geq 0 \) (all non-negative), or
+\item \(-1 < a \leq 0 \) (all non-positive)
+\end{itemize}
+The inequality becomes:
+\[ (1 + a)^n \geq 1 + na \]
+with equality when \( a = 0 \) or \( n = 1 \).
+\end{proof}
+
+\subsection*{Exercise 8}
+\begin{problem}
+For positive real numbers \( x_1, \ldots, x_n \), prove:
+\[
+\frac{1}{n}\sum_{i=1}^n x_i \geq \left(\prod_{i=1}^n x_i\right)^{1/n} \geq \frac{n}{\sum_{i=1}^n \frac{1}{x_i}}
+\]
+with equality if and only if all \( x_i \) are equal.
+\end{problem}
+
+\begin{proof}
+We prove the AM-GM inequality by forward-backward induction.
+
+\vspace{0.5em}
+
+\noindent \textbf{Definitions:}
+\begin{align*}
+A_n &= \frac{1}{n}\sum_{k=1}^n x_k \quad \text{(Arithmetic mean)} \\
+G_n &= \left(\prod_{k=1}^n x_k\right)^{1/n} \quad \text{(Geometric mean)}
+\end{align*}
+
+\noindent \textbf{Base Case (n=1):} Trivially true since $A_1 = x_1 = G_1$.
+
+\vspace{0.5em}
+
+\noindent \textbf{Base Case (n=2):} For $x_1, x_2 > 0$:
+\[
+0 \leq (\sqrt{x_1} - \sqrt{x_2})^2 = x_1 - 2\sqrt{x_1x_2} + x_2
+\]
+which rearranges to:
+\[
+\frac{x_1 + x_2}{2} \geq \sqrt{x_1x_2}
+\]
+
+\vspace{0.5em}
+
+\noindent \textbf{Forward Induction:} Assume true for $n=2^k$. For $n=2^{k+1}=2m$ where $m=2^k$:
+\begin{align*}
+\left(\prod_{i=1}^{2m} x_i\right)^{1/2m} &= \left(\left(\prod_{i=1}^m x_i\right)^{1/m} \left(\prod_{i=m+1}^{2m} x_i\right)^{1/m}\right)^{1/2} \\
+&\leq \frac{1}{2}\left(\frac{\sum_{i=1}^m x_i}{m} + \frac{\sum_{i=m+1}^{2m} x_i}{m}\right) \\
+&= \frac{\sum_{i=1}^{2m} x_i}{2m}
+\end{align*}
+
+\vspace{0.5em}
+
+\noindent \textbf{Backward Induction:} Assume true for $n=k$. For $n=k-1$, set $x_k = G_{k-1}$:
+\[
+\left(\prod_{i=1}^k x_i\right)^{1/k} \leq \frac{1}{k}\left(\sum_{i=1}^{k-1} x_i + G_{k-1}\right)
+\]
+Substituting $G_{k-1}^{k-1} = \prod_{i=1}^{k-1} x_i$:
+\[
+G_{k-1} \leq \frac{(k-1)A_{k-1} + G_{k-1}}{k} \implies G_{k-1} \leq A_{k-1}
+\]
+
+\vspace{0.5em}
+
+\noindent \textbf{HM-GM Inequality:} Applying AM-GM to reciprocals $y_i = 1/x_i$:
+\[
+\frac{1}{n}\sum_{i=1}^n y_i \geq \left(\prod_{i=1}^n y_i\right)^{1/n} \implies \frac{n}{\sum_{i=1}^n \frac{1}{x_i}} \leq \left(\prod_{i=1}^n x_i\right)^{1/n}
+\]
+
+\vspace{0.5em}
+
+\noindent \textbf{Conclusion:} By induction, for all $n \geq 1$:
+\[
+\boxed{\frac{1}{n}\sum_{i=1}^n x_i \geq \left(\prod_{i=1}^n x_i\right)^{1/n} \geq \frac{n}{\sum_{i=1}^n \frac{1}{x_i}}}
+\]
+with equality if and only if all $x_i$ are equal.
+\end{proof}
+
+\subsection*{Exercise 9}
+\begin{problem}
+Let \( a_1 \geq a_2 \geq \cdots \geq a_n \) and \( b_1 \geq b_2 \geq \cdots \geq b_n \) be sequences of real numbers. Prove:
+\[
+\frac{1}{n}\sum_{k=1}^n a_k b_k \geq \left(\frac{1}{n}\sum_{k=1}^n a_k\right)\left(\frac{1}{n}\sum_{k=1}^n b_k\right)
+\]
+\end{problem}
+
+\begin{proof}
+Consider the following expansion for any \( j,k \in \{1,2,\ldots,n\} \):
+\[
+(a_j - a_k)(b_j - b_k) \geq 0
+\]
+This inequality holds because:
+\begin{itemize}
+\item If \( j \leq k \), then \( a_j \geq a_k \) and \( b_j \geq b_k \), so both factors are non-negative
+\item If \( j > k \), then \( a_j \leq a_k \) and \( b_j \leq b_k \), so both factors are non-positive
+\end{itemize}
+
+Summing over all pairs \( (j,k) \):
+\[
+\sum_{j=1}^n \sum_{k=1}^n (a_j - a_k)(b_j - b_k) \geq 0
+\]
+
+Expanding the product:
+\[
+\sum_{j=1}^n \sum_{k=1}^n (a_j b_j - a_j b_k - a_k b_j + a_k b_k) \geq 0
+\]
+
+Simplifying the sums:
+\[
+2n\sum_{k=1}^n a_k b_k - 2\left(\sum_{k=1}^n a_k\right)\left(\sum_{k=1}^n b_k\right) \geq 0
+\]
+
+Dividing by \( 2n^2 \):
+\[
+\frac{1}{n}\sum_{k=1}^n a_k b_k - \left(\frac{1}{n}\sum_{k=1}^n a_k\right)\left(\frac{1}{n}\sum_{k=1}^n b_k\right) \geq 0
+\]
+
+Thus we obtain the desired inequality:
+\[
+\frac{1}{n}\sum_{k=1}^n a_k b_k \geq \left(\frac{1}{n}\sum_{k=1}^n a_k\right)\left(\frac{1}{n}\sum_{k=1}^n b_k\right)
+\]
+\end{proof}
+
+\textbf{Equality condition:} Equality holds if and only if either:
+\begin{itemize}
+\item All \( a_k \) are equal, or
+\item All \( b_k \) are equal.
+\end{itemize}
+
+\subsection*{Exercise 10}
+\begin{problem}
+Let \( a_1, \ldots, a_n \) and \( b_1, \ldots, b_n \) be real numbers. Prove:
+\[
+\left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left( \sum_{i=1}^n b_i^2 \right)
+\]
+\end{problem}
+
+\begin{proof}
+Consider the following quadratic expression in \( \lambda \):
+\[
+P(\lambda) = \sum_{i=1}^n (a_i \lambda + b_i)^2 \geq 0
+\]
+Expanding the square:
+\[
+P(\lambda) = \left( \sum_{i=1}^n a_i^2 \right) \lambda^2 + 2 \left( \sum_{i=1}^n a_i b_i \right) \lambda + \sum_{i=1}^n b_i^2 \geq 0
+\]
+
+Since \( P(\lambda) \) is always non-negative, its discriminant must satisfy:
+\[
+\Delta = 4\left( \sum_{i=1}^n a_i b_i \right)^2 - 4 \left( \sum_{i=1}^n a_i^2 \right) \left( \sum_{i=1}^n b_i^2 \right) \leq 0
+\]
+
+Dividing by 4 and rearranging yields:
+\[
+\left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left( \sum_{i=1}^n b_i^2 \right)
+\]
+
+\textbf{Equality condition:} Holds if and only if the sequences are linearly dependent, i.e., there exists \( \alpha, \beta \) (not both zero) such that \( \alpha a_i + \beta b_i = 0 \) for all \( i \).
+\end{proof}
+
+\subsection*{Exercise 11}
+\begin{problem}
+Let \( x_1, x_2, \ldots, x_n \) be real numbers satisfying:
+\[
+\sum_{i=1}^n x_i = n \quad \text{and} \quad \sum_{i=1}^n x_i^2 = n.
+\]
+Prove that \( x_1 = x_2 = \cdots = x_n = 1 \).
+\end{problem}
+
+\begin{proof}
+Consider the sum of squared deviations from the mean:
+\[
+\sum_{i=1}^n (x_i - 1)^2 = \sum_{i=1}^n (x_i^2 - 2x_i + 1) = \left(\sum_{i=1}^n x_i^2\right) - 2\left(\sum_{i=1}^n x_i\right) + n
+\]
+Substituting the given conditions:
+\[
+= n - 2n + n = 0
+\]
+Since each term \( (x_i - 1)^2 \) is non-negative, their sum being zero implies:
+\[
+(x_i - 1)^2 = 0 \quad \text{for all } i = 1, \ldots, n
+\]
+Thus:
+\[
+x_i = 1 \quad \text{for all } i = 1, \ldots, n
+\]
+\end{proof}
+
+
+\subsection*{Exercise 12}
+\begin{problem}
+Let \( x_1, \ldots, x_n \in [0,1] \) with \( S = \sum_{i=1}^n x_i < 1 \). Prove:
+\[
+1 + S \leq \prod_{i=1}^n (1 + x_i) \leq \frac{1}{1 - S}
+\]
+\end{problem}
+
+\begin{proof}
+\textbf{Part 1: Proof of the lower bound \( 1 + S \leq \prod_{i=1}^n (1 + x_i) \)}
+
+We proceed by induction on \( n \).
+
+\underline{Base case (n=1)}: 
+For \( x_1 \in [0,1] \), we have:
+\[
+1 + x_1 \leq 1 + x_1
+\]
+which holds trivially.
+
+\underline{Inductive step}: 
+Assume the inequality holds for \( n = k \), i.e.:
+\[
+\prod_{i=1}^k (1 + x_i) \geq 1 + \sum_{i=1}^k x_i
+\]
+For \( n = k+1 \):
+\[
+\prod_{i=1}^{k+1} (1 + x_i) = (1 + x_{k+1})\prod_{i=1}^k (1 + x_i) \geq (1 + x_{k+1})\left(1 + \sum_{i=1}^k x_i\right)
+\]
+Expanding the right side:
+\[
+= 1 + \sum_{i=1}^k x_i + x_{k+1} + x_{k+1}\sum_{i=1}^k x_i \geq 1 + \sum_{i=1}^{k+1} x_i
+\]
+since \( x_{k+1}\sum_{i=1}^k x_i \geq 0 \).
+
+\textbf{Part 2: Proof of the upper bound \( \prod_{i=1}^n (1 + x_i) \leq \frac{1}{1 - S} \)}
+
+Again by induction on \( n \).
+
+\underline{Base case (n=1)}: 
+For \( x_1 \in [0,1) \):
+\[
+1 + x_1 \leq \frac{1}{1 - x_1} \iff (1 - x_1)(1 + x_1) = 1 - x_1^2 \leq 1
+\]
+which holds since \( x_1^2 \geq 0 \).
+
+\underline{Inductive step}: 
+Assume the inequality holds for \( n = k \). For \( n = k+1 \):
+\[
+\prod_{i=1}^{k+1} (1 + x_i) \leq \frac{1 + x_{k+1}}{1 - \sum_{i=1}^k x_i}
+\]
+We need to show:
+\[
+\frac{1 + x_{k+1}}{1 - S_k} \leq \frac{1}{1 - S_{k+1}}
+\]
+where \( S_k = \sum_{i=1}^k x_i \) and \( S_{k+1} = S_k + x_{k+1} \). Cross-multiplying (valid since denominators are positive):
+\[
+(1 + x_{k+1})(1 - S_{k+1}) \leq 1 - S_k
+\]
+Expanding and simplifying:
+\[
+1 - S_k - x_{k+1}S_k + x_{k+1} - x_{k+1}^2 \leq 1 - S_k \iff x_{k+1}(1 - S_k - x_{k+1}) \leq 0
+\]
+which holds because \( 1 - S_k - x_{k+1} \geq 1 - S_{k+1} > 0 \) and \( x_{k+1} \geq 0 \).
+
+
+\end{proof}
+
+\boxed{1 + \sum_{i=1}^n x_i \leq \prod_{i=1}^n (1 + x_i) \leq \frac{1}{1 - \sum_{i=1}^n x_i}}
+
+\subsection*{Exercise 13}
+\begin{problem}
+Let \( a_1, \ldots, a_n \) and \( b_1, \ldots, b_n \) be real numbers. Prove:
+\[
+\left( \sum_{k=1}^n (a_k + b_k)^2 \right)^{1/2} \leq \left( \sum_{k=1}^n a_k^2 \right)^{1/2} + \left( \sum_{k=1}^n b_k^2 \right)^{1/2}
+\]
+\end{problem}
+
+\begin{proof}
+We begin by expanding the square:
+\[
+\sum_{k=1}^n (a_k + b_k)^2 = \sum_{k=1}^n (a_k^2 + 2a_k b_k + b_k^2) = \sum_{k=1}^n a_k^2 + 2\sum_{k=1}^n a_k b_k + \sum_{k=1}^n b_k^2
+\]
+
+By the Cauchy-Schwarz inequality:
+\[
+\sum_{k=1}^n a_k b_k \leq \left( \sum_{k=1}^n a_k^2 \right)^{1/2} \left( \sum_{k=1}^n b_k^2 \right)^{1/2}
+\]
+
+Substituting this bound:
+\[
+\sum_{k=1}^n (a_k + b_k)^2 \leq \sum_{k=1}^n a_k^2 + 2\left( \sum_{k=1}^n a_k^2 \right)^{1/2}\left( \sum_{k=1}^n b_k^2 \right)^{1/2} + \sum_{k=1}^n b_k^2
+\]
+
+This can be rewritten as a perfect square:
+\[
+\left( \left( \sum_{k=1}^n a_k^2 \right)^{1/2} + \left( \sum_{k=1}^n b_k^2 \right)^{1/2} \right)^2
+\]
+
+Taking square roots of both sides (which preserves the inequality since all terms are non-negative) yields:
+\[
+\left( \sum_{k=1}^n (a_k + b_k)^2 \right)^{1/2} \leq \left( \sum_{k=1}^n a_k^2 \right)^{1/2} + \left( \sum_{k=1}^n b_k^2 \right)^{1/2}
+\]
+\end{proof}
+
+\subsection*{Exercise 14}
+\begin{problem}
+Let \( a, b > 0 \) and \( n \in \mathbb{N} \). Prove:
+\[
+(a + b)^n \geq a^n + n a^{n-1} b
+\]
+\end{problem}
+
+\begin{proof}
+By the Binomial Theorem, we have the expansion:
+\[
+(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
+\]
+Explicitly writing the first two terms and the remainder:
+\[
+= a^n + n a^{n-1} b + \sum_{k=2}^n \binom{n}{k} a^{n-k} b^k
+\]
+
+Since \( a, b > 0 \) and binomial coefficients satisfy \( \binom{n}{k} \geq 0 \) for all \( k \), the remaining terms are non-negative:
+\[
+\sum_{k=2}^n \binom{n}{k} a^{n-k} b^k \geq 0
+\]
+
+Therefore:
+\[
+(a + b)^n \geq a^n + n a^{n-1} b
+\]
+\end{proof}
+
+
+
+\end{document}
