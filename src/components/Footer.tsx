@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
 
         {/* Credits */}
         <div className="text-center border-t border-white/10 pt-6 flex flex-col items-center gap-2">
-          <p className="text-sm text-white/60">© 2025 NHSM Space. كل الحقوق مغتصبة.</p>
+          <p className="text-sm text-white/60">© 2025 NHSM Space. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="text-sm text-white/60">Developed by</span>
             <img 
