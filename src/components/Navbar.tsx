@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { 
+  Menu,
+  Home,
+  BookOpen,
+  GraduationCap,
+  Megaphone,
+  Mail
+} from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
@@ -29,29 +35,33 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-4">
-          <ul className="flex space-x-2">
+        {/* Desktop Navigation - Centered */}
+        <div className="hidden md:flex items-center justify-center flex-1">
+          <ul className="flex space-x-1">
             <li className="fade-in delay-100 opacity-0">
-              <NavLink to="/" label="Home" />
+              <NavLink to="/" label="Home" icon={<Home className="w-5 h-5" />} />
             </li>
             <li className="fade-in delay-200 opacity-0">
-              <NavLink to="/study-guide" label="Study Guide" />
+              <NavLink to="/study-guide" label="Study Guide" icon={<BookOpen className="w-5 h-5" />} />
             </li>
             <li className="fade-in delay-300 opacity-0">
-              <NavLink to="/announcements" label="Announcements" />
+              <NavLink to="/academic" label="Academic" icon={<GraduationCap className="w-5 h-5" />} />
             </li>
             <li className="fade-in delay-400 opacity-0">
-              <NavLink to="/contact" label="Contact" />
+              <NavLink to="/announcements" label="Announcements" icon={<Megaphone className="w-5 h-5" />} />
+            </li>
+            <li className="fade-in delay-500 opacity-0">
+              <NavLink to="/contact" label="Contact" icon={<Mail className="w-5 h-5" />} />
             </li>
           </ul>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Aligned to right */}
         <div className="md:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-white p-2 focus:outline-none"
+            aria-label="Toggle menu"
           >
             <Menu className="h-6 w-6" />
           </button>
@@ -60,12 +70,23 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-dark-darker/95 backdrop-blur-lg">
-          <ul className="flex flex-col p-4 space-y-4">
-            <li><NavLink to="/" label="Home" /></li>
-            <li><NavLink to="/study-guide" label="Study Guide" /></li>
-            <li><NavLink to="/announcements" label="Announcements" /></li>
-            <li><NavLink to="/contact" label="Contact" /></li>
+        <div className="md:hidden bg-dark-darker/95 backdrop-blur-lg border-t border-white/10">
+          <ul className="flex flex-col p-4 space-y-3">
+            <li>
+              <NavLink to="/" label="Home" icon={<Home className="w-5 h-5" />} />
+            </li>
+            <li>
+              <NavLink to="/study-guide" label="Study Guide" icon={<BookOpen className="w-5 h-5" />} />
+            </li>
+            <li>
+              <NavLink to="/academic" label="Academic" icon={<GraduationCap className="w-5 h-5" />} />
+            </li>
+            <li>
+              <NavLink to="/announcements" label="Announcements" icon={<Megaphone className="w-5 h-5" />} />
+            </li>
+            <li>
+              <NavLink to="/contact" label="Contact" icon={<Mail className="w-5 h-5" />} />
+            </li>
           </ul>
         </div>
       )}
@@ -76,9 +97,10 @@ const Navbar: React.FC = () => {
 interface NavLinkProps {
   to: string;
   label: string;
+  icon?: React.ReactNode;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
+const NavLink: React.FC<NavLinkProps> = ({ to, label, icon }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
 
@@ -86,17 +108,19 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
     <Link 
       to={to} 
       className={`
-        text-lg font-medium px-4 py-2 rounded-lg transition-all duration-300
-        relative overflow-hidden uppercase
-        bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-secondary to-accent
-        hover:text-white hover:bg-white/10
-        ${isActive ? 'after:bg-secondary' : 'after:bg-gradient-to-r after:from-pink-500 after:via-secondary after:to-accent'}
-        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
-        after:transform after:scale-x-0 after:origin-right after:transition-transform
-        hover:after:scale-x-100 hover:after:origin-left after:duration-300
+        flex flex-col items-center justify-center
+        px-3 py-2 rounded-lg transition-all duration-300
+        ${isActive ? 'text-white' : 'text-white/80 hover:text-white'}
+        hover:bg-white/10
+        min-w-[80px]
       `}
     >
-      {label}
+      <span className={`mb-1 ${isActive ? 'text-secondary' : 'text-white/70'}`}>
+        {icon}
+      </span>
+      <span className="text-xs uppercase tracking-wider">
+        {label}
+      </span>
     </Link>
   );
 };

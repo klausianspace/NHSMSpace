@@ -6,21 +6,21 @@ const AnnouncementsSection: React.FC = () => {
     {
       type: 'new' as const,
       title: 'Winter Exam Schedule',
-      date: 'Dec 5, 2023',
+      date: 'Jan 5, 2025',
       description: 'Final exam dates and rooms have been published for all modules.',
       delay: 0
     },
     {
       type: 'urgent' as const,
       title: 'Registration Deadline',
-      date: 'Dec 1, 2023',
-      description: 'Last day to register for Spring 2024 modules is Dec 15.',
+      date: 'Dec 1, 2024',
+      description: 'Last day to register for Math League modules is Dec 15.',
       delay: 1
     },
     {
       type: 'event' as const,
       title: 'Math Hackathon',
-      date: 'Nov 28, 2023',
+      date: 'Feb 16, 2025',
       description: 'Join the annual NHSM Hackathon on Jan 20-21. Prizes await!',
       delay: 2
     }

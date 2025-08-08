@@ -54,7 +54,7 @@ const ModulePage: React.FC = () => {
   }
 
   return (
-    <main className="pt-24 min-h-screen">
+    <main className="page-content min-h-screen">
       <div className="container mx-auto px-4 mb-20">
         {/* Module Header */}
         <header className="text-center mb-12">
@@ -77,33 +77,47 @@ const ModulePage: React.FC = () => {
           
           {/* Chapter Navigation */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-3 mb-12"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            {module.chapters.map((chapter, index) => (
-              <button
-                key={chapter.id}
-                onClick={() => setActiveChapter(chapter.id)}
-                className={`py-3 px-5 rounded-full text-base font-medium transition-all duration-300
-                  flex items-center gap-2
-                  ${activeChapter === chapter.id
-                    ? 'primary-gradient text-white shadow-lg shadow-primary/20'
-                    : 'bg-dark-lighter/70 border border-white/10 text-white/70 hover:bg-dark-lighter hover:text-white'
-                  }`}
-                style={{ animationDelay: `${0.1 + (index * 0.05)}s` }}
-              >
-                {chapter.id === 'progress-tracker' ? (
-                  <>
-                    <BookOpenCheck className="w-4 h-4" />
-                    {chapter.title}
-                  </>
-                ) : (
-                  chapter.title
-                )}
-              </button>
-            ))}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {module.chapters.map((chapter, index) => (
+            <button
+              key={chapter.id}
+              onClick={() => setActiveChapter(chapter.id)}
+              className={`py-3 px-5 rounded-full text-base font-medium transition-all duration-300
+                flex items-center gap-2
+                ${activeChapter === chapter.id
+                  ? 'primary-gradient text-white shadow-lg shadow-primary/20'
+                  : 'bg-dark-lighter/70 border border-white/10 text-white/70 hover:bg-dark-lighter hover:text-white'
+                      }`}
+                    style={{ animationDelay: `${0.1 + (index * 0.05)}s` }}
+                  >
+                    {chapter.id === 'progress-tracker' ? (
+                      <>
+                        <BookOpenCheck className="w-4 h-4" />
+                        {chapter.title}
+                      </>
+                    ) : (
+                      chapter.title
+                    )}
+          </button>
+        ))}
+
+
+          <button
+              onClick={() => setActiveChapter('extra-resources')}
+              className={`py-3 px-5 rounded-full text-base font-medium transition-all duration-300
+                flex items-center gap-2
+                ${activeChapter === 'extra-resources'
+                  ? 'primary-gradient text-white shadow-lg shadow-primary/20'
+                  : 'bg-dark-lighter/70 border border-white/10 text-white/70 hover:bg-dark-lighter hover:text-white'
+                }`}
+            >
+              <ExternalLink className="w-4 h-4" />
+              Extra Resources
+            </button>
           </motion.div>
         </header>
         
@@ -138,6 +152,136 @@ const ModulePage: React.FC = () => {
 
           </motion.section>
         ))}
+
+
+{/* Extra Resources Section */}
+<motion.section
+  className={`${activeChapter === 'extra-resources' ? 'block' : 'hidden'}`}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-2xl font-bold text-white mb-6">Additional Resources for {module.name}</h2>
+    
+    {/* Recommended Books - Now using module data */}
+    {module.extraResources?.recommendedBooks && module.extraResources.recommendedBooks.length > 0 && (
+      <div className="mb-10">
+        <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+          <BookOpen className="w-5 h-5" />
+          Recommended Books
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {module.extraResources.recommendedBooks.map((book, index) => (
+            <ResourceCard 
+              key={`book-${index}`}
+              resource={{
+                id: `book-${index}`,
+                type: 'book',
+                title: book.title,
+                description: `${book.author ? `By ${book.author}\n` : ''}${book.description}`,
+                meta: {},
+                coverImage: book.coverImage,
+                author: book.author , 
+                link: book.link
+              }}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+    )}
+    
+    {/* Past Exams - Now using module data */}
+    {module.extraResources?.pastExams && module.extraResources.pastExams.length > 0 && (
+      <div className="mb-10">
+        <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+          <FileText className="w-5 h-5" />
+          Past Exams
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {module.extraResources.pastExams.map((exam, index) => (
+            <ResourceCard 
+              key={`exam-${index}`}
+              resource={{
+                id: `exam-${index}`,
+                type: 'exam',
+                title: exam.title,
+                description: `${exam.year ? `Year: ${exam.year}\n` : ''}${exam.description}`,
+                meta: {},
+                link: exam.link
+              }}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+    )}
+    
+    {/* Useful Websites - Now using module data */}
+    {module.extraResources?.usefulWebsites && module.extraResources.usefulWebsites.length > 0 && (
+      <div className="mb-10">
+        <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+          <ExternalLink className="w-5 h-5" />
+          Useful Websites
+        </h3>
+        <div className="space-y-4">
+          {module.extraResources.usefulWebsites.map((site, index) => (
+            <motion.div
+              key={`site-${index}`}
+              className="bg-dark-lighter/50 p-4 rounded-lg border border-white/10"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="text-lg font-medium text-white mb-1">{site.title}</h4>
+                  <p className="text-white/70">{site.description}</p>
+                </div>
+                <a 
+                  href={site.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center gap-1 px-3 py-1 text-sm"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  Visit
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    )}
+    
+    {/* Additional Materials - Now using module data */}
+    {module.extraResources?.additionalMaterials && module.extraResources.additionalMaterials.length > 0 && (
+      <div className="mb-10">
+        <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+          <PlusCircle className="w-5 h-5" />
+          Additional Materials
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {module.extraResources.additionalMaterials.map((material, index) => (
+            <ResourceCard 
+              key={`material-${index}`}
+              resource={{
+                id: `material-${index}`,
+                type: 'extras',
+                title: material.title,
+                description: material.description,
+                meta: { type: material.type || 'PDF' },
+                link: material.link
+              }}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</motion.section>
       </div>
       <Footer />
     </main>
@@ -190,6 +334,19 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, index }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 + (index * 0.1) }}
     >
+
+      {resource.coverImage && (
+              <div className="h-48 rounded-t-lg overflow-hidden mb-4">
+                <img 
+                  src={resource.coverImage} 
+                  alt={`${resource.title} cover`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </div>
+            )}
       <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-semibold 
         bg-accent/20 text-accent mb-5">
         {getIcon()}
@@ -213,7 +370,8 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, index }) => {
       {resource.type === 'extras' ? (
         <ExtraLinks />
       ) : resource.type === 'video-playlist' ? (
-        <VideoResource />
+        <VideoResource link={resource.link} thumbnail={resource.thumbnail} />
+
       ) : (
         <div className="flex flex-col sm:flex-row gap-3">
           {resource.link && (
@@ -279,11 +437,18 @@ const ExtraLinks: React.FC = () => {
 };
 
 // Video resource component
-const VideoResource: React.FC = () => {
+interface VideoResourceProps {
+  link: string;
+  thumbnail?: string;
+}
+
+const VideoResource: React.FC<VideoResourceProps> = ({ link , thumbnail }) => {
   return (
     <>
       <div className="h-40 rounded-lg overflow-hidden bg-cover bg-center mb-5 relative group cursor-pointer"
-        style={{ backgroundImage: "url('')" }}>
+       style={{ backgroundImage: `url(${thumbnail || ''})` }}>
+
+
         <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-primary/30" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center
@@ -292,15 +457,26 @@ const VideoResource: React.FC = () => {
           </div>
         </div>
       </div>
-      <button className="btn-primary w-full">
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="btn-primary w-full inline-flex items-center justify-center gap-2"
+      >
         <Play className="w-4 h-4" />
         Watch Playlist
-      </button>
+      </a>
     </>
   );
 };
 
-// Progress Tracker Component
+interface ResourceCardProps {
+  resource: Resource & {
+    coverImage?: string;
+    author?: string;
+  };
+  index: number;
+}
 
 
 

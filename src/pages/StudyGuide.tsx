@@ -99,6 +99,72 @@ const StudyGuide: React.FC = () => {
       year: 1,
       description: 'Explore the historical development of mathematical concepts through ancient civilizations.',
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7xfMscUY2yIEiBKukaStERKA0cLUZGn1Azw&s'
+    },
+
+    {
+      id: 'analysis-2',
+      name: 'Analysis 2',
+      semester: 2,
+      year: 1,
+      description: 'Master the limited development, everything about integrals and differential equations',
+      imageUrl: 'https://www.shutterstock.com/image-vector/fundamental-theorem-calculus-formula-on-260nw-2324441579.jpg'
+    },
+    {
+      id: 'algebra-3',
+      name: 'Algebra 2',
+      semester: 2,
+      year: 1,
+      description: 'Study the fundamentals of linear algebra: vector spaces, linear maps, matrices and inear forms',
+      imageUrl: 'https://i.pinimg.com/736x/5b/c7/58/5bc7580160e1d64115810d180aa1bfbc.jpg'
+    },
+    {
+      id: 'discrete-math-2',
+      name: 'Discrete Mathematics 2',
+      semester: 2,
+      year: 1,
+      description: 'Explore recurrence relations, stirling numbers and other classical numbers, and the integer partitions in a combinatorial way',
+      imageUrl: 'https://i.ytimg.com/vi/PFJNugCr9_I/hqdefault.jpg'
+    },
+    {
+      id: 'Probability-1',
+      name: 'Probability',
+      semester: 2,
+      year: 1,
+      description: 'Learn discrete/continious random variables and their main distributions',
+      imageUrl: 'https://i.ytimg.com/vi/xNLQuuvE9ug/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD2d7mtC6FnCgtBpSsWb7eSCurVvA'
+    },
+    {
+      id: 'physics-2',
+      name: 'Physics 2',
+      semester: 2,
+      year: 1,
+      description: 'Study electrostatics, magnetism, and conductors.',
+      imageUrl: 'https://i.pinimg.com/736x/8f/19/3c/8f193c6b55904601bf3540b4069467cf.jpg'
+    },
+    {
+      id: 'asd-2',
+      name: 'Algorithms & Data Structures 2',
+      semester: 2,
+      year: 1,
+      description: 'Master fundamentals of the C language ',
+      imageUrl: 'https://i.pinimg.com/736x/96/6e/18/966e1898590bffda3f31b466150e3152.jpg'
+    },
+    {
+      id: 'english-2',
+      name: 'English 2',
+      semester: 2,
+      year: 1,
+      description: 'Develop technical English skills for mathematics and scientific communication.',
+      imageUrl: 'https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+      id: 'mathematical-logic',
+      name: 'Mathematical Logic',
+      semester: 2,
+      year: 1,
+      description: 'Learn the fundamentals of the formal mathematical propositional and predicate logic',
+      imageUrl: 
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDB3mE0_pRruP1HVvY6--c03g_x6K1C625QQ&s'
     }
   ];
   
@@ -110,7 +176,7 @@ const StudyGuide: React.FC = () => {
   });
   
   return (
-    <main className="pt-24 min-h-screen">
+    <main className="page-content min-h-screen">  
       <div className="container mx-auto px-4 mb-20">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Study Guide</h1>

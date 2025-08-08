@@ -1,77 +1,12 @@
 import { ProgressStep } from '../types/index';
 
 export const chapterProgress: Record<string, ProgressStep[]> = {
-  limits: [
-    {
-      id: 'step-1',
-      title: 'Read Introduction to Limits',
-      description: 'Read pages 1-7 of the lecture notes',
-      type: 'reading',
-      estimatedTime: '15 min',
-      completed: false,
-      details: 'Focus on the intuitive definition before moving to formal epsilon-delta',
-      link: '',
-    },
-    {
-      id: 'step-2',
-      title: 'Watch Introductory Video',
-      description: 'Watch "Understanding Limits Visually" (10 minutes)',
-      type: 'video',
-      estimatedTime: '10 min',
-      completed: false,
-      link: '',
-    },
-    {
-      id: 'step-3',
-      title: 'Practice Basic Limit Problems',
-      description: 'Solve exercises 1-5 from the TD sheet',
-      type: 'exercise',
-      estimatedTime: '20 min',
-      completed: false,
-      details: 'These problems cover polynomial and rational function limits',
-      link: '',
-    },
-    
-    
-    {
-      id: 'step-4',
-      title: 'Practice Basic Limit Problems',
-      description: 'Solve exercises 1-5 from the TD sheet',
-      type: 'exercise',
-      estimatedTime: '20 min',
-      completed: false,
-      details: 'These problems cover polynomial and rational function limits',
-      link: '',
-    },
-
-    {
-      id: 'step-5',
-      title: 'Practice Basic Limit Problems',
-      description: 'Solve exercises 1-5 from the TD sheet',
-      type: 'exercise',
-      estimatedTime: '20 min',
-      completed: false,
-      details: 'These problems cover polynomial and rational function limits',
-      link: '',
-    },
-
-    {
-      id: 'step-5',
-      title: 'Practice Basic Limit Problems',
-      description: 'Solve exercises 1-5 from the TD sheet',
-      type: 'exercise',
-      estimatedTime: '20 min',
-      completed: false,
-      details: 'These problems cover polynomial and rational function limits',
-      link: '',
-    },
-  ],
-
+  
   'real-numbers': [
     {
       id: 'rn-step-1',
       title: 'Understand How To Prove Real Inequalities',
-      description: 'Check the problem set #0',
+      description: 'Check the problem set #1',
       type: 'exercise',
       estimatedTime: '1.5h',
       completed: false,
@@ -97,7 +32,7 @@ export const chapterProgress: Record<string, ProgressStep[]> = {
       estimatedTime: '10 min',
       details: 'Contains the axioms and the absolute value. Remember the properties especially the triangular and the reverse triangular inequalities ',
       completed: false,
-      link: 'file:///C:/Users/lenovo/Desktop/Klaus/CS/Mathematics%20I/NHSM%20First%20Year/Semester%201/Analysis%20I/Lectures_/Analysis%201.pdf'
+      link: '/Pdfs/Year 1/S1/Analysis 1/Textbooks/real numbers textbook.pdf'
     },
 
     {
@@ -114,14 +49,14 @@ export const chapterProgress: Record<string, ProgressStep[]> = {
     {
       id: 'rn-step-5',
       title: 'Practice On the TD Sheet',
-      description: 'Solve the first 2 exercises from the problem sheet #1',
+      description: 'Solve the first 2 exercises from the problem sheet #2',
       type: 'exercise',
       estimatedTime: ' 1 hour',
       completed: false ,
       details: `Try to solve it on your own. 
                 Use the properties you learned earlier and try to guess what property would be helpful in the problem. If you feel stuck check the solutions. 
                 Don't forget to write the full solutions  `,
-      link: 'd'
+      link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 2 - 2024-2025.pdf'
     },
 
     {
@@ -208,7 +143,7 @@ export const chapterProgress: Record<string, ProgressStep[]> = {
       type: 'video',
       estimatedTime: '3 hours',
       completed: false,
-      link: 'https://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/analyse/topologie/reels&type=fexo' ,
+      link: 'https://youtube.com/playlist?list=PLIznM09WVcDTJPFSAvyGDWkokRPC6lMfD&si=02-G2keRX30cW5FQ' ,
       details: "You don't have to watch it all at once, you're ready now to move to Sup & Inf but make sure you finish it before the midterm exam." 
     },
 
@@ -220,7 +155,7 @@ export const chapterProgress: Record<string, ProgressStep[]> = {
       type: 'reading',
       estimatedTime: '20 min',
       completed: false,
-      link: 'd' ,
+      link: '/Pdfs/Year 1/S1/Analysis 1/Textbooks/real numbers textbook.pdf' ,
       details: "This lesson is one of the most important lessons in analysis 1, it is easy so make sure you study it well." 
     },
 
@@ -277,7 +212,7 @@ export const chapterProgress: Record<string, ProgressStep[]> = {
     {
       id: 'rn-step-18',
       title: "Sup & Inf : TD Sheet",
-      description: "Solve (or revise) exercises 6-14 from the problem sheet #1",
+      description: "Solve (or revise) exercises 6-14 from the problem sheet #2",
       type: 'exercise',
       estimatedTime: '3 hours',
       completed: false,
@@ -307,7 +242,7 @@ export const chapterProgress: Record<string, ProgressStep[]> = {
     
   ],
 
-  'complex-numbers': [
+  'complexnumbers': [
     {
       id: 'cn-step-1',
       title: 'Understand How To Prove Real Inequalities',

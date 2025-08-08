@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
   };
   
   return (
-    <main className="pt-24 min-h-screen">
+    <main className="page-content min-h-screen">
       <div className="container mx-auto px-4 mb-20">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Contact Us</h1>
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full bg-dark-darker/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50"
-                      placeholder="John Doe"
+                      placeholder="Sami Bouhenguel"
                     />
                   </div>
                 </div>

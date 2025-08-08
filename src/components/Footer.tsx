@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Send, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Send, Linkedin, Mail, Phone, MapPin,  } from 'lucide-react';
+import { FaDiscord } from 'react-icons/fa';
 
+
+const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/p/National-Higher-School-of-Mathematics-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D9%84%D9%8A%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA-100083482801386/?locale=fr_FR',
+  instagram: 'https://www.instagram.com/nhsmstudents/',
+  telegram: 'https://t.me/+D2P5JtRd7zA4M2M0', 
+  linkedin: 'https://dz.linkedin.com/company/national-higher-school-of-mathematics',
+  discord: 'https://discord.gg/b24QfVEvsF'
+};
 const Footer: React.FC = () => {
   return (
     <footer className="relative pt-20 pb-6 bg-gradient-to-br from-dark-darker to-dark-lighter mt-24">
@@ -27,13 +36,35 @@ const Footer: React.FC = () => {
               NHSM Space
             </h3>
             <p className="text-white/70 mb-6">
-              Your gateway to mathematical excellence and academic resources at the National Higher School of Mathematics.
+              Your gateway to mathematical excellence and academic resources at the National Higher School of Mathematics. Dédicace l Zaki lmsili.
             </p>
             <div className="flex gap-4">
-              <SocialIcon icon={<Facebook className="w-5 h-5" />} />
-              <SocialIcon icon={<Instagram className="w-5 h-5" />} />
-              <SocialIcon icon={<Send className="w-5 h-5" />} />
-              <SocialIcon icon={<Linkedin className="w-5 h-5" />} />
+            <SocialIcon 
+            icon={<Facebook className="w-5 h-5" />} 
+            url={SOCIAL_LINKS.facebook}
+            ariaLabel="Visit our Facebook page"
+          />
+          <SocialIcon 
+            icon={<Instagram className="w-5 h-5" />} 
+            url={SOCIAL_LINKS.instagram}
+            ariaLabel="Visit our Instagram profile"
+          />
+          <SocialIcon 
+            icon={<Send className="w-5 h-5" />} 
+            url={SOCIAL_LINKS.telegram}
+            ariaLabel="Join our Telegram channel"
+          />
+          <SocialIcon 
+            icon={<Linkedin className="w-5 h-5" />} 
+            url={SOCIAL_LINKS.linkedin}
+            ariaLabel="Visit our LinkedIn page"
+          />
+          <SocialIcon 
+            icon={<FaDiscord className="w-5 h-5" />} 
+            url={SOCIAL_LINKS.discord}
+            ariaLabel="Join our Discord server"
+          />
+              
             </div>
           </div>
 
@@ -74,7 +105,7 @@ const Footer: React.FC = () => {
 
         {/* Credits */}
         <div className="text-center border-t border-white/10 pt-6 flex flex-col items-center gap-2">
-          <p className="text-sm text-white/60">© 2025 NHSM Space. All rights reserved.</p>
+          <p className="text-sm text-white/60">© 2025 NHSM Space. كل الحقوق مغتصبة.</p>
           <div className="flex items-center gap-2">
             <span className="text-sm text-white/60">Developed by</span>
             <img 
@@ -91,15 +122,18 @@ const Footer: React.FC = () => {
 
 interface SocialIconProps {
   icon: React.ReactNode;
+  url: string;
+  ariaLabel: string;
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ icon }) => {
+const SocialIcon = ({ icon, url, ariaLabel }: SocialIconProps) => {
   return (
     <a 
-      href="#" 
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white
-      transition-all duration-300 hover:bg-gradient-to-r from-accent to-secondary
-      hover:-translate-y-1 hover:shadow-md hover:shadow-accent/30"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ariaLabel}
+      className="p-2 rounded-full bg-dark-lighter/30 hover:bg-accent/20 transition-colors duration-300 text-white/70 hover:text-white"
     >
       {icon}
     </a>
@@ -123,5 +157,8 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, label }) => {
     </li>
   );
 };
+
+
+
 
 export default Footer;
