@@ -5,7 +5,7 @@ import AnnouncementsSection from '../components/Announcements';
 import Footer from '../components/Footer';
 
 const Home: React.FC = () => {
-  // Update document title
+  
   React.useEffect(() => {
     document.title = 'NHSM Space - Home';
   }, []);

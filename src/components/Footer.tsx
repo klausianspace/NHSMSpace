@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
               NHSM Space
             </h3>
             <p className="text-white/70 mb-6">
-              Your gateway to mathematical excellence and academic resources at the National Higher School of Mathematics. Dédicace l Zaki lmsili.
+              Your gateway to mathematical excellence and academic resources at the National Higher School of Mathematics.
             </p>
             <div className="flex gap-4">
             <SocialIcon 

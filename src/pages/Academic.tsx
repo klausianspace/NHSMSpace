@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import { BookOpen, GraduationCap, Clock, Sigma, Percent as Percentage, Users } from 'lucide-react';
 
-// Define types for our curriculum data
+
 type Specialization = 'preparatory' | 'cryptology' | 'statistics' | 'modelisation';
 type YearData = {
   semesters: {
@@ -27,16 +27,15 @@ interface CurriculumData {
 }
 
 const Academic: React.FC = () => {
-  // Update document title
+  
   React.useEffect(() => {
     document.title = 'NHSM Space - Academic System';
   }, []);
 
-  // State for selected year and specialization
   const [selectedSpecialization, setSelectedSpecialization] = useState<Specialization>('preparatory');
   const [selectedYear, setSelectedYear] = useState<number>(1);
 
-  // Curriculum data for all years and specializations
+  {/*Hardcoded put it mb3d in a JSON or in .ts file*/}
   const curriculumData: CurriculumData = {
     preparatory: {
       1: {
@@ -337,7 +336,7 @@ const Academic: React.FC = () => {
 
   const handleSpecializationChange = (specialization: Specialization) => {
     setSelectedSpecialization(specialization);
-    // Reset to first available year when changing specialization
+    
     if (specialization === 'preparatory') {
       setSelectedYear(1);
     } else {

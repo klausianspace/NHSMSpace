@@ -23,20 +23,32 @@ const Contact: React.FC = () => {
   };
   
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    
-    // Show success message or reset form
-    alert('Message sent successfully!');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+  
+    try {
+      const res = await fetch('https://formspree.io/f/meozdplz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+  
+      if (res.ok) {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      alert('Error sending message.');
+    }
   };
+  
   
   return (
     <main className="page-content min-h-screen">

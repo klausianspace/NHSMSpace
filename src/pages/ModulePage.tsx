@@ -75,7 +75,7 @@ const ModulePage: React.FC = () => {
             {module.description}
           </motion.p>
           
-          {/* Chapter Navigation */}
+          {/* Chapter Nav*/}
           <motion.div 
           className="flex flex-wrap justify-center gap-3 mb-12"
           initial={{ opacity: 0, y: 10 }}
@@ -192,7 +192,7 @@ const ModulePage: React.FC = () => {
       </div>
     )}
     
-    {/* Past Exams - Now using module data */}
+    {/* Past Exams*/}
     {module.extraResources?.pastExams && module.extraResources.pastExams.length > 0 && (
       <div className="mb-10">
         <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
@@ -218,7 +218,7 @@ const ModulePage: React.FC = () => {
       </div>
     )}
     
-    {/* Useful Websites - Now using module data */}
+    {/* Useful Websites*/}
     {module.extraResources?.usefulWebsites && module.extraResources.usefulWebsites.length > 0 && (
       <div className="mb-10">
         <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
@@ -255,7 +255,7 @@ const ModulePage: React.FC = () => {
       </div>
     )}
     
-    {/* Additional Materials - Now using module data */}
+    {/* Additional Materials */}
     {module.extraResources?.additionalMaterials && module.extraResources.additionalMaterials.length > 0 && (
       <div className="mb-10">
         <h3 className="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
@@ -288,14 +288,14 @@ const ModulePage: React.FC = () => {
   );
 };
 
-// Resource Card Component
+
 interface ResourceCardProps {
   resource: Resource;
   index: number;
 }
 
 const ResourceCard: React.FC<ResourceCardProps> = ({ resource, index }) => {
-  // Get icon based on resource type
+
   const getIcon = () => {
     switch (resource.type) {
       case 'lecture-notes':
@@ -311,7 +311,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, index }) => {
     }
   };
 
-  // Format resource type for display
+  
   const getTypeLabel = () => {
     switch (resource.type) {
       case 'lecture-notes':
@@ -404,7 +404,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, index }) => {
   );
 };
 
-// Extras component with links
+
 const ExtraLinks: React.FC = () => {
   return (
     <>
@@ -436,7 +436,7 @@ const ExtraLinks: React.FC = () => {
   );
 };
 
-// Video resource component
+
 interface VideoResourceProps {
   link: string;
   thumbnail?: string;

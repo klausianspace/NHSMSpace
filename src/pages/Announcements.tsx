@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import { Clock, Megaphone } from 'lucide-react'; // Using Lucide icons which match your project
 
 const Announcements: React.FC = () => {
-  // Update document title
+  
   React.useEffect(() => {
     document.title = 'NHSM Space - Announcements';
   }, []);
@@ -42,9 +42,6 @@ const Announcements: React.FC = () => {
   );
 };
 
-// Keep all existing implementation commented below for future use
-/*
-[Previous announcements code...]
-*/
+
 
 export default Announcements;

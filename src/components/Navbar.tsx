@@ -9,6 +9,10 @@ import {
   Mail
 } from 'lucide-react';
 
+
+
+
+
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -56,7 +60,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
 
-        {/* Mobile Menu Button - Aligned to right */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -90,6 +94,9 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
       )}
+      <div className="flex items-center gap-4">
+        
+      </div>
     </nav>
   );
 };

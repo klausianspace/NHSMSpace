@@ -97,7 +97,7 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({ steps = [], ch
 
   return (
     <div className="space-y-6">
-      {/* Header Section */}
+      
       <div className="glass-effect rounded-2xl p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -383,7 +383,7 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({ steps = [], ch
         </div>
       </div>
       
-      {/* Completion Celebration */}
+      {/* Completion*/}
       {progress === 100 && (
         <div className="glass-effect rounded-2xl p-6 border-l-4 border-primary-success">
           <div className="flex items-center space-x-4">

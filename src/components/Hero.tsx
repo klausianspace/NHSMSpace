@@ -5,7 +5,7 @@ import { BookOpen } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Background Image & Overlay */}
+      {/* Background Image*/}
       <div 
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-50 z-[-2]"
         style={{ 
@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-dark-darker/80 to-dark-darker/60 z-[-1]" />
 
-      {/* Hero Content */}
+      {/* Hero */}
       <div className="container mx-auto px-4 h-full">
         <div className="absolute top-1/3 left-0 md:left-[10%] max-w-xl px-4 md:px-0 fade-in delay-100 opacity-0">
           <div className="w-20 h-0.5 bg-gradient-to-r from-pink-500 to-accent mb-6 line-grow" />

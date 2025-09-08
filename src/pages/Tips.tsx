@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import { Lightbulb, BookOpen, Clock, Brain, Award, Users, ThumbsUp, Star } from 'lucide-react';
 
 const Tips: React.FC = () => {
-  // Update document title
+  
   React.useEffect(() => {
     document.title = 'NHSM Space - Tips & Guidance';
   }, []);
@@ -116,13 +116,13 @@ const Tips: React.FC = () => {
     }
   ];
   
-  // State for active category
+  // active category
   const [activeCategory, setActiveCategory] = React.useState('study-strategies');
   
-  // Filter tips by category
+  // tips by category
   const filteredTips = studyTips.filter(tip => tip.category === activeCategory);
   
-  // Get color class based on category
+  // color class based on category
   const getCategoryColorClass = (color: string) => {
     switch (color) {
       case 'purple':
@@ -196,7 +196,7 @@ const Tips: React.FC = () => {
         
         {/* Success Stories Section */}
         <section className="mt-16">
-          <h2 className="text-2xl font-bold text-white mb-8 text-center">YOU NEED TO HERE THIS</h2>
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">YOU NEED TO HEAR THIS</h2>
           
           <div className="bg-dark-lighter/30 rounded-xl border border-white/10 p-8 max-w-4xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, ChevronRight } from 'lucide-react';
 import Footer from '../components/Footer';
 
-// Define module interface
+// module interface
 interface Module {
   id: string;
   name: string;
@@ -17,7 +17,7 @@ const StudyGuide: React.FC = () => {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [selectedSemester, setSelectedSemester] = useState<number | null>(null);
   
-  // Update document title
+  // document title
   React.useEffect(() => {
     document.title = 'NHSM Space - Study Guide';
   }, []);
@@ -34,7 +34,7 @@ const StudyGuide: React.FC = () => {
     return [1, 2];
   };
   
-  // Sample modules for first semester
+  // modules for first semester (i'll change it later)
   const modules: Module[] = [
     {
       id: 'analysis-1',
@@ -168,7 +168,7 @@ const StudyGuide: React.FC = () => {
     }
   ];
   
-  // Filter modules based on selected year and semester
+  // Filter modules 
   const filteredModules = modules.filter(module => {
     if (selectedYear === null) return false;
     if (selectedSemester === null) return false;
@@ -208,7 +208,7 @@ const StudyGuide: React.FC = () => {
           </div>
         </div>
         
-        {/* Semester Selection (if year is selected) */}
+        {/* Semester Selection  */}
         {selectedYear && (
           <div className="mb-10">
             <h2 className="text-2xl font-semibold text-white mb-4">Select Semester</h2>

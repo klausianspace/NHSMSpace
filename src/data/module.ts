@@ -118,7 +118,7 @@ export const modulesData: Record<string, ModuleData> = {
           description: '15 problems covering modulus, argument, roots of unity, and geometric interpretations (+2 extra exercises on topology of \u211D).',
           meta: { difficulty: 'Difficulty: 3.8/5', solutions: 'Solutions Included' },
           link: '/Pdfs/Year 1/S1/Analysis 1/Problem Sheets/Exercise set 3.pdf',
-          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__2_Solutions.pdf'
+          solutionsLink: '/Pdfs/Year 1/S1/Analysis 1/Solutions/Problem_Set__3_Solutions.pdf'
           
         },
         
@@ -558,7 +558,8 @@ export const modulesData: Record<string, ModuleData> = {
           title: 'Problem Set #4',
           description: 'Exercises covering group axioms, ring operations, and examples of algebraic structures. Full solutions included.',
           meta: { difficulty: '4.1/5', solutions: 'Solutions Included' },
-          link: '/Pdfs/Year 1/S1/Algebra 1/Problem Sheets/-Algebraic Structures- (1).pdf'
+          link: '/Pdfs/Year 1/S1/Algebra 1/Problem Sheets/-Algebraic Structures- (1).pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/Algebra 1/Solutions/alg-str.pdf'
         },
         
 
@@ -790,29 +791,58 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Combinatorial Analysis Textbook',
           description: 'Comprehensive guide to fundamental counting techniques: permutations, combinations, arrangements with/without repetition, binomial coefficients, and problem-solving strategies. Includes definitions, examples, and exercises.',
-          meta: { pages: '28 pages', tags: 'Permutations • Combinations • Binomial • Repetition' }
+          meta: { pages: '28 pages', tags: 'Permutations • Combinations • Binomial • Repetition' },
+          link: "/Pdfs/Year 1/S1/MD 1/Textbooks/Combinatorial_Analysis.pdf",
         },
         {
           id: 'combi-problem-set',
           type: 'problem-set',
           title: 'Problem Set #1',
           description: '15+ problems graded by difficulty to test your mastery of permutations, combinations, and variations — with detailed solutions included. Practice both theory and real-world scenarios.',
-          meta: { difficulty: '4.4/5', solutions: 'Solutions Included' }
+          meta: { difficulty: '4.4/5', solutions: 'Solutions Included' },
+          link: "/Pdfs/Year 1/S1/MD 1/Problem Sheets/MD_I_1 (1).pdf",
+          solutionsLink: "/Pdfs/Year 1/S1/MD 1/Solutions/md1_ws_1_sol.pdf"
         },
-        {
-          id: 'combi-extras',
-          type: 'extras',
-          title: 'Additional Practice',
-          description: 'External resources including interactive combinatorics calculators, visual examples, and challenging problems for deeper exploration.',
-          meta: { resources: '3 external resources', type: 'Interactive & Textual' }
-        },
+        
+        
         {
           id: 'combi-video-playlist',
           type: 'video-playlist',
-          title: 'Mastering Counting Techniques',
-          description: 'Video series covering basic to advanced counting methods with step-by-step explanations, real-life problems, and visual guides.',
-          meta: { videos: '7 videos', duration: '3.2h total' }
-        }
+          title: 'Combinatorics : Counting',
+          description: 'Introductory playlist for counting principles.',
+          meta: { videos: '13 videos', duration: '1.5h total' },
+          link: "https://www.youtube.com/playlist?list=PLVUDmbpupCaru1ReP966kn39zbpkCKm-A",
+          thumbnail: "https://i.ytimg.com/vi/VVY4K-OT4FI/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAF27HfaCTmc0Vn_X8r91_p-f1-Gg"
+        },
+
+
+        {
+          id: 'combi-video-playlist',
+          type: 'video-playlist',
+          title: 'Discrete Mathematics : Combinatorics',
+          description: 'Watch only the first 14 videos.',
+          meta: { videos: '14 videos', duration: '4h total' },
+          link: "https://www.youtube.com/playlist?list=PLl-gb0E4MII0sGLCJeqDB3y63HZ6lM5LJ",
+          thumbnail: "https://i.ytimg.com/vi/spEjNcd37IQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBn2-l4WIpS4OcWjrwCt0siB78NWQ"
+        },
+
+
+        {
+          id: 'combi-video-playlist',
+          type: 'video-playlist',
+          title: 'Discrete Mathematics : Combinations With Repetition',
+          description: 'This playlist covers the main ideas of combinations with repetition section.',
+          meta: { videos: '9 videos', duration: '4h total' },
+          link: "https://www.youtube.com/playlist?list=PLx0jMQFplm94RTVv72pdogyPipimwhLp-",
+          thumbnail: "https://i.ytimg.com/vi/cxSa9GtOVoE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCWZ0VmUQgTe4svtQ9valAYlfVEzw"
+        },
+
+
+
+
+
+
+
 ],
       'inclusion-exclusion': [
         {
@@ -820,28 +850,27 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Inclusion-Exclusion & PHP Textbook',
           description: 'Formal treatment of the inclusion-exclusion principle with step-by-step proofs and examples, covering 2-set and 3-set cases, general formula, and advanced extensions. Includes a dedicated section on the Pigeonhole Principle with applications.',
-          meta: { pages: '19 pages', tags: 'Inclusion-Exclusion • Pigeonhole Principle • Counting Overlaps' }
+          meta: { pages: '19 pages', tags: 'Inclusion-Exclusion • Pigeonhole Principle • Counting Overlaps' },
+          link: "/Pdfs/Year 1/S1/MD 1/Textbooks/MD1_Ch2.pdf",
         },
         {
           id: 'ie-problem-set',
           type: 'problem-set',
           title: 'Problem Set #2',
           description: 'Challenge yourself with carefully selected problems involving overlapping sets, derangements, and creative uses of the pigeonhole principle. Full solutions provided.',
-          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' }
+          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' },
+          link: "/Pdfs/Year 1/S1/MD 1/Problem Sheets/MD_I_2 (1).pdf",
+          solutionsLink: "/Pdfs/Year 1/S1/MD 1/Solutions/md1_ws_2_sol.pdf"
         },
-        {
-          id: 'ie-extras',
-          type: 'extras',
-          title: 'Interactive Practice',
-          description: 'External tools, articles, and exercises for mastering inclusion-exclusion and the pigeonhole principle beyond the classroom.',
-          meta: { resources: '3 external resources', type: 'Visual & Textual' }
-        },
+        
         {
           id: 'ie-video-playlist',
           type: 'video-playlist',
-          title: 'Inclusion-Exclusion & PHP Explained',
-          description: 'Clear and engaging video tutorials walking through the logic, derivation, and applications of both the inclusion-exclusion principle and the pigeonhole principle.',
-          meta: { videos: '6 videos', duration: '2.4h total' }
+          title: ' Pigeonhole Principle & Inclusion-Exclusion Principle',
+          description: 'PHP & Inclusion-Exclusion Principle video tutorials with proofs and examples (watch only the first 16 videos).',
+          meta: { videos: '16 videos', duration: '4h total' },
+          link: "https://www.youtube.com/playlist?list=PLF_J2w5w0Z3G8ZGEyd_NNV7n2EEXJSMJe",
+          thumbnail: "https://i.ytimg.com/vi/1CpBgTZ9pxs/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB0bORWSeXIN7etttowdpSsDBEl5g"
         }
       ],
       'graph-theory-intro': [
@@ -850,31 +879,119 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Graph Theory Fundamentals',
           description: 'Comprehensive notes introducing the core concepts of graph theory: graphs, vertices, edges, degree, adjacency, paths, cycles, and connectedness — with visual examples and formal definitions.',
-          meta: { pages: '17 pages', tags: 'Graphs • Degree • Paths • Connectivity' }
+          meta: { pages: '17 pages', tags: 'Graphs • Degree • Paths • Connectivity' },
+          link: "/Pdfs/Year 1/S1/MD 1/Textbooks/MD1_Ch3.pdf",
         },
         {
           id: 'gt-problem-set',
           type: 'problem-set',
           title: 'Problem Set #3',
           description: 'Practice problems on simple and multigraphs, degree sequences, paths, and connectivity — ranging from basic to advanced difficulty, with full solutions.',
-          meta: { difficulty: '4.4/5', solutions: 'Solutions Included' }
+          meta: { difficulty: '4.4/5', solutions: 'Solutions Included' },
+           link: "/Pdfs/Year 1/S1/MD 1/Problem Sheets/MD_I_3 (1).pdf",
+          solutionsLink: "/Pdfs/Year 1/S1/MD 1/Solutions/md1_ws_3_sol.pdf"
         },
-        {
-          id: 'gt-extras',
-          type: 'extras',
-          title: 'Visual Graph Tools',
-          description: 'External tools and interactive resources to explore graph concepts through drag-and-drop visualizations and puzzles.',
-          meta: { resources: '3 external resources', type: 'Interactive & Visual' }
-        },
+        
+
         {
           id: 'gt-video-playlist',
           type: 'video-playlist',
-          title: 'Graph Theory Made Easy',
+          title: 'Graph Theory',
           description: 'Introductory video series walking through graph types, degree properties, paths, and basic theorems with illustrative examples.',
-          meta: { videos: '7 videos', duration: '3.1h total' }
+          meta: { videos: '7 videos', duration: '3.1h total' },
+          link: "https://www.youtube.com/playlist?list=PLztBpqftvzxXBhbYxoaZJmnZF6AUQr1mH",
+          thumbnail: "https://i.ytimg.com/vi/ZQY4IfEcGvM/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCzoZCIgMRk4NJacsEbciTJ69dHOQ"
         }
       ]
 
+    },
+
+
+    extraResources: {
+      recommendedBooks: [
+        {
+          title: "A Walk Through Combinatorics",
+          author: "Miklós Bóna.",
+          description: "This textbook by Miklos Bona provides a comprehensive introduction to combinatorics, covering a wide range of topics from fundamental principles to more advanced theories. The book emphasizes engaging writing, a rich variety of examples, and thorough exercises with solutions.",
+          link: "/Pdfs/Year 1/S1/MD 1/Books/a-walk-through-combinatorics-an-introduction-to-enumeration-graph-theory-and-selected-other-topics-5nbsped-9811277842-9789811277849-9789811277856-9789811277863_compress.pdf",
+          coverImage: "data:image/jpeg;base64,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" 
+        },
+        {
+          title: "Combinatorics & Graph Theory",
+          author: "C. Vasudev",
+          description: "This textbook by C. Vasudev provides a comprehensive introduction to combinatorics and graph theory, covering a wide range of topics from fundamental principles to more advanced theories. The book emphasizes engaging writing, a rich variety of examples, and thorough exercises with solutions.",
+          link: "/Pdfs/Year 1/S1/MD 1/Books/Combinatorics and graph the_ (Z-Library).pdf",
+          coverImage: "https://imgv2-1-f.scribdassets.com/img/document/234593042/original/609c5472c7/1?v=1"
+        },
+
+
+        
+      ],
+      pastExams: [
+        {
+          title: "2024 Final Exam",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/MD 1/Exams/Final Exam - Correction Promo 4.pdf"
+        },
+
+        {
+          title: "2024 Replacement Exam",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/MD 1/Exams/Replacement Exam - Promo 4.pdf"
+        },
+
+        {
+          title: "2024 Midterm Exam",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/MD 1/Exams/Midterm Exam - Correction Promo 4.pdf"
+        },
+        {
+          title: "2023 Final Exam",
+          year: "2023",
+          description: "Detailed solutions to all problems",
+          link: "/Pdfs/Year 1/S1/MD 1/Exams/Final Exam - Correction Promo 3.pdf"
+        },
+
+        {
+          title: "2023 Midterm Exam",
+          year: "2023",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/MD 1/Exams/Midterm Exam - Correction Promo 3.pdf"
+        },
+
+        
+
+        
+
+        {
+          title: "2022 Catch-up Exam",
+          year: "2022",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/MD 1/Exams/Catchup Exam - Promo 2.pdf"
+        },
+
+        
+        
+        
+      ],
+      usefulWebsites: [
+        {
+          title: "Bibmath: Counting",
+          description: "Solved theoritical exercises on counting chapter",
+          link: "https://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/proba/denombrement-theo&type=fexo"
+        },
+
+        {
+          title: "Bibmath: Graph Theory",
+          description: "Solved exercises on graph theory chapter",
+          link: "https://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/graphes/graphes_theo&type=fexo"
+        },
+
+         
+      ]
     }
   },
 
@@ -888,7 +1005,7 @@ export const modulesData: Record<string, ModuleData> = {
     {
       id: 'fundamentals',
       title: 'Fundamentals of Statistics',
-      description: 'Definition, objectives, types of statistics, populations and samples, and data classifications.'
+      description: 'Definition, objectives, types of statistics, populations and samples, and data classifications and graphical representaions.'
     },
     {
       id: 'numerical-data',
@@ -913,30 +1030,23 @@ export const modulesData: Record<string, ModuleData> = {
           id: 'stats-fundamentals-lecture-notes',
           type: 'lecture-notes',
           title: 'Fundamentals of Statistics',
-          description: 'Clear introduction to key statistical concepts: types of data, populations vs. samples, parameters vs. statistics, and classifications of variables — with examples and definitions.',
-          meta: { pages: '15 pages', tags: 'Populations • Variables • Descriptive vs. Inferential' }
+          description: 'Clear introduction to key statistical concepts: types of data, populations vs. samples, parameters vs. statistics, and classifications of variables, graphical representations of data — with examples and definitions.',
+          meta: { pages: '15 pages', tags: 'Populations • Variables • Descriptive vs. Inferential' },
+          link: '/Pdfs/Year 1/S1/STAT/Textbooks/Textbook_Chap1_4 (1)-1-24.pdf',
+          
         },
         {
           id: 'stats-fundamentals-problem-set',
           type: 'problem-set',
           title: 'Problem Set #1',
           description: 'Foundational exercises on recognizing data types, sampling methods, and distinguishing between populations and samples.',
-          meta: { difficulty: '3.5/5', solutions: 'Solutions Included' }
+          meta: { difficulty: '3.5/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/STAT/Problem Sheets/Problem sheet N-1.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/STAT/Solutions/".pdf'
         },
-        {
-          id: 'stats-fundamentals-extras',
-          type: 'extras',
-          title: 'Introductory Tools',
-          description: 'External links and interactive quizzes to test your understanding of statistics basics.',
-          meta: { resources: '3 external resources', type: 'Textual & Interactive' }
-        },
-        {
-          id: 'stats-fundamentals-videos',
-          type: 'video-playlist',
-          title: 'Understanding Statistics Basics',
-          description: 'Short videos covering the goals and structure of statistics, data classification, and basic terminology.',
-          meta: { videos: '6 videos', duration: '2.1h total' }
-        }
+        
+
+        
       ],
       'numerical-data': [
         {
@@ -944,29 +1054,19 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Representing Numerical Data',
           description: 'Detailed notes on organizing, summarizing, and visualizing data using tables, histograms, bar charts, and pie charts, along with measures like mean, median, mode, and range.',
-          meta: { pages: '20 pages', tags: 'Tables • Histograms • Mean/Median/Mode' }
+          meta: { pages: '25 pages', tags: 'Tables • Histograms • Mean/Median/Mode' },
+          link: '/Pdfs/Year 1/S1/STAT/Textbooks/Textbook_Chap1_4 (1)-25-50.pdf',
         },
         {
           id: 'stats-numerical-problem-set',
           type: 'problem-set',
           title: 'Problem Set #2',
           description: 'Exercises covering frequency tables, graphical representation, and descriptive measures of central tendency and dispersion.',
-          meta: { difficulty: '4.1/5', solutions: 'Solutions Included' }
+          meta: { difficulty: '4.1/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/STAT/Problem Sheets/Problem sheet N-2.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/STAT/Solutions/Exercise set 2.pdf'
         },
-        {
-          id: 'stats-numerical-extras',
-          type: 'extras',
-          title: 'Interactive Charts & Tools',
-          description: 'External platforms to create histograms, bar plots, and explore how statistical measures change with data.',
-          meta: { resources: '3 external resources', type: 'Visual & Interactive' }
-        },
-        {
-          id: 'stats-numerical-videos',
-          type: 'video-playlist',
-          title: 'Visualizing & Summarizing Data',
-          description: 'Step-by-step walkthroughs of data representation techniques and computation of descriptive measures.',
-          meta: { videos: '8 videos', duration: '3.3h total' }
-        }
+     
       ],
       'two-way-stats': [
         {
@@ -974,60 +1074,150 @@ export const modulesData: Record<string, ModuleData> = {
           type: 'lecture-notes',
           title: 'Two-Way Tables and Bivariate Data',
           description: 'Complete notes on analyzing two-variable data using contingency tables, joint/marginal/conditional distributions, and detecting independence between variables.',
-          meta: { pages: '18 pages', tags: 'Contingency Tables • Conditional Distribution • Independence' }
+          meta: { pages: '37 pages', tags: 'Contingency Tables • Conditional Distribution • Independence' },
+          link: '/Pdfs/Year 1/S1/STAT/Textbooks/Textbook_Chap1_4 (1)-51-88.pdf',
         },
         {
           id: 'stats-two-way-problem-set',
           type: 'problem-set',
           title: 'Problem Set #3',
           description: 'Practice problems on constructing and interpreting two-way tables, computing conditional distributions, and testing for independence.',
-          meta: { difficulty: '4.2/5', solutions: 'Solutions Included' }
+          meta: { difficulty: '4.2/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/STAT/Problem Sheets/Problem sheet N-3.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/STAT/Solutions/Exercise set 3 (2).pdf'
         },
-        {
-          id: 'stats-two-way-extras',
-          type: 'extras',
-          title: 'Bivariate Data Tools',
-          description: 'Interactive visualizations and external readings on contingency tables and real-life applications.',
-          meta: { resources: '3 external resources', type: 'Interactive & Applied' }
-        },
-        {
-          id: 'stats-two-way-videos',
-          type: 'video-playlist',
-          title: 'Analyzing Two-Variable Data',
-          description: 'Explanatory video series on two-way statistics, with examples involving categorical and numerical data.',
-          meta: { videos: '7 videos', duration: '2.9h total' }
-        }
+        
       ],
       'intro-probability': [
         {
           id: 'stats-probability-lecture-notes',
           type: 'lecture-notes',
           title: 'Introduction to Probability',
-          description: 'Lecture notes on basic probability principles: sample spaces, events, counting techniques, rules of probability, and introductory combinatorics.',
-          meta: { pages: '25 pages', tags: 'Sample Spaces • Events • Probability Rules' }
+          description: 'Lecture notes on basic probability principles: sample spaces, events, counting techniques, rules of probability, and random variables',
+          meta: { pages: '35 pages', tags: 'Sample Spaces • Events • Probability Rules' },
+          link: '/Pdfs/Year 1/S1/STAT/Textbooks/Textbook_Chap1_4 (1)-89-119.pdf',
         },
         {
           id: 'stats-probability-problem-set',
           type: 'problem-set',
           title: 'Problem Set #4',
-          description: 'Exercises covering probability calculations, event combinations, and applications of the addition and multiplication rules.',
-          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' }
+          description: 'Exercises covering probability calculations, event combinations, and applications of the addition and multiplication rules. Conditional probabilities, Bayess theorem and random variables',
+          meta: { difficulty: '4.5/5', solutions: 'Solutions Included' },
+          link: '/Pdfs/Year 1/S1/STAT/Problem Sheets/Problem sheet N-4.pdf',
+          solutionsLink: '/Pdfs/Year 1/S1/STAT/Solutions/last TD sheet  (1).pdf'
         },
-        {
-          id: 'stats-probability-extras',
-          type: 'extras',
-          title: 'Probability Tools',
-          description: 'Simulations, visual tools, and puzzles to build intuition about randomness and probability.',
-          meta: { resources: '3 external resources', type: 'Simulations & Textual' }
-        },
-        {
-          id: 'stats-probability-videos',
-          type: 'video-playlist',
-          title: 'Intro to Probability',
-          description: 'Conceptual and practical videos on probability basics, with real-world problem-solving demonstrations.',
-          meta: { videos: '9 videos', duration: '4.0h total' }
-        }
+        
+        
       ]
+    },
+
+    extraResources: {
+      recommendedBooks: [
+        
+        {
+          title: "Mathematical Statistics with applications",
+          author: "Dennis D. Wackerly",
+          description: "Statistics & Probability textbook with advanced topics and applications.",
+          link: "/Pdfs/Year 1/S1/STAT/Books/Mathematical Statistics wit_ (Z-Library).pdf",
+          coverImage: "data:image/jpeg;base64,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"
+        },
+
+        {
+          title: "Introductory Statistics",
+          author: "OpenStax",
+          description: "Statistics & Probability textbook with advanced topics and applications.",
+          link: "/Pdfs/Year 1/S1/STAT/Books/Statistics-WEB.pdf",
+          coverImage: "https://m.media-amazon.com/images/I/51J-g9Mo+fL._UF1000,1000_QL80_.jpg"
+        },
+
+
+        
+      ],
+      pastExams: [
+        {
+          title: "2024 Final Exam",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Final Exam - Correction Promo 4.pdf"
+        },
+
+
+        {
+          title: "2024 Midterm Exam",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Midterm Exam - Correction Promo 4.pdf"
+        },
+
+
+        {
+          title: "2023 Catch-up Exam",
+          year: "2023",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Catchup Exam - Correction Promo 3.pdf"
+        },
+
+
+        
+
+        
+        {
+          title: "2023 Final Exam",
+          year: "2023",
+          description: "Detailed solutions to all problems",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Final Exam - Correction Promo 3.pdf"
+        },
+
+        {
+          title: "2023 Midterm Exam",
+          year: "2023",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Midterm Exam - Correction Promo 3.pdf"
+        },
+
+        
+
+        
+
+        {
+          title: "2022 Catch-up Exam",
+          year: "2022",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Catchup Exam - Correction Promo 2.pdf"
+        },
+
+        {
+          title: "2022 Final Exam",
+          year: "2022",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Final Exam - Correction Promo 2.pdf"
+        },
+
+
+        {
+          title: "2022 Midterm Exam 2",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Midterm Exam 2 - Correction Promo 2.pdf"
+        },
+
+
+
+        {
+          title: "2022 Midterm Exam 1",
+          year: "2024",
+          description: "With model solutions",
+          link: "/Pdfs/Year 1/S1/STAT/Exams/Midterm Exam 1 - Correction Promo 2.pdf"
+        },
+
+        
+        
+        
+      ],
+      
+
+         
+      
     }
     
   
@@ -1041,11 +1231,7 @@ export const modulesData: Record<string, ModuleData> = {
   subtitle: 'First Semester, Year 1',
   description: 'Introduction to classical mechanics: motion in one and two dimensions, Newton’s laws, and the principles of work and energy.',
   chapters: [
-    {
-      id: 'review',
-      title: 'Review',
-      description: 'Mathematical and physical prerequisites: units, vector operations, and fundamental principles of mechanics.'
-    },
+    
     {
       id: 'kinematics',
       title: 'Kinematics',
@@ -1063,36 +1249,7 @@ export const modulesData: Record<string, ModuleData> = {
     }
   ],
   resources: {
-    'review': [
-    {
-      id: 'phy-review-lecture-notes',
-      type: 'lecture-notes',
-      title: 'Prerequisite Review Notes',
-      description: 'Covers key mathematical tools and fundamental physics concepts: units, dimensional analysis, and vector operations in \u211D\u00b2/\u211D\u00b3.',
-      meta: { pages: '14 pages', tags: 'Units • Vectors • Kinematics Basics' }
-    },
-    {
-      id: 'phy-review-problem-set',
-      type: 'problem-set',
-      title: 'Intro Mechanics Problems',
-      description: 'Conceptual and calculation-based problems on vectors, unit conversions, and basic physical quantities.',
-      meta: { difficulty: '3.5/5', solutions: 'Solutions Included' }
-    },
-    {
-      id: 'phy-review-extras',
-      type: 'extras',
-      title: 'Vector Tools & Simulations',
-      description: 'External vector visualizers and unit converters to reinforce understanding of basics.',
-      meta: { resources: '3 external resources', type: 'Interactive & Visual' }
-    },
-    {
-      id: 'phy-review-videos',
-      type: 'video-playlist',
-      title: 'Foundation Refresher',
-      description: 'Short videos on the essentials of vectors, unit systems, and physical quantities.',
-      meta: { videos: '5 videos', duration: '1.4h total' }
-    }
-  ],
+    
 
   'kinematics': [
     {
@@ -1100,7 +1257,11 @@ export const modulesData: Record<string, ModuleData> = {
       type: 'lecture-notes',
       title: 'Kinematics in 1D & 2D',
       description: 'Detailed treatment of position, velocity, acceleration, and motion graphs with examples in one and two dimensions.',
-      meta: { pages: '21 pages', tags: 'Motion Graphs • Vectors • Acceleration' }
+      meta: { pages: '21 pages', tags: 'Motion Graphs • Vectors • Acceleration' },
+      link: '/Pdfs/Year 1/S1/STAT/Problem Sheets/Problem sheet N-1.pdf',
+      solutionsLink: '/Pdfs/Year 1/S1/STAT/Solutions/".pdf'
+
+
     },
     {
       id: 'phy-kinematics-problem-set',
